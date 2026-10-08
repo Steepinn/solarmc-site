@@ -105,20 +105,30 @@ export function getPublicOriginFromRequest(req: {
   );
 }
 
-export function getDiscordRedirectUri(origin: string) {
-  const fixed = process.env.DISCORD_REDIRECT_URI?.trim();
-  if (fixed) return fixed;
+function callbackForSiteBase(base: string) {
+  return `${base.replace(/\/$/, "")}/api/auth/callback`;
+}
 
-  // Always match the host the user opened (localhost or prod).
-  if (origin?.trim()) {
-    return `${origin.replace(/\/$/, "")}/api/auth/callback`;
+/** Значение DISCORD_REDIRECT_URI в env (может не совпадать с тем, что уходит в Discord). */
+export function getEnvDiscordRedirectUri(): string | null {
+  const fixed = process.env.DISCORD_REDIRECT_URI?.trim();
+  return fixed ? fixed.replace(/\/$/, "") : null;
+}
+
+export function getDiscordRedirectUri(origin: string) {
+  const fromOrigin = origin?.trim().replace(/\/$/, "");
+  if (fromOrigin && /^https?:\/\//i.test(fromOrigin)) {
+    return callbackForSiteBase(fromOrigin);
   }
+
+  const fixed = getEnvDiscordRedirectUri();
+  if (fixed) return fixed;
 
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
     process.env.SITE_URL?.trim();
   if (siteUrl) {
-    return `${siteUrl.replace(/\/$/, "")}/api/auth/callback`;
+    return callbackForSiteBase(siteUrl);
   }
 
   return "/api/auth/callback";

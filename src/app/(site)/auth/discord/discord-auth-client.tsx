@@ -8,12 +8,14 @@ import { siteConfig } from "@/config/site";
 
 type Props = {
   redirectUri: string;
+  envRedirectUri: string | null;
   clientId: string;
   hasSecret: boolean;
 };
 
 export default function DiscordAuthPage({
   redirectUri,
+  envRedirectUri,
   clientId,
   hasSecret,
 }: Props) {
@@ -34,6 +36,21 @@ export default function DiscordAuthPage({
     "http://localhost:3000/api/auth/callback",
     "http://127.0.0.1:3000/api/auth/callback",
   ].filter((v, i, a) => a.indexOf(v) === i);
+
+  const envRedirectIgnored =
+    envRedirectUri && envRedirectUri !== redirectUri;
+
+  const oauthPortalUrl = clientId
+    ? `https://discord.com/developers/applications/${clientId}/oauth2`
+    : "https://discord.com/developers/applications";
+
+  async function copyRedirect() {
+    try {
+      await navigator.clipboard.writeText(redirectUri);
+    } catch {
+      /* ignore */
+    }
+  }
 
   return (
     <PageShell
@@ -63,6 +80,50 @@ export default function DiscordAuthPage({
             авторизации на Discord.
           </p>
         ) : null}
+
+        <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/5 px-3 py-3 text-start text-xs">
+          <p className="font-medium text-amber-200">
+            Ошибка «Некорректный OAuth2 redirect_uri» на Discord
+          </p>
+          <p className="mt-1 text-muted-foreground">
+            Redirect добавляют в{" "}
+            <strong>то же приложение</strong>, чей Client ID стоит на сайте — не в
+            другом боте.
+          </p>
+          {clientId ? (
+            <p className="mt-2 font-mono text-[11px] text-foreground">
+              Client ID: {clientId}
+            </p>
+          ) : (
+            <p className="mt-2 text-red-400">DISCORD_CLIENT_ID не задан на сервере.</p>
+          )}
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <code className="break-all rounded bg-muted/50 px-2 py-1 font-mono text-[11px]">
+              {redirectUri}
+            </code>
+            <button
+              type="button"
+              onClick={() => void copyRedirect()}
+              className="shrink-0 rounded-md bg-muted px-2 py-1 text-[11px] hover:bg-muted/80"
+            >
+              Копировать
+            </button>
+          </div>
+          <a
+            href={oauthPortalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-block text-solar-gold hover:underline"
+          >
+            Открыть OAuth2 этого приложения →
+          </a>
+          {envRedirectIgnored ? (
+            <p className="mt-2 text-amber-300/90">
+              DISCORD_REDIRECT_URI в env ({envRedirectUri}) не используется — сайт
+              шлёт URI выше. Удали или исправь переменную на Render.
+            </p>
+          ) : null}
+        </div>
 
         <div className="mt-6 space-y-3">
           <Link
