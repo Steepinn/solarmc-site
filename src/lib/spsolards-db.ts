@@ -1,6 +1,7 @@
-import { DatabaseSync } from "node:sqlite";
 import path from "path";
 import { getServerRoot } from "@/lib/minecraft-paths";
+
+type DatabaseSync = import("node:sqlite").DatabaseSync;
 
 function dbPath(): string | null {
   const explicit = process.env.SPSOLARDS_DB?.trim();
@@ -12,14 +13,15 @@ function dbPath(): string | null {
 
 let cached: { at: number; path: string; db: DatabaseSync } | null = null;
 
-function openDb(): DatabaseSync | null {
+async function openDb(): Promise<DatabaseSync | null> {
   const file = dbPath();
   if (!file) return null;
   try {
     if (cached && cached.path === file && Date.now() - cached.at < 15_000) {
       return cached.db;
     }
-    const db = new DatabaseSync(file, { readOnly: true });
+    const { DatabaseSync: Db } = await import("node:sqlite");
+    const db = new Db(file, { readOnly: true });
     cached = { at: Date.now(), path: file, db };
     return db;
   } catch {
@@ -31,7 +33,7 @@ function openDb(): DatabaseSync | null {
 export async function uuidByDiscordId(discordId: string): Promise<string | null> {
   const id = discordId.trim();
   if (!id) return null;
-  const db = openDb();
+  const db = await openDb();
   if (!db) return null;
   try {
     const row = db
@@ -46,7 +48,7 @@ export async function uuidByDiscordId(discordId: string): Promise<string | null>
 export async function discordIdByUuid(uuid: string): Promise<string | null> {
   const id = uuid.trim().toLowerCase();
   if (!id) return null;
-  const db = openDb();
+  const db = await openDb();
   if (!db) return null;
   try {
     const row = db

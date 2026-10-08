@@ -215,6 +215,6 @@ export function setSoundEnabled(on: boolean) {
   localStorage.setItem("solar-sound", on ? "on" : "off");
 }
 
-export function softHaptic(_ms = 4) {
+export function softHaptic() {
   // вибрация на десктопе бесполезна, на мобиле иногда даёт лаг — не дергаем
 }
