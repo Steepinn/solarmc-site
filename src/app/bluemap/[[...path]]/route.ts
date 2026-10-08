@@ -69,7 +69,7 @@ async function proxy(req: NextRequest, pathParts: string[] = []) {
       {
         error: "map_unreachable",
         message:
-          "Сервер карты не отвечает. Проверь, что BlueMap запущен (localhost:8100).",
+          "Сервер карты не отвечает. Проверь BlueMap на сервере и MAP_UPSTREAM (порт 8100).",
         upstream: upstreamBase,
       },
       { status: 502 },

@@ -46,12 +46,14 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: SOLARDS_API_URL
-        sync: false
+        value: http://26.13.227.132:8080
       - key: SOLARDS_API_TOKEN
         sync: false
       - key: MAP_UPSTREAM
-        sync: false
+        value: http://26.13.227.132:8100
+      - key: NEXT_PUBLIC_MAP_URL
+        value: http://26.13.227.132:8100
       - key: MINECRAFT_SERVER_IP
-        sync: false
+        value: "26.13.227.132"
       - key: MINECRAFT_SERVER_PORT
-        sync: false
+        value: "25813"

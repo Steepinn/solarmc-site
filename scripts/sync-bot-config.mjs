@@ -94,7 +94,7 @@ async function main() {
 
   const serverPanel = cfg.server_info_panel ?? {};
   const serverAddr = extractServerIp(serverPanel.embed_description ?? "") ?? {
-    ip: "143.20.155.16",
+    ip: "26.13.227.132",
     port: "25813",
   };
 
@@ -122,7 +122,7 @@ async function main() {
     serverInfo: {
       ip: serverAddr.ip,
       port: serverAddr.port,
-      dynmap: serverPanel.url_dynmap ?? "http://143.20.155.16:8100/",
+      dynmap: serverPanel.url_dynmap ?? "http://26.13.227.132:8100/",
       wiki: serverPanel.url_wiki ?? "https://mcsolar.gitbook.io/",
       monitoring: serverPanel.url_monitoring ?? "",
       help: serverPanel.help ?? serverPanel.url_help ?? "",
