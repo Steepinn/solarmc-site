@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Информация",
+    "items": [
+      { "title": "Введение", "href": "/docs/informaciya/home" },
+      { "title": "Правила", "href": "/docs/informaciya/rules" },
+      {
+        "title": "Разрешённые моды",
+        "href": "/docs/informaciya/rules/allowed-mods"
+      },
+      {
+        "title": "Запрещённые слова",
+        "href": "/docs/informaciya/rules/zapreshennye-slova"
+      },
+      { "title": "Донат", "href": "/docs/informaciya/donat" },
+      { "title": "Частые вопросы", "href": "/docs/informaciya/faq" },
+      { "title": "Как получить помощь", "href": "/docs/informaciya/help" }
+    ]
+  },
+  {
+    "title": "Гайды",
+    "items": [
+      { "title": "Как начать", "href": "/docs/guides/how-to-start" },
+      { "title": "Ресурс-пак", "href": "/docs/guides/gaid-po-resurs-paku" },
+      { "title": "Пластинки", "href": "/docs/guides/gaid-po-plastinkam" },
+      { "title": "Напитки", "href": "/docs/guides/gaid-po-napitkam" },
+      {
+        "title": "Рецепты напитков",
+        "href": "/docs/guides/gaid-po-napitkam/recepty-napitkov"
+      }
+    ]
+  },
+  {
+    "title": "Что есть на сервере",
+    "items": [
+      { "title": "Клиент", "href": "/docs/mods/client-mods" },
+      { "title": "Вход и список игроков", "href": "/docs/mods/solarauth-diary" },
+      { "title": "Расы", "href": "/docs/mods/origins" },
+      { "title": "Скиллы", "href": "/docs/mods/levelz" },
+      { "title": "Квесты", "href": "/docs/mods/questlog" },
+      { "title": "Сезоны", "href": "/docs/mods/serene-seasons" },
+      { "title": "Кухня", "href": "/docs/mods/farmers-delight" },
+      { "title": "Виноградник", "href": "/docs/mods/vinery" },
+      { "title": "Рыбалка", "href": "/docs/mods/tide" },
+      { "title": "Список рыб", "href": "/docs/mods/tide/ryby" },
+      { "title": "Звери", "href": "/docs/mods/zveri" },
+      { "title": "Данжи", "href": "/docs/mods/dungeons-pve" },
+      { "title": "Боссы", "href": "/docs/mods/bosses-bomd" },
+      { "title": "Артефакты", "href": "/docs/mods/artefakty" },
+      { "title": "Эндерит", "href": "/docs/mods/enderit" },
+      { "title": "Почта", "href": "/docs/mods/pochta" },
+      { "title": "Деньги", "href": "/docs/mods/dengi" },
+      { "title": "Рации", "href": "/docs/mods/radio" },
+      { "title": "Пинг", "href": "/docs/mods/ping" },
+      { "title": "Мебель", "href": "/docs/mods/mebel" },
+      { "title": "Жители", "href": "/docs/mods/zhiteli" },
+      { "title": "Мир вокруг", "href": "/docs/mods/mir" },
+      { "title": "Камера и экраны", "href": "/docs/mods/kamera" },
+      { "title": "Корабли", "href": "/docs/mods/shippy-ships" },
+      { "title": "Эмоции", "href": "/docs/mods/emotecraft" },
+      { "title": "Общие схемы", "href": "/docs/mods/syncmatica" },
+      { "title": "Карта мира", "href": "/docs/mods/bluemap" },
+      {
+        "title": "Голосовой чат",
+        "href": "/docs/server-content/nastroika-golosovogo-chata"
+      },
+      {
+        "title": "Команды",
+        "href": "/docs/server-content/poleznye-komandy-dlya-igrokov"
+      }
+    ]
+  },
+  {
+    "title": "Администрация",
+    "staffOnly": true,
+    "items": [
+      { "title": "Обзор для staff", "href": "/docs/admin/home" },
+      { "title": "Ранги", "href": "/docs/admin/ranks" },
+      { "title": "Модерация", "href": "/docs/admin/moderation" },
+      { "title": "Команды staff", "href": "/docs/admin/commands" },
+      { "title": "Сайт и админ-панель", "href": "/docs/admin/website" },
+      { "title": "Сезон 3 — чеклист", "href": "/docs/admin/season" }
+    ]
+  }
+]

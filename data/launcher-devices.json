@@ -1,0 +1,22 @@
+{
+  "wnyR_4DVZZlxeJD-XsLnng": {
+    "device": "wnyR_4DVZZlxeJD-XsLnng",
+    "status": "pending",
+    "createdAt": 1786566555851
+  },
+  "cJO5nTLWdpZNOZ0Iwj4MYA": {
+    "device": "cJO5nTLWdpZNOZ0Iwj4MYA",
+    "status": "pending",
+    "createdAt": 1786566723050
+  },
+  "XMtCqDTY68yUKhKkIp_T6A": {
+    "device": "XMtCqDTY68yUKhKkIp_T6A",
+    "status": "ok",
+    "createdAt": 1786566594110,
+    "completedAt": 1786566596959,
+    "nick": "Steepy3",
+    "discordId": "694193769658056784",
+    "username": "steepin",
+    "avatar": "https://cdn.discordapp.com/avatars/694193769658056784/89f2a062d490a4641dc652bb5b1a7ec6.png"
+  }
+}

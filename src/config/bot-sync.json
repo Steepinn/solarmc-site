@@ -1,0 +1,52 @@
+{
+  "brandName": "Solar",
+  "guildId": "1466351394523971620",
+  "channels": {
+    "applications": "1473254891597336712",
+    "applications_results": "1487402697689923664",
+    "admin_requests_forum": null,
+    "status": "1487395981480956047"
+  },
+  "applications": {
+    "cooldown_hours": 24,
+    "storage_file": "applications.json",
+    "ticket_category_id": "1487428372220088452",
+    "staff_role_id": "1480602248831696987",
+    "approved_role_id": "1466352891932577926",
+    "ticket_counter_file": "application_ticket_counter.json",
+    "ticket_auto_delete_seconds": 180
+  },
+  "roles": {
+    "applications_notify": "1480602248831696987",
+    "admin_requests_notify": null
+  },
+  "discord": {
+    "moderator_role_id": "1480602248831696987",
+    "admin_role_id": "1466352163398619293",
+    "approved_role_id": "1466352891932577926"
+  },
+  "welcome": {
+    "rules_ack_storage_file": "welcome_rules_ack.json",
+    "embed_title": "👋 Привет! Это Solar",
+    "embed_description": "Ты в Discord **Minecraft-сервера {brand}** — для новичков всё по шагам.\n\n**Заявка на проходку** — через кнопку **Заявки** ниже. Сначала обязательно нажми **Правила Discord** и прочитай канал с правилами этого сервера — без этого к заявкам не пустит.\n\n**Вики проекта** — там **правила игры** и вся актуальная информация о мире **{brand}**.\n\n**Мониторинг** — можешь сразу отдать голос за сервер, нам это важно.\n\nКнопки **Википедия** и **Мониторинг** работают сразу. **Заявки** откроются после шага с правилами Discord.",
+    "url_wiki": "https://mcsolar.gitbook.io/",
+    "url_monitoring": "https://hotmc.ru/minecraft-server-287943",
+    "url_discord_rules": "https://discord.com/channels/1466351394523971620/1487418215712948344",
+    "url_applications": "https://discord.com/channels/1466351394523971620/1473254891597336712"
+  },
+  "serverInfo": {
+    "ip": "143.20.155.16",
+    "port": "25813",
+    "dynmap": "http://143.20.155.16:8100/",
+    "wiki": "https://mcsolar.gitbook.io/",
+    "monitoring": "https://hotmc.ru/minecraft-server-287943",
+    "help": "https://discord.com/channels/1466351394523971620/1487647305594306661"
+  },
+  "colors": {
+    "main": "FFCC33",
+    "red": "D94A4A",
+    "accent": "FFE566",
+    "warm": "E6A800"
+  },
+  "syncedAt": "2026-06-19T22:27:12.687Z"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "informaciya--rules",
+    "path": "/solar/informaciya/rules",
+    "title": "Правила проекта"
+  },
+  {
+    "slug": "informaciya--faq",
+    "path": "/solar/informaciya/faq",
+    "title": "Часто задаваемые вопросы"
+  },
+  {
+    "slug": "informaciya--help",
+    "path": "/solar/informaciya/help",
+    "title": "Получение помощи"
+  },
+  {
+    "slug": "guides--how-to-start",
+    "path": "/solar/guides/how-to-start",
+    "title": "Как начать игру на сервере?"
+  },
+  {
+    "slug": "guides--gaid-po-resurs-paku",
+    "path": "/solar/guides/gaid-po-resurs-paku",
+    "title": "Гайд по ресурс паку"
+  },
+  {
+    "slug": "guides--gaid-po-plastinkam",
+    "path": "/solar/guides/gaid-po-plastinkam",
+    "title": "Гайд по пластинкам"
+  },
+  {
+    "slug": "guides--gaid-po-napitkam",
+    "path": "/solar/guides/gaid-po-napitkam",
+    "title": "Гайд по напиткам"
+  },
+  {
+    "slug": "server-content--poleznye-komandy-dlya-igrokov",
+    "path": "/solar/server-content/poleznye-komandy-dlya-igrokov",
+    "title": "Полезные команды для игроков"
+  },
+  {
+    "slug": "server-content--nastroika-golosovogo-chata",
+    "path": "/solar/server-content/nastroika-golosovogo-chata",
+    "title": "Настройка голосового чата"
+  },
+  {
+    "slug": "informaciya",
+    "path": "/solar/informaciya",
+    "title": "Информация"
+  },
+  {
+    "slug": "informaciya--home",
+    "path": "/solar/informaciya/home",
+    "title": "Введение"
+  },
+  {
+    "slug": "informaciya--rules--allowed-mods",
+    "path": "/solar/informaciya/rules/allowed-mods",
+    "title": "Разрешённые и Запрещённые модификации"
+  },
+  {
+    "slug": "informaciya--rules--zapreshennye-slova",
+    "path": "/solar/informaciya/rules/zapreshennye-slova",
+    "title": "Запрещенные слова"
+  },
+  {
+    "slug": "guides--gaid-po-napitkam--recepty-napitkov",
+    "path": "/solar/guides/gaid-po-napitkam/recepty-napitkov",
+    "title": "Рецепты напитков"
+  }
+]

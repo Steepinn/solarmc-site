@@ -1,0 +1,382 @@
+{
+  "nextNumber": 8,
+  "tickets": [
+    {
+      "id": "52bdbf9c-dfd4-45b0-9fe4-613aef9abdfa",
+      "number": 7,
+      "discordId": "694193769658056784",
+      "discordUsername": "steepin",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/694193769658056784/89f2a062d490a4641dc652bb5b1a7ec6.png",
+      "mcNick": "Steepy3",
+      "category": "question",
+      "subject": "Ты гей",
+      "status": "closed",
+      "evidenceUrls": [
+        "https://youtube.com/"
+      ],
+      "messages": [
+        {
+          "id": "4711b180-8e16-4b3d-87a9-a670c25d0761",
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "ты гей ты гей ты гей ты гей ты гей ты гей ты гей ты гей ты гей ты гей ты гей",
+          "createdAt": "2026-07-25T02:41:38.682Z"
+        }
+      ],
+      "createdAt": "2026-07-25T02:41:38.682Z",
+      "updatedAt": "2026-08-11T01:51:16.425Z",
+      "closedAt": "2026-08-11T01:51:15.899Z",
+      "closedBy": "steepin"
+    },
+    {
+      "id": "acd678b8-503f-454b-ab67-756fccdda0a7",
+      "number": 6,
+      "discordId": "622293229261553674",
+      "discordUsername": "MAYSON 1337",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/622293229261553674/c18bcc7625b139f9ef7f48bcefb2d2cc.png",
+      "mcNick": "Steepy0",
+      "category": "report",
+      "subject": "ASasAS",
+      "status": "closed",
+      "evidenceUrls": [
+        "https://youtube.com/"
+      ],
+      "rulePoint": "ASasaS",
+      "incidentAt": "1211-02-01T17:41:28.000Z",
+      "reportedPlayer": "asASA",
+      "messages": [
+        {
+          "id": "b4bad683-2877-43ed-be45-87f37c1a9646",
+          "authorDiscordId": "622293229261553674",
+          "authorUsername": "MAYSON 1337",
+          "authorRole": "user",
+          "body": "`12331`21`3`13`13`131`31`313`13`13",
+          "createdAt": "2026-07-23T00:02:24.688Z"
+        }
+      ],
+      "createdAt": "2026-07-23T00:02:24.688Z",
+      "updatedAt": "2026-07-23T00:02:44.272Z",
+      "closedAt": "2026-07-23T00:02:43.914Z",
+      "closedBy": "Steepy3"
+    },
+    {
+      "id": "1253726c-e186-4750-871a-a4df79f16c77",
+      "number": 5,
+      "discordId": "622293229261553674",
+      "discordUsername": "MAYSON 1337",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/622293229261553674/c18bcc7625b139f9ef7f48bcefb2d2cc.png",
+      "mcNick": "Steepy0",
+      "category": "access",
+      "subject": "2324",
+      "status": "closed",
+      "messages": [
+        {
+          "id": "3749b829-7a82-4e81-af0d-594cffcac603",
+          "authorDiscordId": "622293229261553674",
+          "authorUsername": "MAYSON 1337",
+          "authorRole": "user",
+          "body": "234324234324324324432423423432432",
+          "createdAt": "2026-07-22T23:55:30.576Z"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "ку",
+          "id": "59b7920e-1b79-4bc1-bb4d-ef7cdebfa118",
+          "createdAt": "2026-07-22T23:56:20.570Z",
+          "discordMessageId": "1529638255434399926"
+        }
+      ],
+      "createdAt": "2026-07-22T23:55:30.576Z",
+      "updatedAt": "2026-07-22T23:56:34.271Z",
+      "closedAt": "2026-07-22T23:56:33.622Z",
+      "closedBy": "steepin"
+    },
+    {
+      "id": "8f3d6a14-ef24-46ba-9021-6c94c5c5206e",
+      "number": 4,
+      "discordId": "930860725893754900",
+      "discordUsername": "Пидорас",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/930860725893754900/30cdc04de45b3d6dc1da78c6760088a5.png",
+      "category": "access",
+      "subject": "ФЫВЯыфВЫФВФ",
+      "status": "closed",
+      "messages": [
+        {
+          "id": "43996f12-6715-41f0-97ea-cd8b8c4e8b00",
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "Пидорас",
+          "authorRole": "user",
+          "body": "ВФЫВЫФВЫФВЫФВЫФВ",
+          "createdAt": "2026-07-22T02:12:44.533Z"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "КУ",
+          "discordMessageId": "1529310306583449692",
+          "createdAt": "2026-07-22T02:13:10.301000+00:00",
+          "id": "5172750a-1628-4ca9-bbca-93185ffe111e"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "Пидорас",
+          "authorRole": "user",
+          "body": "КУ",
+          "id": "d7320dde-8b86-4610-b616-88e71bccf675",
+          "createdAt": "2026-07-22T02:15:50.163Z",
+          "discordMessageId": "1529310983850426449"
+        }
+      ],
+      "createdAt": "2026-07-22T02:12:44.533Z",
+      "updatedAt": "2026-07-22T02:30:47.511Z",
+      "closedAt": "2026-07-22T02:30:46.765Z",
+      "closedBy": "steepin"
+    },
+    {
+      "id": "43b9908f-ff20-47cc-853d-1aeb4f2a491c",
+      "number": 3,
+      "discordId": "930860725893754900",
+      "discordUsername": "Пидорас",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/930860725893754900/30cdc04de45b3d6dc1da78c6760088a5.png",
+      "category": "access",
+      "subject": "nen nflsdfsdlf[psdfs",
+      "status": "closed",
+      "evidenceUrls": [
+        "https://www.youtube.com/watch?v=5yH7Hyf45HA&list=PLAXgYzDMtq7up58JrlnDfKk6YHLsiV1pA&index=23&gad_source=1&gad_campaignid=23898595434&gbraid=0AAAABCaTZsp9_AMnvH4wURHuA1Nr7TPoq&gclid=CjwKCAjwsfzSBhB5EiwAOGyqSdYKR9wMA8Htwt9OGBwo24tr3c8eqexKCpqe6Ea9mm6XPCNk4b-QdBoCp5kQAvD_BwE"
+      ],
+      "messages": [
+        {
+          "id": "ef51320c-1b92-468b-8430-595902519369",
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "Пидорас",
+          "authorRole": "user",
+          "body": "sfasdfasdfasdfasdfasdfasdf",
+          "createdAt": "2026-07-22T02:01:37.987Z"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307609394577449",
+          "createdAt": "2026-07-22T02:02:27.241000+00:00",
+          "id": "f9cabdad-476d-48a9-b343-fca282379a7e"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307610862456984",
+          "createdAt": "2026-07-22T02:02:27.591000+00:00",
+          "id": "e857b5f7-bee0-475a-ab77-93d7f23ce81e"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307612623933441",
+          "createdAt": "2026-07-22T02:02:28.011000+00:00",
+          "id": "bb14dd16-1dea-4baf-b539-44fa06de7cda"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307613827698810",
+          "createdAt": "2026-07-22T02:02:28.298000+00:00",
+          "id": "715412a9-95b9-4b3c-9042-6338f284af8e"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307614826070108",
+          "createdAt": "2026-07-22T02:02:28.536000+00:00",
+          "id": "bd4b2a88-6087-422d-8ec7-6a50434f3fd6"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529307616008867903",
+          "createdAt": "2026-07-22T02:02:28.818000+00:00",
+          "id": "02e56039-3ac3-4d51-8884-e29e48b3dbe1"
+        },
+        {
+          "authorDiscordId": "930860725893754900",
+          "authorUsername": "whymebrooooo",
+          "authorRole": "user",
+          "body": "ук",
+          "discordMessageId": "1529307617258639441",
+          "createdAt": "2026-07-22T02:02:29.116000+00:00",
+          "id": "23d0468a-cb6a-4777-9035-2f39444b8b37"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "re",
+          "discordMessageId": "1529307958784299178",
+          "createdAt": "2026-07-22T02:03:50.542000+00:00",
+          "id": "b3bda777-d437-4e8f-af66-1734a03713a4"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "ку",
+          "discordMessageId": "1529307964970635395",
+          "createdAt": "2026-07-22T02:03:52.017000+00:00",
+          "id": "ce339576-e5e3-446d-8512-4bf83a52793f"
+        }
+      ],
+      "createdAt": "2026-07-22T02:01:37.987Z",
+      "updatedAt": "2026-07-22T02:30:40.717Z",
+      "closedAt": "2026-07-22T02:30:38.546Z",
+      "closedBy": "steepin"
+    },
+    {
+      "id": "be23ce8c-8ca9-4ef4-a13c-0b2e60c3e2b4",
+      "number": 2,
+      "discordId": "694193769658056784",
+      "discordUsername": "steepin",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/694193769658056784/89f2a062d490a4641dc652bb5b1a7ec6.png",
+      "mcNick": "Steepy3",
+      "category": "access",
+      "subject": "привет",
+      "status": "closed",
+      "evidenceUrls": [
+        "https://www.youtube.com/"
+      ],
+      "messages": [
+        {
+          "id": "1a1fad8a-6ec5-490f-8012-1122ba160272",
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "ту так туту тататататутутутата",
+          "createdAt": "2026-07-21T23:59:14.999Z"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "куку",
+          "discordMessageId": "1529276730303451247",
+          "createdAt": "2026-07-21T23:59:45.092000+00:00",
+          "id": "0cf949ed-3105-4c2f-ae27-1c4f71c51e6d"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "ку",
+          "id": "0e32d425-9818-45be-968d-3ee0dc748234",
+          "createdAt": "2026-07-21T23:59:49.678Z",
+          "discordMessageId": "1529276755574132757"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "как дела",
+          "id": "71529d3d-0063-466c-82f8-d42b59dc7489",
+          "createdAt": "2026-07-21T23:59:55.684Z",
+          "discordMessageId": "1529276780442288229"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "норм",
+          "discordMessageId": "1529276792861491420",
+          "createdAt": "2026-07-22T00:00:00.007000+00:00",
+          "id": "80b5cce5-7156-44f9-8c5d-bdcdc85d4e42"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "1487647069416980531",
+          "discordMessageId": "1529276982984970400",
+          "createdAt": "2026-07-22T00:00:45.336000+00:00",
+          "id": "93955b83-ae58-45cc-90bd-c669da684891"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "ку",
+          "id": "60b393fa-805f-497f-b645-64400fd6471c",
+          "createdAt": "2026-07-22T00:07:32.673Z",
+          "discordMessageId": "1529278697386020884"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529278713202741279",
+          "createdAt": "2026-07-22T00:07:37.852000+00:00",
+          "id": "6c83b7de-2ef9-4a8e-917c-3a4710ca0f45"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "ку",
+          "discordMessageId": "1529278964206407751",
+          "createdAt": "2026-07-22T00:08:37.696000+00:00",
+          "id": "6ba84ce4-00f2-47c3-affe-09b0709584ca"
+        }
+      ],
+      "createdAt": "2026-07-21T23:59:14.999Z",
+      "updatedAt": "2026-07-22T00:11:46.513Z",
+      "discordChannelId": "1529276610811924630",
+      "closedAt": "2026-07-22T00:11:46.513Z",
+      "closedBy": "steepin"
+    },
+    {
+      "id": "d65161c9-7168-4305-b922-c069f6e89171",
+      "number": 1,
+      "discordId": "694193769658056784",
+      "discordUsername": "steepin",
+      "discordAvatar": "https://cdn.discordapp.com/avatars/694193769658056784/89f2a062d490a4641dc652bb5b1a7ec6.png",
+      "mcNick": "Steepy3",
+      "category": "report",
+      "subject": "выаываыв",
+      "status": "closed",
+      "messages": [
+        {
+          "id": "133a64d3-df13-4a6b-b650-20e32e2573ab",
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "user",
+          "body": "аываываываываываывавыаывавы",
+          "createdAt": "2026-07-21T21:24:55.334Z"
+        },
+        {
+          "authorDiscordId": "694193769658056784",
+          "authorUsername": "steepin",
+          "authorRole": "staff",
+          "body": "круто",
+          "id": "755f5379-7c3a-4a6d-bfc5-5d3cc1cf02bf",
+          "createdAt": "2026-07-21T21:25:09.150Z"
+        }
+      ],
+      "createdAt": "2026-07-21T21:24:55.334Z",
+      "updatedAt": "2026-07-21T21:25:11.877Z",
+      "closedAt": "2026-07-21T21:25:11.877Z",
+      "closedBy": "steepin"
+    }
+  ]
+}

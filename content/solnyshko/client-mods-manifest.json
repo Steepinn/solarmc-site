@@ -1,0 +1,471 @@
+{
+  "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\client-mods",
+  "updated": "2026-10-08",
+  "note": "Live scan client-mods (без .prev/.old/.disabled).",
+  "mods": [
+    {
+      "file": "additionalentityattributes-fabric-2.0.2+1.21.1.jar",
+      "id": "additionalentityattributes-fabric-2-0-2-1-21-1"
+    },
+    {
+      "file": "AdvancementPlaques-1.21.1-fabric-1.6.8.jar",
+      "id": "advancementplaques-1-21-1-fabric-1-6-8"
+    },
+    {
+      "file": "amendments-fabric-1.21-2.1.7.jar",
+      "id": "amendments-fabric-1-21-2-1-7"
+    },
+    {
+      "file": "another_furniture-fabric-4.0.2.jar",
+      "id": "another-furniture-fabric-4-0-2"
+    },
+    {
+      "file": "appleskin-fabric-mc1.21-3.0.6.jar",
+      "id": "appleskin-fabric-mc1-21-3-0-6"
+    },
+    {
+      "file": "architectury-13.0.11-fabric.jar",
+      "id": "architectury-13-0-11-fabric"
+    },
+    {
+      "file": "artifacts-fabric-13.2.1.jar",
+      "id": "artifacts-fabric-13-2-1"
+    },
+    {
+      "file": "attributefix-fabric-1.21.1-21.1.2.jar",
+      "id": "attributefix-fabric-1-21-1-21-1-2"
+    },
+    {
+      "file": "BetterF3-11.0.3-Fabric-1.21.1.jar",
+      "id": "betterf3-11-0-3-fabric-1-21-1"
+    },
+    {
+      "file": "BOMD-1.10.2-1.21.1.jar",
+      "id": "bomd-1-10-2-1-21-1"
+    },
+    {
+      "file": "bookshelf-fabric-1.21.1-21.1.8.jar",
+      "id": "bookshelf-fabric-1-21-1-21-1-8"
+    },
+    {
+      "file": "brb-1.10.0-rc5+1.21.jar",
+      "id": "brb-1-10-0-rc5-1-21"
+    },
+    {
+      "file": "cardinal-components-api-6.1.3.jar",
+      "id": "cardinal-components-api-6-1-3"
+    },
+    {
+      "file": "chatanimation-fabric-1.3.1+mc1.21.jar",
+      "id": "chatanimation-fabric-1-3-1-mc1-21"
+    },
+    {
+      "file": "cicada-lib-0.14.3+1.21-1.21.1.jar",
+      "id": "cicada-lib-0-14-3-1-21-1-21-1"
+    },
+    {
+      "file": "click-through-0.1.0+1.21.jar",
+      "id": "click-through-0-1-0-1-21"
+    },
+    {
+      "file": "cloth-config-15.0.140-fabric.jar",
+      "id": "cloth-config-15-0-140-fabric"
+    },
+    {
+      "file": "common-networking-fabric-1.0.21-1.21.1.jar",
+      "id": "common-networking-fabric-1-0-21-1-21-1"
+    },
+    {
+      "file": "continuity-3.0.0+1.21.jar",
+      "id": "continuity-3-0-0-1-21"
+    },
+    {
+      "file": "CreativeCore_FABRIC_v2.13.39_mc1.21.1.jar",
+      "id": "creativecore-fabric-v2-13-39-mc1-21-1"
+    },
+    {
+      "file": "display-delight-1.6.1-mc1.21.1.jar",
+      "id": "display-delight-1-6-1-mc1-21-1"
+    },
+    {
+      "file": "do_a_barrel_roll-fabric-3.7.3+1.21.jar",
+      "id": "do-a-barrel-roll-fabric-3-7-3-1-21"
+    },
+    {
+      "file": "DumplingsDelightRewrapped-1.21.1-1.3.0+fabric.jar",
+      "id": "dumplingsdelightrewrapped-1-21-1-1-3-0-fabric"
+    },
+    {
+      "file": "DungeonsArise-1.21.1-2.1.68-fabric-release.jar",
+      "id": "dungeonsarise-1-21-1-2-1-68-fabric-release"
+    },
+    {
+      "file": "dynamic-fps-3.11.4+minecraft-1.21.0-fabric.jar",
+      "id": "dynamic-fps-3-11-4-minecraft-1-21-0-fabric"
+    },
+    {
+      "file": "Emojiful-Fabric-1.21-5.2.4.jar",
+      "id": "emojiful-fabric-1-21-5-2-4"
+    },
+    {
+      "file": "emotecraft-for-MC1.21.1-2.4.12-fabric.jar",
+      "id": "emotecraft-for-mc1-21-1-2-4-12-fabric"
+    },
+    {
+      "file": "enderitemod-fabric-1.6.2-1.21.1.jar",
+      "id": "enderitemod-fabric-1-6-2-1-21-1"
+    },
+    {
+      "file": "entity_model_features-3.2.4-1.21-fabric.jar",
+      "id": "entity-model-features-3-2-4-1-21-fabric"
+    },
+    {
+      "file": "entity_sound_features-0.8.1-1.21-fabric.jar",
+      "id": "entity-sound-features-0-8-1-1-21-fabric"
+    },
+    {
+      "file": "entity_texture_features_1.21-fabric-7.1.jar",
+      "id": "entity-texture-features-1-21-fabric-7-1"
+    },
+    {
+      "file": "entityculling-fabric-1.10.5-mc1.21.1.jar",
+      "id": "entityculling-fabric-1-10-5-mc1-21-1"
+    },
+    {
+      "file": "envelope-fabric-1.21.1-0.7.4.jar",
+      "id": "envelope-fabric-1-21-1-0-7-4"
+    },
+    {
+      "file": "fabric-api-0.116.14+1.21.1.jar",
+      "id": "fabric-api-0-116-14-1-21-1"
+    },
+    {
+      "file": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "id": "fabric-language-kotlin-1-13-13-kotlin-2-4-10"
+    },
+    {
+      "file": "FarmersDelight-1.21.1-3.2.7+refabricated.jar",
+      "id": "farmersdelight-1-21-1-3-2-7-refabricated"
+    },
+    {
+      "file": "faunus-1.0.5.jar",
+      "id": "faunus-1-0-5"
+    },
+    {
+      "file": "ferritecore-7.0.3-fabric.jar",
+      "id": "ferritecore-7-0-3-fabric"
+    },
+    {
+      "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "id": "forgeconfigapiport-v21-1-6-1-21-1-fabric"
+    },
+    {
+      "file": "fpv20-1.1.9-1.21~1.21.1.jar",
+      "id": "fpv20-1-1-9-1-21-1-21-1"
+    },
+    {
+      "file": "FuelInfo-2.1+1.21.jar",
+      "id": "fuelinfo-2-1-1-21"
+    },
+    {
+      "file": "geckolib-fabric-1.21.1-4.9.2-arclight.jar",
+      "id": "geckolib-fabric-1-21-1-4-9-2-arclight"
+    },
+    {
+      "file": "GlitchCore-fabric-1.21.1-2.1.0.2.jar",
+      "id": "glitchcore-fabric-1-21-1-2-1-0-2"
+    },
+    {
+      "file": "GoodEnding-1.21.1-1.1.0-Fabric.jar",
+      "id": "goodending-1-21-1-1-1-0-fabric"
+    },
+    {
+      "file": "Iceberg-1.21.1-fabric-1.3.2.jar",
+      "id": "iceberg-1-21-1-fabric-1-3-2"
+    },
+    {
+      "file": "ImmediatelyFast-Fabric-1.6.11+1.21.1.jar",
+      "id": "immediatelyfast-fabric-1-6-11-1-21-1"
+    },
+    {
+      "file": "InvMove-0.9.3+1.21.1-Fabric.jar",
+      "id": "invmove-0-9-3-1-21-1-fabric"
+    },
+    {
+      "file": "iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+      "id": "iris-fabric-1-8-14-beta-1-mc1-21-1"
+    },
+    {
+      "file": "krypton-0.2.8.jar",
+      "id": "krypton-0-2-8"
+    },
+    {
+      "file": "lambdynamiclights-4.8.10+1.21.1.jar",
+      "id": "lambdynamiclights-4-8-10-1-21-1"
+    },
+    {
+      "file": "language-reload-1.7.6+1.21.1.jar",
+      "id": "language-reload-1-7-6-1-21-1"
+    },
+    {
+      "file": "letsdo-vinery-fabric-1.5.3.jar",
+      "id": "letsdo-vinery-fabric-1-5-3"
+    },
+    {
+      "file": "lexiconfig-fabric-1.4.21-novel.jar",
+      "id": "lexiconfig-fabric-1-4-21-novel"
+    },
+    {
+      "file": "libz-1.1.0.jar",
+      "id": "libz-1-1-0"
+    },
+    {
+      "file": "litematica-fabric-1.21-0.19.61.jar",
+      "id": "litematica-fabric-1-21-0-19-61"
+    },
+    {
+      "file": "lithium-fabric-0.15.4+mc1.21.1.jar",
+      "id": "lithium-fabric-0-15-4-mc1-21-1"
+    },
+    {
+      "file": "malilib-fabric-1.21-0.21.10.jar",
+      "id": "malilib-fabric-1-21-0-21-10"
+    },
+    {
+      "file": "modmenu-11.0.4.jar",
+      "id": "modmenu-11-0-4"
+    },
+    {
+      "file": "moonlight-fabric-1.21.1-3.0.22.jar",
+      "id": "moonlight-fabric-1-21-1-3-0-22"
+    },
+    {
+      "file": "moreculling-fabric-1.21.1-1.0.9.jar",
+      "id": "moreculling-fabric-1-21-1-1-0-9"
+    },
+    {
+      "file": "moredelight-25.07.28-1.21-fabric.jar",
+      "id": "moredelight-25-07-28-1-21-fabric"
+    },
+    {
+      "file": "morevillagers-re-1.21.1-fabric-5.1.2.jar",
+      "id": "morevillagers-re-1-21-1-fabric-5-1-2"
+    },
+    {
+      "file": "MouseTweaks-fabric-mc1.21-2.26.jar",
+      "id": "mousetweaks-fabric-mc1-21-2-26"
+    },
+    {
+      "file": "oceansdelight-fdrf-fabric-1.0.3-1.21.1.jar",
+      "id": "oceansdelight-fdrf-fabric-1-0-3-1-21-1"
+    },
+    {
+      "file": "onceuponastroll-fabric-1.21.1-1.10.0.jar",
+      "id": "onceuponastroll-fabric-1-21-1-1-10-0"
+    },
+    {
+      "file": "Origins-1.13.0-pre.2+mc.1.21.1.jar",
+      "id": "origins-1-13-0-pre-2-mc-1-21-1"
+    },
+    {
+      "file": "particle-rain-3.0.5.jar",
+      "id": "particle-rain-3-0-5"
+    },
+    {
+      "file": "Ping-Wheel-1.12.2-fabric-1.21.1.jar",
+      "id": "ping-wheel-1-12-2-fabric-1-21-1"
+    },
+    {
+      "file": "player-animation-lib-fabric-2.0.4+1.21.1.jar",
+      "id": "player-animation-lib-fabric-2-0-4-1-21-1"
+    },
+    {
+      "file": "prickle-fabric-1.21.1-21.1.11.jar",
+      "id": "prickle-fabric-1-21-1-21-1-11"
+    },
+    {
+      "file": "puffish_skills-0.19.1-1.21-fabric.jar",
+      "id": "puffish-skills-0-19-1-1-21-fabric"
+    },
+    {
+      "file": "pumpkin_pie_delight-1.0.2+1.21.jar",
+      "id": "pumpkin-pie-delight-1-0-2-1-21"
+    },
+    {
+      "file": "questlog-fabric-1.21.1-3.3.0.jar",
+      "id": "questlog-fabric-1-21-1-3-3-0"
+    },
+    {
+      "file": "QuickSkin-1.21.1-2.6.2.4.jar",
+      "id": "quickskin-1-21-1-2-6-2-4"
+    },
+    {
+      "file": "ranged_weapon_api-fabric-2.3.3+1.21.1.jar",
+      "id": "ranged-weapon-api-fabric-2-3-3-1-21-1"
+    },
+    {
+      "file": "reeses-sodium-options-fabric-2.2.3+mc1.21.1.jar",
+      "id": "reeses-sodium-options-fabric-2-2-3-mc1-21-1"
+    },
+    {
+      "file": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+      "id": "resourcefulconfig-fabric-1-21-3-0-11"
+    },
+    {
+      "file": "Resourcify (1.21.1-fabric)-1.8.5.jar",
+      "id": "resourcify-1-21-1-fabric-1-8-5"
+    },
+    {
+      "file": "SereneSeasons-fabric-1.21.1-10.1.0.1.jar",
+      "id": "sereneseasons-fabric-1-21-1-10-1-0-1"
+    },
+    {
+      "file": "shippy-ships-1.0.8-FABRIC-MC-1.21.1.jar",
+      "id": "shippy-ships-1-0-8-fabric-mc-1-21-1"
+    },
+    {
+      "file": "simpleradio-fabric-1.21.1-4.4.7.9.jar",
+      "id": "simpleradio-fabric-1-21-1-4-4-7-9"
+    },
+    {
+      "file": "sleep_tight-1.21-1.4.1-fabric-solar-arclight.jar",
+      "id": "sleep-tight-1-21-1-4-1-fabric-solar-arclight"
+    },
+    {
+      "file": "SmartBrainLib-fabric-1.21.1-1.16.11.jar",
+      "id": "smartbrainlib-fabric-1-21-1-1-16-11"
+    },
+    {
+      "file": "smoothscroll-2.2.1-1.21.1.jar",
+      "id": "smoothscroll-2-2-1-1-21-1"
+    },
+    {
+      "file": "sodium-extra-fabric-0.9.3+mc1.21.1.jar",
+      "id": "sodium-extra-fabric-0-9-3-mc1-21-1"
+    },
+    {
+      "file": "sodium-fabric-0.8.12+mc1.21.1.jar",
+      "id": "sodium-fabric-0-8-12-mc1-21-1"
+    },
+    {
+      "file": "solar_ui_ru-1.0.9.jar",
+      "id": "solar-ui-ru-1-0-9"
+    },
+    {
+      "file": "solarauth-1.0.19.jar",
+      "id": "solarauth-1-0-19"
+    },
+    {
+      "file": "solardiary-1.3.1.jar",
+      "id": "solardiary-1-3-1"
+    },
+    {
+      "file": "solarfdcompat-1.0.1.jar",
+      "id": "solarfdcompat-1-0-1"
+    },
+    {
+      "file": "solarhub-1.0.6.jar",
+      "id": "solarhub-1-0-6"
+    },
+    {
+      "file": "solartideocean-1.0.1.jar",
+      "id": "solartideocean-1-0-1"
+    },
+    {
+      "file": "solartitle-1.0.6.jar",
+      "id": "solartitle-1-0-6"
+    },
+    {
+      "file": "solarwebcamfix-1.0.0.jar",
+      "id": "solarwebcamfix-1-0-0"
+    },
+    {
+      "file": "sound-physics-remastered-fabric-1.21.1-1.5.1.jar",
+      "id": "sound-physics-remastered-fabric-1-21-1-1-5-1"
+    },
+    {
+      "file": "syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
+      "id": "syncmatica-fabric-1-21-0-3-14-sakura-5"
+    },
+    {
+      "file": "talking-heads-1.1.3+1.21.1+fabric.jar",
+      "id": "talking-heads-1-1-3-1-21-1-fabric"
+    },
+    {
+      "file": "tide-fabric-1.21.1-2.1.jar",
+      "id": "tide-fabric-1-21-1-2-1"
+    },
+    {
+      "file": "trinkets-3.10.0.jar",
+      "id": "trinkets-3-10-0"
+    },
+    {
+      "file": "untitledduckmod-1.6.0-fabric-1.21.1.jar",
+      "id": "untitledduckmod-1-6-0-fabric-1-21-1"
+    },
+    {
+      "file": "vcinteraction-fabric-1.21.1-1.0.8.jar",
+      "id": "vcinteraction-fabric-1-21-1-1-0-8"
+    },
+    {
+      "file": "voicechat-fabric-1.21.1-2.6.12.jar",
+      "id": "voicechat-fabric-1-21-1-2-6-12"
+    },
+    {
+      "file": "waterframes-FABRIC-mc1.21.1-v2.1.22.jar",
+      "id": "waterframes-fabric-mc1-21-1-v2-1-22"
+    },
+    {
+      "file": "watermedia-2.1.37.jar",
+      "id": "watermedia-2-1-37"
+    },
+    {
+      "file": "watermedia-3.0.0.23.jar",
+      "id": "watermedia-3-0-0-23"
+    },
+    {
+      "file": "watervision-FB-mc1.21.1-v0.1.0-alpha.jar",
+      "id": "watervision-fb-mc1-21-1-v0-1-0-alpha"
+    },
+    {
+      "file": "webcam-fabric-4.4.0-1.21.1.jar",
+      "id": "webcam-fabric-4-4-0-1-21-1"
+    },
+    {
+      "file": "wiretap-1.3.0+1.21.1.fabric.jar",
+      "id": "wiretap-1-3-0-1-21-1-fabric"
+    },
+    {
+      "file": "yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
+      "id": "yet-another-config-lib-v3-3-8-2-1-21-1-fabric"
+    },
+    {
+      "file": "YungsApi-1.21.1-Fabric-5.1.6.jar",
+      "id": "yungsapi-1-21-1-fabric-5-1-6"
+    },
+    {
+      "file": "YungsBetterDungeons-1.21.1-Fabric-5.1.4.jar",
+      "id": "yungsbetterdungeons-1-21-1-fabric-5-1-4"
+    },
+    {
+      "file": "YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar",
+      "id": "yungsbetternetherfortresses-1-21-1-fabric-3-1-5"
+    },
+    {
+      "file": "YungsBetterOceanMonuments-1.21.1-Fabric-4.1.2.jar",
+      "id": "yungsbetteroceanmonuments-1-21-1-fabric-4-1-2"
+    },
+    {
+      "file": "YungsBetterStrongholds-1.21.1-Fabric-5.1.3.jar",
+      "id": "yungsbetterstrongholds-1-21-1-fabric-5-1-3"
+    }
+  ],
+  "optional": [
+    {
+      "file": "fwa+1.21.1-1.2.31-loader017.jar",
+      "id": "fwa-1-21-1-1-2-31-loader017",
+      "note": "Fancy World Animations, не обязателен"
+    }
+  ],
+  "extras_note": "Автосинк: Солнышко читает папку live. JSON — кэш/fallback."
+}

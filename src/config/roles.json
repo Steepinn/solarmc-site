@@ -1,0 +1,12 @@
+{
+  "player": { "id": null, "label": "Player", "color": "#9ca3af" },
+  "pulse": { "id": "1487852851664257035", "label": "Pulse", "color": "#a855f7" },
+  "mayor": { "id": null, "label": "Мэр города", "color": "#22c55e" },
+  "media": { "id": null, "label": "Медиа", "color": "#ec4899" },
+  "judge": { "id": null, "label": "Судья", "color": "#3b82f6" },
+  "supreme_judge": { "id": null, "label": "Верховный судья", "color": "#6366f1" },
+  "president": { "id": null, "label": "Президент", "color": "#f59e0b" },
+  "helper": { "id": null, "label": "Хелпер", "color": "#26a69a" },
+  "moderator": { "id": "1480602248831696987", "label": "Модератор", "color": "#ffb000" },
+  "administrator": { "id": "1466352163398619293", "label": "Администратор", "color": "#ef4444" }
+}
