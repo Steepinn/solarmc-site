@@ -1,7 +1,7 @@
 {
   "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\mods",
   "updated": "2026-10-08",
-  "note": "Live scan server mods.",
+  "note": "Активные jar на сервере (без .prev/.old/.disabled).",
   "mods": [
     {
       "file": "additionalentityattributes-fabric-2.0.2+1.21.1.jar",
@@ -212,20 +212,8 @@
       "id": "smartbrainlib-fabric-1-21-1-1-16-11"
     },
     {
-      "file": "solar_ui_ru-1.0.3.jar",
-      "id": "solar-ui-ru-1-0-3"
-    },
-    {
-      "file": "solar_ui_ru-1.0.6.jar",
-      "id": "solar-ui-ru-1-0-6"
-    },
-    {
-      "file": "solar_ui_ru-1.0.8.jar",
-      "id": "solar-ui-ru-1-0-8"
-    },
-    {
-      "file": "solar_ui_ru-1.0.9.jar",
-      "id": "solar-ui-ru-1-0-9"
+      "file": "solar_ui_ru-1.0.11.jar",
+      "id": "solar-ui-ru-1-0-11"
     },
     {
       "file": "solarauth-1.0.19.jar",

@@ -1,7 +1,7 @@
 {
   "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\client-mods",
   "updated": "2026-10-08",
-  "note": "Live scan client-mods (без .prev/.old/.disabled).",
+  "note": "Актуальная клиентская сборка Season 3 (без .prev/.old/.disabled). optional/ отдельно.",
   "mods": [
     {
       "file": "additionalentityattributes-fabric-2.0.2+1.21.1.jar",
@@ -348,8 +348,8 @@
       "id": "sodium-fabric-0-8-12-mc1-21-1"
     },
     {
-      "file": "solar_ui_ru-1.0.9.jar",
-      "id": "solar-ui-ru-1-0-9"
+      "file": "solar_ui_ru-1.0.11.jar",
+      "id": "solar-ui-ru-1-0-11"
     },
     {
       "file": "solarauth-1.0.19.jar",
@@ -467,5 +467,5 @@
       "note": "Fancy World Animations, не обязателен"
     }
   ],
-  "extras_note": "Автосинк: Солнышко читает папку live. JSON — кэш/fallback."
+  "extras_note": "CLIENT_EXTRA_MODS: Sodium/Iris/LambDynamicLights/Mouse Tweaks/InvMove и др. — в этой папке."
 }
