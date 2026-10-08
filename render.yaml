@@ -1,0 +1,56 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Секреты (sync: false) задаёшь в Dashboard → Environment после первого деплоя.
+
+services:
+  - type: web
+    name: solarmc
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SITE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: DISCORD_CLIENT_SECRET
+        sync: false
+      - key: DISCORD_REDIRECT_URI
+        sync: false
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: DISCORD_GUILD_ID
+        sync: false
+      - key: DISCORD_MODERATOR_ROLE_ID
+        sync: false
+      - key: DISCORD_ADMIN_ROLE_ID
+        sync: false
+      - key: DISCORD_APPROVED_ROLE_ID
+        sync: false
+      - key: DISCORD_APPLICATION_CATEGORY_ID
+        sync: false
+      - key: DISCORD_SUPPORT_CATEGORY_ID
+        sync: false
+      - key: DISCORD_BOT_ACTION_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SOLARDS_API_URL
+        sync: false
+      - key: SOLARDS_API_TOKEN
+        sync: false
+      - key: MAP_UPSTREAM
+        sync: false
+      - key: MINECRAFT_SERVER_IP
+        sync: false
+      - key: MINECRAFT_SERVER_PORT
+        sync: false
