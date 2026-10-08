@@ -6,6 +6,7 @@ import {
   fetchGuildMember,
   fetchGuildMemberByBot,
   getDiscordRedirectUri,
+  getPublicOriginFromRequest,
 } from "@/lib/auth";
 import {
   completeLauncherDevice,
@@ -14,7 +15,7 @@ import {
 } from "@/lib/launcher-auth";
 
 export async function GET(req: NextRequest) {
-  const origin = req.nextUrl.origin;
+  const origin = getPublicOriginFromRequest(req);
   const code = req.nextUrl.searchParams.get("code");
   const error = req.nextUrl.searchParams.get("error");
   const launcherDevice = parseLauncherState(req.nextUrl.searchParams.get("state"));

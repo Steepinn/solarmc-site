@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDiscordOAuthUrl, getEnrichedSession } from "@/lib/auth";
+import {
+  getDiscordOAuthUrl,
+  getEnrichedSession,
+  getPublicOriginFromRequest,
+} from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -10,7 +14,7 @@ export const runtime = "nodejs";
  * ?force=1 — всё равно Discord (смена аккаунта).
  */
 export async function GET(req: NextRequest) {
-  const origin = req.nextUrl.origin;
+  const origin = getPublicOriginFromRequest(req);
   const device = req.nextUrl.searchParams.get("device")?.trim() ?? "";
   const force = req.nextUrl.searchParams.get("force") === "1";
 

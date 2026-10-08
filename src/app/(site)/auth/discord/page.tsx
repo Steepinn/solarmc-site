@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { headers } from "next/headers";
-import { getDiscordRedirectUri } from "@/lib/auth";
+import { buildPublicOrigin, getDiscordRedirectUri } from "@/lib/auth";
 import DiscordAuthPage from "./discord-auth-client";
 
 export const metadata = { title: "Авторизация" };
@@ -8,10 +8,7 @@ export const metadata = { title: "Авторизация" };
 async function getRequestOrigin() {
   const h = await headers();
   const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
-  const proto =
-    h.get("x-forwarded-proto") ??
-    (host.includes("localhost") || host.startsWith("127.") ? "http" : "https");
-  return `${proto}://${host}`;
+  return buildPublicOrigin(host, h.get("x-forwarded-proto"), `http://${host}`);
 }
 
 export default async function Page() {

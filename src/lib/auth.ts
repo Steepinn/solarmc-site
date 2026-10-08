@@ -79,6 +79,32 @@ export async function clearSessionCookie() {
   cookieStore.delete(SESSION_COOKIE);
 }
 
+/** Origin за reverse-proxy (Render/Vercel): https + реальный host. */
+export function buildPublicOrigin(
+  host: string | null | undefined,
+  proto: string | null | undefined,
+  fallbackOrigin: string,
+): string {
+  const h = host?.split(",")[0]?.trim();
+  if (!h) return fallbackOrigin.replace(/\/$/, "");
+  let p = proto?.split(",")[0]?.trim();
+  if (!p) {
+    p = h.includes("localhost") || h.startsWith("127.") ? "http" : "https";
+  }
+  return `${p}://${h}`.replace(/\/$/, "");
+}
+
+export function getPublicOriginFromRequest(req: {
+  headers: { get(name: string): string | null };
+  nextUrl: { origin: string };
+}) {
+  return buildPublicOrigin(
+    req.headers.get("x-forwarded-host") ?? req.headers.get("host"),
+    req.headers.get("x-forwarded-proto"),
+    req.nextUrl.origin,
+  );
+}
+
 export function getDiscordRedirectUri(origin: string) {
   const fixed = process.env.DISCORD_REDIRECT_URI?.trim();
   if (fixed) return fixed;
