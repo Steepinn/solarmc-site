@@ -3,6 +3,7 @@ import { getEnrichedSession } from "@/lib/auth";
 import {
   answerFromWiki,
   answerWithGemini,
+  polishBotAnswer,
   type ChatTurn,
 } from "@/lib/solnyshko/answer";
 import type { SolAudience } from "@/lib/solnyshko/policy";
@@ -92,7 +93,7 @@ export async function POST(req: NextRequest) {
   const result = gemini ?? answerFromWiki(message, audience, history);
 
   return NextResponse.json({
-    answer: result.answer,
+    answer: polishBotAnswer(result.answer),
     sources: result.sources,
     mode: result.mode,
     audience,

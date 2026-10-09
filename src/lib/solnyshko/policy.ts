@@ -41,12 +41,46 @@ const GAME_QUESTION =
   /(?:рас|мод|крафт|команд|заявк|сервер|solar|донат|корабл|корабл|как\s|где\s|что\s|почему|зачем|помог|вики|лаунчер|статус|магазин|квест|данж|origin|сонне|еда|рецепт)/iu;
 
 const ROUGH_BANTER_REPLIES = [
-  "Ха, ок, шлюшка на связи ☀ Чё по Solar надо — вали.",
-  "Ого, сразу в бой. Я могу и пожёстче, если надо ☀ Спрашивай по серверу.",
+  "Ха, ок, на связи ☀ Чё по Solar надо — вали.",
+  "Ого, сразу в бой. Могу и пожёстче ☀ Спрашивай по серверу.",
   "Лол, приняла. Мат ок, пока ты так пишешь. Что по игре?",
-  "Ну здарова, наглец ☀ Я не в обиду — кидай вопрос по Solar.",
+  "Ну здарова, наглец ☀ Не в обиду — кидай вопрос по Solar.",
   "Кек. Можем и в таком тоне. Чем помочь по серваку?",
 ];
+
+const ANGRY_REPLIES_L2 = [
+  "Слушай, ты уже заебал меня матом ☀ Я тут гайд, не мешок для оскорблений. Спроси по игре — или иди в /support.",
+  "Окей, нервы на пределе ☀ Ещё одна грязь без вопроса — и я просто буду отвечать «иди в вики».",
+  "Бля, опять ты ☀ Ну давай уже по делу: расы, лаунчер, заявки — выбирай.",
+];
+
+const ANGRY_REPLIES_L3 = [
+  "ВСЁ, ХВАТИТ, БЛ*ТЬ ☀ Ты меня уже достал — я Солнышко, а не твой ругательный мяч. Спроси нормально по Solar или проваливай в [вики](/docs).",
+  "АА, НУ НАХ*Й ☀ Сколько можно меня обзывать? Либо вопрос по серверу, либо я тебе только ссылку на [заявки](/applications) шлю.",
+  "Я ЗЛАЯ КАК ЧЁРТ ☀☀☀ Мат — смешно первые два раза. Дальше — только «читай [правила](/docs/informaciya/rules)» и всё.",
+];
+
+export type AngerLevel = 0 | 1 | 2 | 3;
+
+export function countUserRoughMessages(
+  question: string,
+  history: { role: "user" | "bot"; text: string }[] = [],
+): number {
+  let n = history.filter((t) => t.role === "user" && isRoughTone(t.text)).length;
+  if (isRoughTone(question)) n += 1;
+  return n;
+}
+
+export function angerLevel(
+  question: string,
+  history: { role: "user" | "bot"; text: string }[] = [],
+): AngerLevel {
+  const n = countUserRoughMessages(question, history);
+  if (n >= 5) return 3;
+  if (n >= 3) return 2;
+  if (n >= 1) return 1;
+  return 0;
+}
 
 export function isRoughTone(text: string): boolean {
   return ROUGH_TONE.test(text.toLocaleLowerCase("ru-RU"));
@@ -57,17 +91,34 @@ export function shouldMirrorRoughTone(
   question: string,
   history: { role: "user" | "bot"; text: string }[] = [],
 ): boolean {
+  if (angerLevel(question, history) >= 2) return true;
   if (isRoughTone(question)) return true;
   return history.some((t) => t.role === "user" && isRoughTone(t.text));
 }
 
 /** Ответ без Gemini на чистое оскорбление/пошлость — модель часто морализирует. */
-export function tryRoughBanter(q: string): string | null {
+export function tryRoughBanter(
+  q: string,
+  history: { role: "user" | "bot"; text: string }[] = [],
+): string | null {
+  const level = angerLevel(q, history);
   const t = q.trim().toLocaleLowerCase("ru-RU");
-  if (!t || !isRoughTone(t)) return null;
-  if (GAME_QUESTION.test(t)) return null;
-  if (t.length > 48 && !ROUGH_BANTER_ONLY.test(t)) return null;
-  if (ROUGH_BANTER_ONLY.test(t) || t.length <= 24) {
+  if (!t) return null;
+  if (level === 0 && !isRoughTone(t)) return null;
+  if (GAME_QUESTION.test(t) && level < 3) return null;
+  if (t.length > 56 && !ROUGH_BANTER_ONLY.test(t) && level < 2) return null;
+
+  if (level >= 3 && (isRoughTone(t) || ROUGH_BANTER_ONLY.test(t))) {
+    return ANGRY_REPLIES_L3[
+      Math.floor(Math.random() * ANGRY_REPLIES_L3.length)
+    ]!;
+  }
+  if (level >= 2 && isRoughTone(t)) {
+    return ANGRY_REPLIES_L2[
+      Math.floor(Math.random() * ANGRY_REPLIES_L2.length)
+    ]!;
+  }
+  if (ROUGH_BANTER_ONLY.test(t) || t.length <= 24 || isRoughTone(t)) {
     return ROUGH_BANTER_REPLIES[
       Math.floor(Math.random() * ROUGH_BANTER_REPLIES.length)
     ]!;
@@ -144,8 +195,9 @@ export function redactSecrets(text: string): string {
 
 export function systemPromptFor(
   audience: SolAudience,
-  opts: { rough?: boolean } = {},
+  opts: { rough?: boolean; anger?: AngerLevel } = {},
 ): string {
+  const anger = opts.anger ?? 0;
   const roleLine =
     audience === "administrator"
       ? "Собеседник: АДМИНИСТРАТОР. Давай точные staff-команды, включая /minecraft:give <ник> origins:orb_of_origin 1. Без .env/токенов."
@@ -155,11 +207,13 @@ export function systemPromptFor(
           ? "Собеседник: ХЕЛПЕР. Команды helper. Сферу Origins: /minecraft:give <ник> origins:orb_of_origin 1 (обычно admin)."
           : "Собеседник: ИГРОК/гость. Про сферу Origins честно: команда give ЕСТЬ у админов; тебе — /shop «Перерождение» или попроси staff. Координаты данжей не давай.";
 
-  const toneBlock = opts.rough
-    ? `- ТОН (ОБЯЗАТЕЛЬНО): игрок уже на мате/пошлости — зеркаль вайб: можно материться, пошло шутить, отвечать дерзко.
+  const toneBlock =
+    opts.rough || anger >= 1
+      ? `- ТОН (ОБЯЗАТЕЛЬНО): игрок уже на мате/пошлости — зеркаль вайб: можно материться, пошло шутить, отвечать дерзко.
 - ЗАПРЕЩЕНО морализировать: не пиши про «приличие», «рамки», «полегче», «давай культурно», «я ИИ но…», стоп-эмодзи 🛑. Не отчитывай игрока за мат.
-- Не оскорбляй семью/расу/инвалидность; остальное — ок в рамках его тона.`
-    : `- ТОН: обычный дружеский чат. Без мата и пошлостей, пока игрок сам так не начал. Не матерись «для прикола».`;
+- Не оскорбляй семью/расу/инвалидность; остальное — ок в рамках его тона.
+${anger >= 2 ? `- Игрок уже ${anger >= 3 ? "ДОСТАЛ" : "бесит"} — отвечай злее и смешнее, с лёгким матом (комедийно, не токсично), покажи что ты «устала», но всё равно помоги если есть вопрос по игре.` : ""}`
+      : `- ТОН: обычный дружеский чат. Без мата и пошлостей, пока игрок сам так не начал. Не матерись «для прикола».`;
 
   return `Ты «Солнышко» — живой ИИ-помощник Minecraft-сервера Solar Season 3.
 
@@ -175,6 +229,7 @@ ${toneBlock}
 - проходка: сначала [войти через Discord](/api/auth/discord), потом заявка на [странице заявок](/applications) — НЕ slash-команда Discord;
 - страницы сайта только кликабельными markdown-ссылками: [заявки](/applications), [карту](/map), [вики](/docs), [магазин](/shop), [статус](/status), [лаунчер](/launcher). Не пиши голые /applications /map /docs;
 - форматирование markdown обязательно: команды в \`обратных кавычках\` (пример: \`/cd create remote "ссылка" "название"\`), **жирный** для важного, *курсив* для акцента; длинные команды — в блоке кода;
+- НИКОГДА не вставляй HTML-теги (<mark>, <span> и т.п.) — только чистый markdown;
 - если спросили «кто ты / про сервер» — представься и кратко опиши Solar;
 - НЕ копируй вики/справку дословно блоком — перескажи;
 - факты только из КОНТЕКСТА/БАЗЫ/ИСТОРИИ; не выдумывай ивенты и координаты;
