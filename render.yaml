@@ -37,6 +37,8 @@ services:
         sync: false
       - key: DISCORD_APPROVED_ROLE_ID
         sync: false
+      - key: DISCORD_STRANGER_ROLE_ID
+        sync: false
       - key: DISCORD_APPLICATION_CATEGORY_ID
         sync: false
       - key: DISCORD_SUPPORT_CATEGORY_ID

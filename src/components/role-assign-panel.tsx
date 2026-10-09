@@ -12,7 +12,9 @@ type SiteUser = {
   roles: ProjectRoleKey[];
 };
 
-const keys = Object.keys(projectRoles) as ProjectRoleKey[];
+const keys = (Object.keys(projectRoles) as ProjectRoleKey[]).filter(
+  (k) => k !== "stranger",
+);
 
 export function RoleAssignPanel() {
   const [query, setQuery] = useState("");

@@ -2,7 +2,11 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import type { SessionUser } from "./types";
 import { discordConfig } from "@/lib/bot-config";
-import { getSiteRoleKeys } from "@/lib/site-roles";
+import {
+  getSiteRoleKeys,
+  isSiteRolesTracked,
+  resolveHasWhitelist,
+} from "@/lib/site-roles";
 import { mergeProjectRoles, resolveUserProjectRoles } from "@/lib/roles";
 import { resolveMcNickForDiscord } from "@/lib/solards-links";
 import { isUserBlocked } from "@/lib/site-blocks";
@@ -12,6 +16,11 @@ const SESSION_COOKIE = "solarmc_session";
 const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
 const ENRICH_TTL_MS = 45_000;
 const enrichCache = new Map<string, { at: number; user: SessionUser }>();
+
+export function clearEnrichedSessionCache(discordId?: string) {
+  if (discordId) enrichCache.delete(discordId);
+  else enrichCache.clear();
+}
 
 function getSecret() {
   const secret = process.env.SESSION_SECRET ?? "dev-secret-change-in-production";
@@ -225,16 +234,21 @@ export async function enrichSessionUser(session: SessionUser): Promise<SessionUs
     session.mcNick;
 
   const siteKeys = await getSiteRoleKeys(session.discordId);
+  const siteTracked = await isSiteRolesTracked(session.discordId);
   const discordRoles = member ? resolveUserProjectRoles(member.roles) : [];
   const projectRoles = mergeProjectRoles(siteKeys, discordRoles);
-  const hasWhitelistFromSite = siteKeys.includes("player");
+  const hasWhitelist = resolveHasWhitelist({
+    siteKeys,
+    siteTracked,
+    discordApproved: flags.hasWhitelist,
+  });
 
   const user: SessionUser = {
     ...session,
     ...flags,
     mcNick: mcNick ?? undefined,
     projectRoles,
-    hasWhitelist: hasWhitelistFromSite || flags.hasWhitelist,
+    hasWhitelist,
   };
   enrichCache.set(session.discordId, { at: Date.now(), user });
   return user;

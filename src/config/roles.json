@@ -1,4 +1,5 @@
 {
+  "stranger": { "id": null, "label": "Странник", "color": "#64748b" },
   "player": { "id": null, "label": "Player", "color": "#9ca3af" },
   "pulse": { "id": "1487852851664257035", "label": "Pulse", "color": "#a855f7" },
   "mayor": { "id": null, "label": "Мэр города", "color": "#22c55e" },

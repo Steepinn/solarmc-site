@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getEnrichedSession } from "@/lib/auth";
+import { clearEnrichedSessionCache, getEnrichedSession } from "@/lib/auth";
 import { getApplicationById, updateApplicationStatus } from "@/lib/db";
 import { dmApplicationDecision } from "@/lib/discord-bot";
 import { grantPlayerPass, revokePlayerPass } from "@/lib/site-roles";
@@ -51,5 +51,6 @@ export async function POST(req: NextRequest) {
     });
   }
 
+  clearEnrichedSessionCache(id);
   return NextResponse.json({ ok: true, grant });
 }
