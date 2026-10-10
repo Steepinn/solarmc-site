@@ -4,7 +4,7 @@ import Link from "next/link";
 import { homeLinks, siteConfig } from "@/config/site";
 import { GalleryMarquee } from "@/components/gallery-marquee";
 import { LinkCard } from "@/components/link-card";
-import { CopyIpButton } from "@/components/copy-ip-button";
+import { Download } from "lucide-react";
 
 function DiscordIcon() {
   return (
@@ -46,7 +46,13 @@ export function HeroSection() {
             </Link>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
-            <CopyIpButton ip={siteConfig.serverIp} />
+            <Link
+              href="/launcher"
+              className="pressable inline-flex min-h-12 items-center gap-2.5 rounded-2xl border border-border bg-card px-5 py-3 text-base font-bold transition-colors hover:bg-accent"
+            >
+              <Download className="size-5 text-solar-yellow" aria-hidden />
+              Зайти через лаунчер
+            </Link>
             <Link
               href={siteConfig.links.discord}
               target="_blank"

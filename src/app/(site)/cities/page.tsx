@@ -30,7 +30,7 @@ export default async function CitiesPage() {
           <p className="text-sm text-muted-foreground">Городов пока нет.</p>
         </ContentCard>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {cities.map((city) => (
             <Link key={city.id} href={`/cities/${city.slug}`}>
               <ContentCard className="h-full transition-colors hover:border-solar-gold/40">

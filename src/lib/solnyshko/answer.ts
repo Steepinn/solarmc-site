@@ -10,7 +10,9 @@ import {
 } from "@/lib/solnyshko/recipe-index";
 import { answerClientModPresence } from "@/lib/solnyshko/client-mods-index";
 import { answerFishQuestion } from "@/lib/solnyshko/fish-index";
+import { sanitizeChatMarkdown } from "@/lib/solnyshko/format-answer";
 import {
+  angerLevel,
   checkBlockedQuestion,
   shouldMirrorRoughTone,
   systemPromptFor,
@@ -53,8 +55,14 @@ function synthesizeFromChunks(chunks: KnowledgeChunk[]): string {
     .filter((c) => !c.staffOnly && !/staff|luckperms|ранг/i.test(c.title))
     .slice(0, 2);
   const use = top.length ? top : chunks.slice(0, 2);
-  const bits = use.map((c) => c.text.slice(0, 280).replace(/\s+/g, " ").trim());
+  const bits = use.map((c) =>
+    sanitizeChatMarkdown(c.text.slice(0, 280).replace(/\s+/g, " ").trim()),
+  );
   return `${bits.join("\n\n")}\n\nЕсли уточнишь — разверну.`;
+}
+
+export function polishBotAnswer(text: string): string {
+  return sanitizeChatMarkdown(text);
 }
 
 /** Запасной путь без Gemini. */
@@ -70,7 +78,7 @@ export function answerFromWiki(
   const small = trySmallTalk(question);
   if (small) return { mode: "wiki", sources: [], answer: small };
 
-  const banter = tryRoughBanter(question);
+  const banter = tryRoughBanter(question, history);
   if (banter) return { mode: "wiki", sources: [], answer: banter };
 
   const blocked = checkBlockedQuestion(question, audience);
@@ -122,11 +130,15 @@ export function buildGeminiPrompt(
   extra = "",
 ) {
   const rough = shouldMirrorRoughTone(question, history);
+  const anger = angerLevel(question, history);
   const ctx = chunks
-    .map((c, i) => `[${i + 1}] ${c.title} (${c.href})\n${c.text.slice(0, 900)}`)
+    .map(
+      (c, i) =>
+        `[${i + 1}] ${c.title} (${c.href})\n${sanitizeChatMarkdown(c.text.slice(0, 900))}`,
+    )
     .join("\n\n");
 
-  return `${systemPromptFor(audience, { rough })}
+  return `${systemPromptFor(audience, { rough, anger })}
 
 БАЗА:
 ${buildCoreContext(audience)}
@@ -139,7 +151,7 @@ ${formatHistory(history)}
 СООБЩЕНИЕ ИГРОКА:
 ${question}
 
-${history.length > 0 ? "В этом чате уже общались — НЕ здоровайся снова.\n" : ""}${rough ? "Игрок на мате/пошлости — отвечай ТАК ЖЕ. Не читай мораль про приличие.\n" : "Без мата, пока игрок сам не начал.\n"}Ответь живо и по делу. Факты только из БАЗЫ/КОНТЕКСТА. Не пиши «открой /docs» вместо ответа. Сразу ответ игроку:`;
+${history.length > 0 ? "В этом чате уже общались — НЕ здоровайся снова.\n" : ""}${rough || anger >= 2 ? `Игрок на мате/пошлости (уровень злости ${anger}/3) — отвечай ТАК ЖЕ. Не читай мораль про приличие.\n` : "Без мата, пока игрок сам не начал.\n"}Ответь живо и по делу. Факты только из БАЗЫ/КОНТЕКСТА. Не пиши «открой /docs» вместо ответа. Без HTML-тегов. Сразу ответ игроку:`;
 }
 
 async function callGemini(opts: {
@@ -236,7 +248,7 @@ export async function answerWithGemini(
   const small = trySmallTalk(question);
   if (small) return { mode: "wiki", answer: small, sources: [] };
 
-  const banter = tryRoughBanter(question);
+  const banter = tryRoughBanter(question, history);
   if (banter) return { mode: "wiki", answer: banter, sources: [] };
 
   const blocked = checkBlockedQuestion(question, audience);
@@ -293,6 +305,7 @@ export async function answerWithGemini(
   const chunks = searchKnowledge(question, audience, 8);
   const sources = food?.sources ?? faq?.sources ?? sourcesOf(chunks);
   const rough = shouldMirrorRoughTone(question, history);
+  const anger = angerLevel(question, history);
   const prompt = buildGeminiPrompt(
     question,
     chunks,
@@ -307,11 +320,11 @@ export async function answerWithGemini(
       model,
       prompt,
       maxOutputTokens: 1024,
-      rough,
+      rough: rough || anger >= 2,
     });
     if (result?.finishReason === "QUOTA") continue;
       if (result?.text && result.text.length >= 2) {
-      let answer = result.text;
+      let answer = polishBotAnswer(result.text);
       if (
         /нет\s+(?:никакой\s+)?команд|команды\s+нет|не\s+существует\s+команд/i.test(
           answer,

@@ -56,6 +56,8 @@ export const discordConfig = {
       botConfig.applications.approved_role_id ??
       "1466352891932577926",
   ),
+  /** Роль «Странник» — снимается при выдаче Player. */
+  strangerRoleId: process.env.DISCORD_STRANGER_ROLE_ID?.trim() || "",
   applicationCategoryId: id(
     process.env.DISCORD_APPLICATION_CATEGORY_ID,
     botConfig.applications.ticket_category_id ?? "1487428372220088452",

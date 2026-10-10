@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getEnrichedSession } from "@/lib/auth";
+import { clearEnrichedSessionCache, getEnrichedSession } from "@/lib/auth";
 import { filterDirectory, listAdminDirectory } from "@/lib/admin-directory";
 import {
   getSiteRoleKeys,
@@ -57,6 +57,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 
-  const saved = await setSiteRoleKeys(discordId.trim(), roles);
+  const id = discordId.trim();
+  const saved = await setSiteRoleKeys(id, roles);
+  clearEnrichedSessionCache(id);
   return NextResponse.json({ ok: true, roles: saved });
 }

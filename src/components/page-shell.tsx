@@ -17,28 +17,33 @@ export function PageShell({
   className,
 }: PageShellProps) {
   return (
-    <div className={cn("relative z-[1] mx-auto max-w-[1400px] px-4 py-4 sm:py-5", className)}>
-      <div className="panel-surface rounded-2xl px-5 py-4 sm:px-7 sm:py-5">
+    <div
+      className={cn(
+        "relative z-[1] mx-auto max-w-[1400px] min-w-0 px-3 py-3 sm:px-4 sm:py-5",
+        className,
+      )}
+    >
+      <div className="panel-surface rounded-2xl px-4 py-3 sm:px-7 sm:py-5">
         {eyebrow && (
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-solar-gold">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-solar-gold sm:text-xs">
             {eyebrow}
           </p>
         )}
         <h1
           className={cn(
-            "font-display text-3xl font-bold tracking-tight sm:text-4xl",
+            "font-display text-2xl font-bold tracking-tight break-words sm:text-3xl lg:text-4xl",
             eyebrow ? "mt-1" : undefined,
           )}
         >
           {title}
         </h1>
         {description && (
-          <p className="mt-1.5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="user-content mt-1.5 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg">
             {description}
           </p>
         )}
       </div>
-      {children && <div className="mt-3">{children}</div>}
+      {children && <div className="mt-3 min-w-0 sm:mt-4">{children}</div>}
     </div>
   );
 }
@@ -53,7 +58,7 @@ export function ContentCard({
   return (
     <div
       className={cn(
-        "panel-surface rounded-2xl p-6",
+        "panel-surface min-w-0 rounded-2xl p-4 sm:p-6",
         className,
       )}
     >

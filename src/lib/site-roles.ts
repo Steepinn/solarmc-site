@@ -25,27 +25,43 @@ export async function getSiteRoleKeys(discordId: string): Promise<ProjectRoleKey
   return store[discordId] ?? [];
 }
 
+/** Есть запись в site-roles — проходку считаем по сайту, не только по Discord. */
+export async function isSiteRolesTracked(discordId: string): Promise<boolean> {
+  const store = await readStore();
+  return Object.prototype.hasOwnProperty.call(store, discordId);
+}
+
+/** Проходка: player на сайте; иначе Discord, если роли не ведутся на сайте. */
+export function resolveHasWhitelist(opts: {
+  siteKeys: ProjectRoleKey[];
+  siteTracked: boolean;
+  discordApproved: boolean;
+}): boolean {
+  if (opts.siteKeys.includes("player")) return true;
+  if (opts.siteTracked) return false;
+  return opts.discordApproved;
+}
+
 export async function setSiteRoleKeys(discordId: string, roles: ProjectRoleKey[]) {
   const store = await readStore();
   const unique = [...new Set(roles)];
-  if (unique.length === 0) {
-    delete store[discordId];
-  } else {
-    store[discordId] = unique;
-  }
+  store[discordId] = unique;
   await writeStore(store);
   await syncSiteRolesToDiscord(discordId, unique);
+  await setMemberWhitelist(discordId, unique.includes("player"));
   return unique;
 }
 
 export async function grantPlayerPass(discordId: string) {
   const current = await getSiteRoleKeys(discordId);
-  const next: ProjectRoleKey[] = current.includes("player")
-    ? current
-    : [...current, "player"];
+  const withoutStranger = current.filter((k) => k !== "stranger");
+  const next: ProjectRoleKey[] = withoutStranger.includes("player")
+    ? withoutStranger
+    : [...withoutStranger, "player"];
   const store = await readStore();
   store[discordId] = next;
   await writeStore(store);
+  await syncSiteRolesToDiscord(discordId, next);
   await setMemberWhitelist(discordId, true);
   return next;
 }
@@ -54,12 +70,9 @@ export async function revokePlayerPass(discordId: string) {
   const current = await getSiteRoleKeys(discordId);
   const next = current.filter((k) => k !== "player");
   const store = await readStore();
-  if (next.length === 0) {
-    delete store[discordId];
-  } else {
-    store[discordId] = next;
-  }
+  store[discordId] = next;
   await writeStore(store);
+  await syncSiteRolesToDiscord(discordId, next);
   await setMemberWhitelist(discordId, false);
   return next;
 }

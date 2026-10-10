@@ -31,7 +31,7 @@ npm run dev
 
 ## Настройка
 
-Ссылки и IP — в `src/config/site.ts`.
+Ссылки и навигация — в `src/config/site.ts`. Адрес Minecraft-сервера для бэкенда — в `.env` / `bot-sync.json`.
 
 ## Что дальше
 

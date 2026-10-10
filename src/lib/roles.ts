@@ -22,6 +22,10 @@ export const projectRoles: Record<
 /** Discord role ID для ключа (Player = проходка / whitelist). */
 export function discordRoleIdForKey(key: ProjectRoleKey): string | null {
   if (key === "player") return discordConfig.approvedRoleId;
+  if (key === "stranger") {
+    const fromEnv = discordConfig.strangerRoleId?.trim();
+    if (fromEnv) return fromEnv;
+  }
   const id = projectRoles[key]?.id;
   return id?.trim() ? id : null;
 }

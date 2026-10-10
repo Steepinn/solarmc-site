@@ -47,7 +47,7 @@ export function buildCoreContext(audience: SolAudience): string {
     "Страница [лаунчер](/launcher) — ДВЕ разные zip-сборки. Не мешать.",
     "ОФИЦИАЛКА (лицензия / Microsoft / Mojang Launcher): скачай блок «Официальный Minecraft» → файл solar-launcher-official.zip. Java 1.21.1 + Fabric уже в комплекте. Ставь только эту сборку в официальный клиент.",
     "TLauncher: скачай блок «TLauncher» → solar-launcher-tlauncher.zip. Только для TLauncher. Официальную zip туда НЕ ставь.",
-    "После установки: IP на [статусе](/status). Нужна проходка — [заявки](/applications). Моды: [клиентские моды](/docs/mods/client-mods). Старт: [как начать](/docs/guides/how-to-start).",
+    "После установки: запуск только через [лаунчер](/launcher) — адрес для ручного ввода игрокам не даём. Нужна проходка — [заявки](/applications). Моды: [клиентские моды](/docs/mods/client-mods). Старт: [как начать](/docs/guides/how-to-start).",
     "Нет отдельной «тайной инструкции для лицензии» — всё на /launcher. Не пиши «накатай файлы абы как» без указания какой именно zip брать.",
     "Только Minecraft Java 1.21.1. Bedrock / телефон — нельзя.",
     "Ссылки в ответах всегда markdown: [войти через Discord](/api/auth/discord), [заявки](/applications), [лаунчер](/launcher), [карту](/map), [вики](/docs), [магазин](/shop), [статус](/status), [поддержку](/support). Не пиши голые /applications /map /docs.",

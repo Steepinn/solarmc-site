@@ -239,6 +239,17 @@ export async function syncSiteRolesToDiscord(discordId: string, keys: ProjectRol
   return setMemberRoles(discordId, roleIds);
 }
 
+function applyPassRoleFlags(roles: Set<string>, approved: boolean) {
+  const stranger = discordConfig.strangerRoleId?.trim();
+  if (approved) {
+    roles.add(discordConfig.approvedRoleId);
+    if (stranger) roles.delete(stranger);
+  } else {
+    roles.delete(discordConfig.approvedRoleId);
+    if (stranger) roles.add(stranger);
+  }
+}
+
 export async function setMemberWhitelist(discordId: string, approved: boolean) {
   const headers = botHeaders();
   if (!headers) return false;
@@ -252,11 +263,7 @@ export async function setMemberWhitelist(discordId: string, approved: boolean) {
   const member = (await memberRes.json()) as { roles: string[] };
   const roles = new Set(member.roles);
 
-  if (approved) {
-    roles.add(discordConfig.approvedRoleId);
-  } else {
-    roles.delete(discordConfig.approvedRoleId);
-  }
+  applyPassRoleFlags(roles, approved);
 
   const patchRes = await fetch(
     `${DISCORD_API}/guilds/${discordConfig.guildId}/members/${discordId}`,

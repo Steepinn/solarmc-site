@@ -5,7 +5,6 @@ import { ContentCard, PageShell } from "@/components/page-shell";
 import { getEnrichedSession } from "@/lib/auth";
 import { siteConfig } from "@/config/site";
 import { getLatestUserApplication } from "@/lib/db";
-import botSync from "@/config/bot-sync.json";
 
 export const metadata = { title: "Заявки на проходку" };
 
@@ -64,8 +63,11 @@ export default async function ApplicationsPage({ searchParams }: Props) {
             </div>
           ) : session.hasWhitelist ? (
             <p className="mt-4 text-sm text-green-400">
-              У тебя уже есть проходка — заходи на {botSync.serverInfo.ip}:
-              {botSync.serverInfo.port}!
+              У тебя уже есть проходка — скачай{" "}
+              <Link href="/launcher" className="font-semibold underline hover:no-underline">
+                лаунчер
+              </Link>{" "}
+              и заходи на сервер.
             </p>
           ) : latest?.status === "pending" ? (
             <div className="mt-4 space-y-3 text-sm">
