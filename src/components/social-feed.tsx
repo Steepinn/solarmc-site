@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { Copy, MessageCircle, Plus } from "lucide-react";
+import { Copy, Heart, MessageCircle, Plus } from "lucide-react";
 import { FeedComposerModal } from "@/components/feed-composer-modal";
 import { ContentCard } from "@/components/page-shell";
 import { cn } from "@/lib/utils";
@@ -117,13 +117,22 @@ export function SocialFeed() {
     });
     if (!res.ok) return;
     const data = await res.json();
+    const raw = data.comment as FeedComment & { authorName?: string };
+    const comment: FeedComment = {
+      id: raw.id,
+      author: raw.author ?? raw.authorName ?? "?",
+      authorSlug: raw.authorSlug,
+      avatar: raw.avatar,
+      content: raw.content,
+      createdAt: raw.createdAt,
+    };
     setPosts((prev) =>
       prev.map((p) =>
         p.id === postId
           ? {
               ...p,
               commentCount: p.comments.length + 1,
-              comments: [...p.comments, data.comment],
+              comments: [...p.comments, comment],
             }
           : p,
       ),
@@ -259,35 +268,40 @@ export function SocialFeed() {
                         )}
                       </div>
                     ) : null}
-                    <div className="mt-3 flex flex-wrap items-center gap-3 text-xs">
+                    <div className="mt-3 flex flex-wrap items-center gap-4 text-xs">
                       <button
                         type="button"
                         disabled={!user}
                         onClick={() => void toggleLike(post.id)}
                         className={cn(
-                          "transition-colors disabled:cursor-not-allowed",
+                          "inline-flex min-h-8 items-center gap-1.5 transition-colors disabled:cursor-not-allowed",
                           post.liked
                             ? "text-solar-gold"
                             : "text-muted-foreground hover:text-solar-gold",
                         )}
                       >
-                        {post.liked ? "♥" : "♡"} {post.likes}
+                        <Heart
+                          className="size-4 shrink-0"
+                          fill={post.liked ? "currentColor" : "none"}
+                          strokeWidth={2}
+                        />
+                        <span>{post.likes}</span>
                       </button>
                       <button
                         type="button"
                         onClick={() => toggleComments(post.id)}
-                        className="inline-flex items-center gap-1 text-muted-foreground transition hover:text-solar-gold"
+                        className="inline-flex min-h-8 items-center gap-1.5 text-muted-foreground transition hover:text-solar-gold"
                       >
-                        <MessageCircle className="size-3.5" />
-                        {post.commentCount || post.comments.length}
+                        <MessageCircle className="size-4 shrink-0" strokeWidth={2} />
+                        <span>{post.commentCount || post.comments.length}</span>
                       </button>
                       <button
                         type="button"
                         onClick={() => void copyPostLink(post.id)}
-                        className="inline-flex items-center gap-1 text-muted-foreground transition hover:text-solar-gold"
+                        className="inline-flex min-h-8 items-center gap-1.5 text-muted-foreground transition hover:text-solar-gold"
                       >
-                        <Copy className="size-3.5" />
-                        {copyOk === post.id ? "Скопировано" : "Ссылка"}
+                        <Copy className="size-4 shrink-0" strokeWidth={2} />
+                        <span>{copyOk === post.id ? "Скопировано" : "Ссылка"}</span>
                       </button>
                     </div>
                     {commentsOpen ? (
@@ -308,15 +322,20 @@ export function SocialFeed() {
                               />
                             </Link>
                             <div className="min-w-0">
-                              <Link
-                                href={`/u/${encodeURIComponent(c.authorSlug)}`}
-                                className="font-medium hover:text-solar-gold"
-                              >
-                                {c.author}
-                              </Link>
-                              <span className="ms-2 text-xs text-muted-foreground">
-                                {formatWhen(c.createdAt)}
-                              </span>
+                              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                                <Link
+                                  href={`/u/${encodeURIComponent(c.authorSlug)}`}
+                                  className="font-medium hover:text-solar-gold"
+                                >
+                                  {c.author ||
+                                    (c as FeedComment & { authorName?: string })
+                                      .authorName ||
+                                    "Игрок"}
+                                </Link>
+                                <span className="text-xs text-muted-foreground">
+                                  {formatWhen(c.createdAt)}
+                                </span>
+                              </div>
                               <p className="user-content mt-0.5 whitespace-pre-wrap">
                                 {c.content}
                               </p>

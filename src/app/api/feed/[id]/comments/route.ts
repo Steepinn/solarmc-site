@@ -31,7 +31,16 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     if (!comment) {
       return NextResponse.json({ error: "not_found" }, { status: 404 });
     }
-    return NextResponse.json({ comment });
+    return NextResponse.json({
+      comment: {
+        id: comment.id,
+        author: comment.authorName,
+        authorSlug: comment.authorSlug,
+        avatar: comment.avatar,
+        content: comment.content,
+        createdAt: comment.createdAt,
+      },
+    });
   } catch (e) {
     if (e instanceof Error && e.message === "invalid_content") {
       return NextResponse.json({ error: "invalid_content" }, { status: 400 });
