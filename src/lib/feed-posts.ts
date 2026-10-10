@@ -55,6 +55,17 @@ export async function listFeedPosts(limit = 50): Promise<FeedPost[]> {
     .slice(0, limit);
 }
 
+export async function listFeedPostsByDiscordId(
+  discordId: string,
+  limit = 40,
+): Promise<FeedPost[]> {
+  const { posts } = await readStore();
+  return [...posts]
+    .filter((p) => p.discordId === discordId)
+    .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
+    .slice(0, limit);
+}
+
 export async function createFeedPost(input: {
   discordId: string;
   username: string;
