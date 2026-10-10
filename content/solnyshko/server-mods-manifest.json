@@ -1,6 +1,6 @@
 {
   "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\mods",
-  "updated": "2026-10-08",
+  "updated": "2026-10-10",
   "note": "Активные jar на сервере (без .prev/.old/.disabled).",
   "mods": [
     {
@@ -98,10 +98,6 @@
     {
       "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
       "id": "forgeconfigapiport-v21-1-6-1-21-1-fabric"
-    },
-    {
-      "file": "fpv20-1.1.9-1.21~1.21.1.jar",
-      "id": "fpv20-1-1-9-1-21-1-21-1"
     },
     {
       "file": "geckolib-fabric-1.21.1-4.9.2-arclight.jar",

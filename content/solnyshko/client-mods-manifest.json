@@ -1,6 +1,6 @@
 {
   "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\client-mods",
-  "updated": "2026-10-08",
+  "updated": "2026-10-10",
   "note": "Актуальная клиентская сборка Season 3 (без .prev/.old/.disabled). optional/ отдельно.",
   "mods": [
     {
@@ -158,10 +158,6 @@
     {
       "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
       "id": "forgeconfigapiport-v21-1-6-1-21-1-fabric"
-    },
-    {
-      "file": "fpv20-1.1.9-1.21~1.21.1.jar",
-      "id": "fpv20-1-1-9-1-21-1-21-1"
     },
     {
       "file": "FuelInfo-2.1+1.21.jar",
@@ -418,10 +414,6 @@
     {
       "file": "watermedia-2.1.37.jar",
       "id": "watermedia-2-1-37"
-    },
-    {
-      "file": "watermedia-3.0.0.23.jar",
-      "id": "watermedia-3-0-0-23"
     },
     {
       "file": "watervision-FB-mc1.21.1-v0.1.0-alpha.jar",
