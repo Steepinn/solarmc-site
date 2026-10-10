@@ -1,7 +1,8 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { ProfileView } from "@/components/profile-view";
-import { clearSessionCookie, getEnrichedSession } from "@/lib/auth";
+import { getEnrichedSession } from "@/lib/auth";
 import { getLatestUserApplication } from "@/lib/db";
+import { listFeedPostsByDiscordId } from "@/lib/feed-posts";
 import {
   loadAdvancementsForProfile,
   resolvePublicProfile,
@@ -9,17 +10,10 @@ import {
 import { getPublicProjectRoles } from "@/lib/public-roles";
 import { getProfileSettings } from "@/lib/profile-settings";
 import { getUserBlock } from "@/lib/site-blocks";
-import { profilePath } from "@/lib/site-users";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = "force-dynamic";
-
-async function logoutAction() {
-  "use server";
-  await clearSessionCookie();
-  redirect("/");
-}
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
@@ -43,7 +37,7 @@ export default async function PublicProfilePage({ params }: Props) {
       session.discordId === profile.discordId,
   );
 
-  const [advancements, application, publicRoles, block, profileSettings] =
+  const [advancements, application, publicRoles, block, profileSettings, feedPosts] =
     await Promise.all([
       loadAdvancementsForProfile(profile),
       isOwner && session
@@ -62,13 +56,10 @@ export default async function PublicProfilePage({ params }: Props) {
             bannerUrl: null,
             updatedAt: new Date(0).toISOString(),
           }),
+      profile.discordId
+        ? listFeedPostsByDiscordId(profile.discordId)
+        : Promise.resolve([]),
     ]);
-
-  const shareHref = profilePath({
-    mcNick: profile.mcNick ?? undefined,
-    discordId: profile.discordId ?? profile.slug,
-    username: profile.username,
-  });
 
   const statusLabel =
     application?.status === "pending"
@@ -79,25 +70,32 @@ export default async function PublicProfilePage({ params }: Props) {
           ? "Отклонено"
           : null;
 
+  const profilePosts = feedPosts.map((p) => ({
+    id: p.id,
+    content: p.content,
+    createdAt: p.createdAt,
+    mediaUrl: p.mediaUrl ?? null,
+    mediaType: p.mediaType ?? null,
+    likes: p.likedBy.length,
+  }));
+
   return (
     <ProfileView
       displayName={profile.displayName}
       username={profile.username}
       mcNick={profile.mcNick}
       avatar={profile.avatar}
-      shareHref={shareHref}
       advancements={advancements}
       profileSettings={profileSettings}
+      profilePosts={profilePosts}
       isOwner={isOwner}
       roles={publicRoles.roles}
       hasWhitelist={publicRoles.hasWhitelist}
       applicationStatus={statusLabel}
-      isOwnerAdmin={isOwner ? session?.isAdmin : undefined}
       viewerIsAdmin={Boolean(session?.isAdmin)}
       targetDiscordId={profile.discordId}
       isBlocked={Boolean(block)}
       blockReason={block?.reason ?? null}
-      logoutAction={isOwner ? logoutAction : undefined}
     />
   );
 }

@@ -3,21 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import {
-  FormEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  Copy,
-  ImagePlus,
-  Loader2,
-  MessageCircle,
-  Plus,
-  X,
-} from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { Copy, MessageCircle, Plus } from "lucide-react";
+import { FeedComposerModal } from "@/components/feed-composer-modal";
 import { ContentCard } from "@/components/page-shell";
 import { cn } from "@/lib/utils";
 
@@ -52,12 +40,6 @@ type User = {
   mcNick?: string | null;
 };
 
-type PendingMedia = {
-  url: string;
-  type: "image" | "video";
-  preview: string;
-};
-
 function formatWhen(iso: string) {
   const diff = Date.now() - Date.parse(iso);
   const min = Math.floor(diff / 60_000);
@@ -78,11 +60,6 @@ export function SocialFeed() {
   const [posts, setPosts] = useState<FeedItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [composerOpen, setComposerOpen] = useState(false);
-  const [text, setText] = useState("");
-  const [media, setMedia] = useState<PendingMedia | null>(null);
-  const [posting, setPosting] = useState(false);
-  const [uploading, setUploading] = useState(false);
-  const [error, setError] = useState("");
   const [expandedComments, setExpandedComments] = useState<Set<string>>(
     () => new Set(),
   );
@@ -90,7 +67,6 @@ export function SocialFeed() {
     {},
   );
   const [copyOk, setCopyOk] = useState<string | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
 
   const load = useCallback(async () => {
     const [meRes, feedRes] = await Promise.all([
@@ -117,68 +93,6 @@ export function SocialFeed() {
     const el = document.getElementById(`post-${highlightId}`);
     el?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [highlightId, loading, posts.length]);
-
-  function closeComposer() {
-    setComposerOpen(false);
-    setText("");
-    setMedia(null);
-    setError("");
-  }
-
-  async function onPickMedia(file: File) {
-    if (file.size > 10 * 1024 * 1024) {
-      setError("Файл больше 10 МБ");
-      return;
-    }
-    setUploading(true);
-    setError("");
-    const fd = new FormData();
-    fd.set("file", file);
-    const res = await fetch("/api/feed/upload", { method: "POST", body: fd });
-    setUploading(false);
-    if (!res.ok) {
-      setError(
-        res.status === 413
-          ? "Максимум 10 МБ"
-          : "Не удалось загрузить файл (jpg, png, gif, webp, mp4, webm)",
-      );
-      return;
-    }
-    const data = await res.json();
-    setMedia({
-      url: data.url,
-      type: data.type,
-      preview: URL.createObjectURL(file),
-    });
-  }
-
-  async function submitPost(e: FormEvent) {
-    e.preventDefault();
-    if (!user || (!text.trim() && !media)) return;
-    setPosting(true);
-    setError("");
-    const res = await fetch("/api/feed", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        content: text.trim(),
-        mediaUrl: media?.url ?? null,
-        mediaType: media?.type ?? null,
-      }),
-    });
-    const data = await res.json();
-    setPosting(false);
-    if (!res.ok) {
-      setError(
-        data.error === "invalid_content"
-          ? "Нужен текст или вложение (до 2000 символов)"
-          : "Не удалось опубликовать",
-      );
-      return;
-    }
-    closeComposer();
-    if (data.post) setPosts((prev) => [data.post as FeedItem, ...prev]);
-  }
 
   async function toggleLike(id: string) {
     if (!user) return;
@@ -264,97 +178,12 @@ export function SocialFeed() {
         </div>
       ) : null}
 
-      {composerOpen && user ? (
-        <div
-          className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 p-4 sm:items-center"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="composer-title"
-        >
-          <ContentCard className="relative w-full max-w-lg p-4 sm:p-6">
-            <button
-              type="button"
-              className="absolute end-3 top-3 rounded-lg p-2 text-muted-foreground hover:bg-accent"
-              aria-label="Закрыть"
-              onClick={closeComposer}
-            >
-              <X className="size-5" />
-            </button>
-            <h2 id="composer-title" className="text-lg font-semibold">
-              Новый пост
-            </h2>
-            <form onSubmit={submitPost} className="mt-4 space-y-3">
-              <textarea
-                className="input-field min-h-[100px] w-full resize-y text-sm"
-                placeholder="Что нового на Solar?"
-                maxLength={2000}
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                autoFocus
-              />
-              {media ? (
-                <div className="relative overflow-hidden rounded-xl border border-border">
-                  {media.type === "image" ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={media.preview}
-                      alt=""
-                      className="max-h-48 w-full object-cover"
-                    />
-                  ) : (
-                    <video
-                      src={media.preview}
-                      className="max-h-48 w-full"
-                      controls
-                    />
-                  )}
-                  <button
-                    type="button"
-                    className="absolute end-2 top-2 rounded-lg bg-black/60 p-1.5 text-white"
-                    onClick={() => setMedia(null)}
-                  >
-                    <X className="size-4" />
-                  </button>
-                </div>
-              ) : null}
-              <input
-                ref={fileRef}
-                type="file"
-                accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm"
-                className="hidden"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) void onPickMedia(f);
-                  e.target.value = "";
-                }}
-              />
-              <div className="flex flex-wrap items-center gap-2">
-                <button
-                  type="button"
-                  disabled={uploading}
-                  onClick={() => fileRef.current?.click()}
-                  className="btn-secondary inline-flex items-center gap-2 text-sm"
-                >
-                  {uploading ? (
-                    <Loader2 className="size-4 animate-spin" />
-                  ) : (
-                    <ImagePlus className="size-4" />
-                  )}
-                  Фото / видео (до 10 МБ)
-                </button>
-                <button
-                  type="submit"
-                  disabled={posting || uploading || (!text.trim() && !media)}
-                  className="btn-primary ms-auto inline-flex items-center gap-2 disabled:opacity-50"
-                >
-                  {posting ? <Loader2 className="size-4 animate-spin" /> : null}
-                  Опубликовать
-                </button>
-              </div>
-              {error ? <p className="text-sm text-red-400">{error}</p> : null}
-            </form>
-          </ContentCard>
-        </div>
+      {user ? (
+        <FeedComposerModal
+          open={composerOpen}
+          onClose={() => setComposerOpen(false)}
+          onCreated={(post) => setPosts((prev) => [post as FeedItem, ...prev])}
+        />
       ) : null}
 
       <div className="mx-auto max-w-2xl min-w-0 space-y-3 sm:space-y-4">

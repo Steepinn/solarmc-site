@@ -1792,10 +1792,11 @@ html.menu-open header#nd-nav {
 .support-compose {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 120;
   display: grid;
   place-items: center;
-  padding: 1rem;
+  padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
 }
 
 .support-compose__backdrop {
