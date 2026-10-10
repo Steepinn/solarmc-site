@@ -31,6 +31,7 @@ export const mainNav: NavItem[] = [
   { label: "Статус", href: "/status" },
   { label: "Магазин", href: "/shop" },
   { label: "Города", href: "/cities" },
+  { label: "Соцсеть", href: "/social" },
   { label: "Ивенты", href: "/events" },
   { label: "Суды", href: "/courts" },
   { label: "Заявки", href: "/applications" },
@@ -41,11 +42,13 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   navigation: [
     { label: "Вики", href: "/docs/informaciya/home" },
+    { label: "Соцсеть", href: "/social" },
     { label: "Города", href: "/cities" },
     { label: "Ивенты", href: "/events" },
     { label: "Команда", href: "/team" },
   ],
   sections: [
+    { label: "Лента", href: "/feed" },
     { label: "Магазин", href: "/shop" },
     { label: "Заявки", href: "/applications" },
     { label: "Техподдержка", href: "/support" },
@@ -97,6 +100,12 @@ export const homeLinks = [
     title: "Вики",
     description: "Правила, гайды, механики и вся база знаний по серверу.",
     href: "/docs/informaciya/home",
+    icon: "wiki" as const,
+  },
+  {
+    title: "Соцсеть",
+    description: "Лента, профили игроков, города и ивенты — сообщество Solar.",
+    href: "/social",
     icon: "wiki" as const,
   },
   {
@@ -163,6 +172,8 @@ export const searchItems = [
     group: "Вики",
   },
   { title: "Полезные команды", href: "/docs/server-content/poleznye-komandy-dlya-igrokov", group: "Вики" },
+  { title: "Социальная сеть", href: "/social", group: "Соцсеть" },
+  { title: "Лента", href: "/feed", group: "Соцсеть" },
   { title: "Города", href: "/cities", group: "Разделы" },
   { title: "Ивенты", href: "/events", group: "Разделы" },
   { title: "Лаунчер", href: "/launcher", group: "Сервер" },

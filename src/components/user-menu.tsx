@@ -8,6 +8,7 @@ import {
   ClipboardList,
   LifeBuoy,
   LogOut,
+  MessageCircle,
   Shield,
   User,
 } from "lucide-react";
@@ -104,6 +105,9 @@ export function UserProfileLinks({
         onClick={onNavigate}
       >
         Профиль
+      </MenuLink>
+      <MenuLink href="/social" icon={<MessageCircle className="size-4" />} onClick={onNavigate}>
+        Соцсеть
       </MenuLink>
       <MenuLink
         href="/applications"

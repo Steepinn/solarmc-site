@@ -60,7 +60,7 @@ export function SiteHeader() {
       id="nd-nav"
       className="relative sticky top-0 z-50 border-b border-border bg-card"
     >
-      <div className="mx-auto flex h-20 max-w-[1400px] items-center gap-3 px-4">
+      <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-2 px-3 sm:h-20 sm:gap-3 sm:px-4">
         <button
           type="button"
           aria-label={phase === "open" ? "Закрыть меню" : "Открыть меню"}
