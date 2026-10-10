@@ -5,3 +5,6 @@ out
 .env.local
 *.log
 .DS_Store
+public/uploads/feed/*
+public/uploads/profile/*
+!public/uploads/**/.gitkeep

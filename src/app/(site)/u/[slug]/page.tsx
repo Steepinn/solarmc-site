@@ -7,6 +7,7 @@ import {
   resolvePublicProfile,
 } from "@/lib/public-profile";
 import { getPublicProjectRoles } from "@/lib/public-roles";
+import { getProfileSettings } from "@/lib/profile-settings";
 import { getUserBlock } from "@/lib/site-blocks";
 import { profilePath } from "@/lib/site-users";
 
@@ -42,16 +43,26 @@ export default async function PublicProfilePage({ params }: Props) {
       session.discordId === profile.discordId,
   );
 
-  const [advancements, application, publicRoles, block] = await Promise.all([
-    loadAdvancementsForProfile(profile),
-    isOwner && session
-      ? getLatestUserApplication(session.discordId)
-      : Promise.resolve(null),
-    profile.discordId
-      ? getPublicProjectRoles(profile.discordId)
-      : Promise.resolve({ roles: [], hasWhitelist: false }),
-    profile.discordId ? getUserBlock(profile.discordId) : Promise.resolve(null),
-  ]);
+  const [advancements, application, publicRoles, block, profileSettings] =
+    await Promise.all([
+      loadAdvancementsForProfile(profile),
+      isOwner && session
+        ? getLatestUserApplication(session.discordId)
+        : Promise.resolve(null),
+      profile.discordId
+        ? getPublicProjectRoles(profile.discordId)
+        : Promise.resolve({ roles: [], hasWhitelist: false }),
+      profile.discordId ? getUserBlock(profile.discordId) : Promise.resolve(null),
+      profile.discordId
+        ? getProfileSettings(profile.discordId)
+        : Promise.resolve({
+            discordId: "",
+            bio: "",
+            bannerPreset: "default" as const,
+            bannerUrl: null,
+            updatedAt: new Date(0).toISOString(),
+          }),
+    ]);
 
   const shareHref = profilePath({
     mcNick: profile.mcNick ?? undefined,
@@ -76,6 +87,7 @@ export default async function PublicProfilePage({ params }: Props) {
       avatar={profile.avatar}
       shareHref={shareHref}
       advancements={advancements}
+      profileSettings={profileSettings}
       isOwner={isOwner}
       roles={publicRoles.roles}
       hasWhitelist={publicRoles.hasWhitelist}
