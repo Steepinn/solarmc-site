@@ -78,7 +78,7 @@ export default function LauncherPage() {
     <PageShell
       title="Лаунчер"
       eyebrow="Скачать"
-      description="Выбери, чем пользуешься — официальным Minecraft или TLauncher. Сборки разные, не перепутай."
+      description="Единственный способ зайти на SolarMC: скачай сборку под свой клиент и запускай мир из лаунчера."
     >
       <div className="grid gap-4 lg:grid-cols-2">
         {builds.map(({ build, href, ready }) => (
@@ -93,14 +93,7 @@ export default function LauncherPage() {
 
       <ContentCard className="mt-4">
         <p className="text-sm text-muted-foreground">
-          После установки зайди по IP со{" "}
-          <Link
-            href="/status"
-            className="font-semibold text-solar-gold underline-offset-2 hover:underline"
-          >
-            статуса
-          </Link>
-          . Нужна проходка —{" "}
+          После установки запускай сервер из лаунчера — он подставит адрес сам. Нужна проходка —{" "}
           <Link
             href="/applications"
             className="font-semibold text-solar-gold underline-offset-2 hover:underline"

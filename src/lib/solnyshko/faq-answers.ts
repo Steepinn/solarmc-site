@@ -38,7 +38,7 @@ const START = `Короче старт:
 1) [Войди через Discord](/api/auth/discord) на сайте
 2) Открой [заявки](/applications) и подай заявку там
 3) После одобрения скачай [лаунчер](/launcher) (официалка или TLauncher — разные сборки)
-4) IP смотри на [статусе](/status)
+4) Запускай мир только из [лаунчера](/launcher) — лаунчер сам подставит подключение
 5) Зашёл — выбери Origin, качай скиллы на **K**
 
 Карта мира — [карта](/map), вики — [вики](/docs).`;
@@ -65,7 +65,7 @@ const LAUNCHER_OFFICIAL = `Для **официального Minecraft** (лиц
 3. В архиве уже **Java 1.21.1 + Fabric** — ставь эту сборку в официальный клиент по файлам из zip
 4. **Не** мешай с TLauncher-сборкой
 
-IP потом на [статусе](/status). Проходка — [заявки](/applications). Моды: [клиентские моды](/docs/mods/client-mods).`;
+Запуск — только из [лаунчера](/launcher). Проходка — [заявки](/applications). Моды: [клиентские моды](/docs/mods/client-mods).`;
 
 const LAUNCHER_TLAUNCHER = `Для **TLauncher**:
 
@@ -74,14 +74,14 @@ const LAUNCHER_TLAUNCHER = `Для **TLauncher**:
 3. Ставь только эту zip — она под структуру папок TLauncher
 4. Официальную сборку в TLauncher **не** пихай
 
-IP — [статус](/status), проходка — [заявки](/applications).`;
+Запуск — [лаунчер](/launcher), проходка — [заявки](/applications).`;
 
 const LAUNCHER_GENERAL = `На Solar **две разные** клиентские сборки на [лаунчере](/launcher):
 
 • **Официальный Minecraft** (Microsoft/Mojang) → zip «Официальный Minecraft»
 • **TLauncher** → отдельный zip «TLauncher»
 
-Не путай их. Версия: **Java 1.21.1 Fabric**. После установки — IP на [статусе](/status), проходка через [заявки](/applications). Гайд: [как начать](/docs/guides/how-to-start).`;
+Не путай их. Версия: **Java 1.21.1 Fabric**. После установки — вход только через [лаунчер](/launcher), проходка через [заявки](/applications). Гайд: [как начать](/docs/guides/how-to-start).`;
 
 const ORIGIN_ADVICE = `Имхо, если без заморочек — бери **Human**.
 Хочешь вайб и мобильность — **Elytrian** (небо/Энд) или **Enderian** (телепорт, но вода — боль).
@@ -137,7 +137,7 @@ const CRITTERS = `Сейчас звери — **Faunus** и утки/гуси (C
 const VINERY = `**Vinery (вино):** 6 ягод в кадку → топчешься → 2 бутылки сока (винные бутылки!). Бродильная бочка: сок слева → ингредиенты + пустая винная бутылка → ~5 мин → выход справа. Shift+ПКМ — слить сок. Пиво/водка — другой мод (Brewery). [гайд](/docs/mods/vinery).`;
 
 const SERVER_BLURB = `Solar Season 3 — ваниль+моды Minecraft 1.21.1 Fabric: Origins, скиллы (K), Questlog, Shippy Ships, Farmers Delight (+аддоны), Vinery, Faunus/утки, рации, пинг, данжи Arise/YUNG, артефакты, эндерит, почта, банкомат, донат SONNE в [магазине](/shop).
-Проходка: [войти через Discord](/api/auth/discord) → подать заявку на [странице заявок](/applications). Вики — [вики](/docs), карта — [карта](/map), IP — [статус](/status).
+Проходка: [войти через Discord](/api/auth/discord) → подать заявку на [странице заявок](/applications). Вход на сервер — только [лаунчер](/launcher). Вики — [вики](/docs), карта — [карта](/map), онлайн — [статус](/status).
 Я «Солнышко» — помогу по командам, расам, еде, донату. Координаты данжей не сливаю.`;
 
 export function tryFaqAnswer(question: string): FaqHit | null {
@@ -223,6 +223,20 @@ export function tryFaqAnswer(question: string): FaqHit | null {
       sources: [
         { title: "Магазин", href: "/shop" },
         { title: "Донат", href: "/docs/informaciya/donat" },
+      ],
+    };
+  }
+
+  if (
+    /\bip\b|айпи|адрес\s+сервер|ручн.{0,12}подключ|сетевая\s+игра|25813|play\.|:\s*25813/i.test(
+      q,
+    )
+  ) {
+    return {
+      answer: LAUNCHER_GENERAL,
+      sources: [
+        { title: "Лаунчер", href: "/launcher" },
+        { title: "Как начать", href: "/docs/guides/how-to-start" },
       ],
     };
   }

@@ -39,4 +39,4 @@
 * Удали старые копии одних и тех же модов
 * Пиши в Discord или [поддержку](/support)
 
-Дальше: [как начать](/docs/guides/how-to-start), IP на [статусе](/status).
+Дальше: [как начать](/docs/guides/how-to-start), [лаунчер](/launcher), онлайн на [статусе](/status).

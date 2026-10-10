@@ -28,7 +28,7 @@
 
 ### Общее
 - Версия сервера: **Minecraft Java 1.21.1 Fabric** (не Bedrock, не телефон)
-- IP — страница [/status](/status)
+- Вход на мир — только [/launcher](/launcher); онлайн смотри на [/status](/status)
 - Проходка: Discord-вход → заявка на [/applications](/applications) (не slash Discord)
 - Гайд модов: [/docs/mods/client-mods](/docs/mods/client-mods)
 - Как начать: [/docs/guides/how-to-start](/docs/guides/how-to-start)

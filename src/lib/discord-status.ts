@@ -1,4 +1,4 @@
-import { discordConfig, serverConfig } from "./bot-config";
+import { discordConfig } from "./bot-config";
 import { discordFetch } from "./discord-api";
 import type { ServerStatus } from "./types";
 
@@ -87,6 +87,5 @@ export async function fetchDiscordAdminSnapshot() {
       tps: status.tps,
     },
     source: "discord" as const,
-    server: `${serverConfig.ip}:${serverConfig.port}`,
   };
 }

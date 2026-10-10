@@ -5,7 +5,6 @@ export const siteConfig = {
   shortName: "Solar",
   description:
     "SolarMC Season 3 — Minecraft 1.21.1 с PvE-данжами, боссами, Origins и скиллами. Выживание, города и совместный геймплей.",
-  serverIp: `${botSync.serverInfo.ip}:${botSync.serverInfo.port}`,
   themeColor: "#fff200",
   links: {
     discord: "https://discord.gg/DjmJzUARCy",
