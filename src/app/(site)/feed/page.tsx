@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { PageShell } from "@/components/page-shell";
 import { SocialFeed } from "@/components/social-feed";
 
@@ -16,7 +17,9 @@ export default function FeedPage() {
           ← Социальная сеть
         </Link>
       </p>
-      <SocialFeed />
+      <Suspense fallback={<p className="text-sm text-muted-foreground">Загрузка…</p>}>
+        <SocialFeed />
+      </Suspense>
     </PageShell>
   );
 }
