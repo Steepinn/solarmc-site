@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SoundProvider } from "@/components/sound-provider";
 import { PageTransition } from "@/components/page-transition";
 import { NavPrefetch } from "@/components/nav-prefetch";
+import { PageScrollRail } from "@/components/page-scroll-rail";
 import { SolnyshkoChat } from "@/components/solnyshko-chat";
 
 export default function SiteLayout({
@@ -20,6 +21,7 @@ export default function SiteLayout({
           <PageTransition>{children}</PageTransition>
         </main>
         <SiteFooter />
+        <PageScrollRail />
         <SolnyshkoChat />
       </div>
     </SoundProvider>

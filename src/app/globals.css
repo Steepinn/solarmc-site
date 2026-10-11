@@ -1812,6 +1812,91 @@ html.menu-open header#nd-nav {
   overflow-y: auto;
 }
 
+/* —— Custom page scroll rail (wheel-free scrolling) —— */
+.page-scroll-rail {
+  position: fixed;
+  right: max(0.25rem, env(safe-area-inset-right));
+  top: calc(var(--site-shell-offset) + 0.75rem);
+  bottom: max(5.5rem, calc(env(safe-area-inset-bottom) + 4.5rem));
+  z-index: 45;
+  display: flex;
+  width: 2.25rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+
+.page-scroll-rail__btn {
+  pointer-events: auto;
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--solar-gold, #fff200) 35%, var(--border));
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  color: var(--foreground);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.25);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.page-scroll-rail__btn:hover {
+  background: var(--accent);
+  color: var(--solar-gold, #fff200);
+}
+
+.page-scroll-rail__track {
+  pointer-events: auto;
+  position: relative;
+  flex: 1;
+  width: 0.65rem;
+  min-height: 4rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--border) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.page-scroll-rail__thumb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--solar-gold, #fff200) 90%, #fff),
+    color-mix(in srgb, var(--solar-gold, #fff200) 55%, #c97800)
+  );
+  box-shadow: 0 0 10px color-mix(in srgb, var(--solar-gold, #fff200) 45%, transparent);
+  cursor: grab;
+  touch-action: none;
+}
+
+.page-scroll-rail__thumb:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 640px) {
+  .page-scroll-rail {
+    width: 2.5rem;
+  }
+
+  .page-scroll-rail__track {
+    width: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-scroll-rail__btn,
+  .page-scroll-rail__thumb {
+    transition: none;
+  }
+}
+
 .support-ticket-page {
   max-height: calc(100svh - var(--site-shell-offset) - 1.5rem);
 }
