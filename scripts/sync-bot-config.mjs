@@ -24,6 +24,27 @@ function readEnvFile(filePath) {
   return parseEnv(fs.readFileSync(filePath, "utf8"));
 }
 
+function upsertBotEnv(filePath, updates) {
+  const lines = fs.existsSync(filePath)
+    ? fs.readFileSync(filePath, "utf8").split(/\r?\n/)
+    : [];
+  for (const [key, value] of Object.entries(updates)) {
+    const prefix = `${key}=`;
+    let hit = false;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].startsWith(prefix)) {
+        lines[i] = `${prefix}${value}`;
+        hit = true;
+        break;
+      }
+    }
+    if (!hit) lines.push(`${prefix}${value}`);
+  }
+  const body = lines.join("\n").replace(/\n+$/, "") + "\n";
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, body);
+}
+
 function parseBotConfig(text) {
   const cfg = JSON.parse(text);
   const guildMatch = text.match(/"test_guild_ids"\s*:\s*\[\s*(\d{15,})/);
@@ -167,8 +188,43 @@ async function main() {
     `SOLARDS_PATH=${SOLARDS_DIR.replace(/\\/g, "\\\\")}`,
   ];
 
+  const siteUrl = (
+    localEnv.SITE_URL ||
+    localEnv.NEXT_PUBLIC_SITE_URL ||
+    cfg.website?.url ||
+    "https://solarmc.onrender.com"
+  )
+    .trim()
+    .replace(/\/$/, "");
+  const botActionSecret =
+    localEnv.DISCORD_BOT_ACTION_SECRET?.trim() ||
+    cfg.website?.bot_action_secret?.trim() ||
+    localEnv.SESSION_SECRET?.trim() ||
+    "solarmc-discord-bot-action-dev";
+
+  if (!localEnv.SITE_URL && siteUrl) {
+    envLines.push(`SITE_URL=${siteUrl}`);
+  }
+  if (!localEnv.DISCORD_BOT_ACTION_SECRET && botActionSecret) {
+    envLines.push(`DISCORD_BOT_ACTION_SECRET=${botActionSecret}`);
+  }
+
   fs.writeFileSync(envLocal, envLines.join("\n") + "\n");
   console.log("Updated .env.local");
+
+  cfg.website = {
+    ...(cfg.website ?? {}),
+    url: siteUrl,
+    bot_action_secret: botActionSecret,
+  };
+  fs.writeFileSync(configPath, JSON.stringify(cfg, null, 2) + "\n");
+  console.log("Updated SOLARBOT config.json website →", siteUrl);
+
+  upsertBotEnv(botEnvPath, {
+    SITE_URL: siteUrl,
+    DISCORD_BOT_ACTION_SECRET: botActionSecret,
+  });
+  console.log("Updated SOLARBOT .env (SITE_URL, DISCORD_BOT_ACTION_SECRET)");
 
   const { spawnSync } = await import("child_process");
   spawnSync("node", ["scripts/import-discord-applications.mjs"], {
