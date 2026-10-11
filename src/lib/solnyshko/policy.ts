@@ -96,6 +96,16 @@ export function shouldMirrorRoughTone(
   return history.some((t) => t.role === "user" && isRoughTone(t.text));
 }
 
+function looksLikeGameOrHelpQuestion(text: string): boolean {
+  const t = text.trim();
+  if (!t) return false;
+  if (/[?]/.test(t)) return true;
+  if (GAME_QUESTION.test(t)) return true;
+  return /(?:^|\s)(?:как|что|где|когда|зачем|почему|можно|сколько|есть\s+ли|подскаж|объясни|расскаж)/iu.test(
+    t,
+  );
+}
+
 /** Ответ без Gemini на чистое оскорбление/пошлость — модель часто морализирует. */
 export function tryRoughBanter(
   q: string,
@@ -105,23 +115,29 @@ export function tryRoughBanter(
   const t = q.trim().toLocaleLowerCase("ru-RU");
   if (!t) return null;
   if (level === 0 && !isRoughTone(t)) return null;
-  if (GAME_QUESTION.test(t) && level < 3) return null;
-  if (t.length > 56 && !ROUGH_BANTER_ONLY.test(t) && level < 2) return null;
+
+  // Вопрос по игре (даже с матом) — не глушим, ответит Gemini/wiki
+  if (looksLikeGameOrHelpQuestion(q)) return null;
+
+  if (t.length > 48 && !ROUGH_BANTER_ONLY.test(t)) return null;
 
   if (level >= 3 && (isRoughTone(t) || ROUGH_BANTER_ONLY.test(t))) {
     return ANGRY_REPLIES_L3[
       Math.floor(Math.random() * ANGRY_REPLIES_L3.length)
     ]!;
   }
-  if (level >= 2 && isRoughTone(t)) {
+  if (level >= 2 && isRoughTone(t) && t.length <= 32) {
     return ANGRY_REPLIES_L2[
       Math.floor(Math.random() * ANGRY_REPLIES_L2.length)
     ]!;
   }
-  if (ROUGH_BANTER_ONLY.test(t) || t.length <= 24 || isRoughTone(t)) {
+  if (ROUGH_BANTER_ONLY.test(t) || (t.length <= 28 && isRoughTone(t))) {
     return ROUGH_BANTER_REPLIES[
       Math.floor(Math.random() * ROUGH_BANTER_REPLIES.length)
     ]!;
+  }
+  if (isRoughTone(t) && !looksLikeGameOrHelpQuestion(q)) {
+    return "По таким темам не помогу ☀ Зато по Solar: [лаунчер](/launcher), [заявки](/applications), [расы](/docs/mods/origins), [вики](/docs).";
   }
   return null;
 }
