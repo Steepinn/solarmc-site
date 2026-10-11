@@ -4,8 +4,13 @@ import {
   loadPlayerAdvancementsByUuid,
 } from "@/lib/minecraft-advancements";
 import { mcNickByUuid, uuidByMcNick } from "@/lib/minecraft-paths";
-import { getSiteUserBySlug, type SiteUserRecord } from "@/lib/site-users";
-import { uuidByDiscordId } from "@/lib/spsolards-db";
+import {
+  getSiteUserByDiscordId,
+  getSiteUserBySlug,
+  type SiteUserRecord,
+} from "@/lib/site-users";
+import { MC_NICK_RE, discordIdByMcNick } from "@/lib/solards-links";
+import { discordIdByUuid, uuidByDiscordId } from "@/lib/spsolards-db";
 
 export type PublicProfile = {
   slug: string;
@@ -16,6 +21,39 @@ export type PublicProfile = {
   avatar: string | null;
   siteUser: SiteUserRecord | null;
 };
+
+async function profileFromMcNick(
+  nickRaw: string,
+  discordIdHint?: string | null,
+): Promise<PublicProfile | null> {
+  const nick = nickRaw.trim();
+  if (!MC_NICK_RE.test(nick)) return null;
+
+  let discordId = discordIdHint?.trim() || null;
+  if (!discordId) discordId = await discordIdByMcNick(nick);
+
+  const uuid = await uuidByMcNick(nick);
+  if (uuid && !discordId) {
+    discordId = await discordIdByUuid(uuid);
+  }
+
+  let siteUser: SiteUserRecord | null = null;
+  if (discordId) {
+    siteUser = await getSiteUserByDiscordId(discordId);
+  }
+
+  const canonicalNick = uuid ? ((await mcNickByUuid(uuid)) ?? nick) : nick;
+
+  return {
+    slug: canonicalNick,
+    displayName: canonicalNick,
+    username: siteUser?.username ?? canonicalNick,
+    mcNick: canonicalNick,
+    discordId: siteUser?.discordId ?? discordId,
+    avatar: siteUser?.avatar ?? null,
+    siteUser,
+  };
+}
 
 export async function resolvePublicProfile(slugRaw: string): Promise<PublicProfile | null> {
   const slug = decodeURIComponent(slugRaw).trim();
@@ -39,25 +77,13 @@ export async function resolvePublicProfile(slugRaw: string): Promise<PublicProfi
     };
   }
 
-  const uuid = await uuidByMcNick(slug);
-  if (uuid) {
-    const nick = (await mcNickByUuid(uuid)) ?? slug;
-    return {
-      slug: nick,
-      displayName: nick,
-      username: nick,
-      mcNick: nick,
-      discordId: null,
-      avatar: null,
-      siteUser: null,
-    };
-  }
+  const byNick = await profileFromMcNick(slug);
+  if (byNick) return byNick;
 
   return null;
 }
 
 export async function loadAdvancementsForProfile(profile: PublicProfile) {
-  // discordId → SPSolards links → uuid надёжнее, чем только ник
   if (profile.discordId) {
     const byDiscord = await loadPlayerAdvancementsByDiscordId(profile.discordId);
     if (byDiscord.uuid) return byDiscord;
