@@ -4,7 +4,7 @@ import { uuidByDiscordId } from "@/lib/spsolards-db";
 import { mcNickByUuid } from "@/lib/minecraft-paths";
 import { solardsFetch } from "@/lib/solards-client";
 
-const MC_NICK_RE = /^[A-Za-z0-9_]{3,16}$/;
+export const MC_NICK_RE = /^[A-Za-z0-9_]{3,16}$/;
 
 type SolardsLinkResponse = {
   linked?: boolean;
@@ -50,4 +50,21 @@ export async function resolveMcNickForDiscord(
   }
 
   return null;
+}
+
+type BalanceLookup = {
+  discordId?: string;
+  discord_id?: string;
+};
+
+/** Discord ID по MC-нику через SOLARDS (если игрок привязал /dslink). */
+export async function discordIdByMcNick(nick: string): Promise<string | null> {
+  const n = nick.trim();
+  if (!MC_NICK_RE.test(n)) return null;
+  const data = await solardsFetch<BalanceLookup>(
+    `/api/balance/player/${encodeURIComponent(n)}`,
+    2500,
+  );
+  const id = data?.discordId ?? data?.discord_id;
+  return id?.trim() || null;
 }

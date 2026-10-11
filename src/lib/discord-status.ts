@@ -1,5 +1,6 @@
 import { discordConfig } from "./bot-config";
 import { discordFetch } from "./discord-api";
+import { fetchMinecraftPing } from "./minecraft-ping";
 import type { ServerStatus } from "./types";
 
 type DiscordMessage = {
@@ -71,16 +72,35 @@ export async function fetchDiscordServerStatus(): Promise<ServerStatus | null> {
   };
 }
 
+function mergePlayerLists(...lists: (string[] | undefined)[]) {
+  const out = new Set<string>();
+  for (const list of lists) {
+    for (const name of list ?? []) {
+      const n = name?.trim();
+      if (n && n !== "empty") out.add(n);
+    }
+  }
+  return [...out].sort((a, b) => a.localeCompare(b, "ru"));
+}
+
 export async function fetchDiscordAdminSnapshot() {
-  const status = await fetchDiscordServerStatus();
+  const [status, ping] = await Promise.all([
+    fetchDiscordServerStatus(),
+    fetchMinecraftPing(),
+  ]);
   if (!status) return null;
+
+  const onlinePlayers = mergePlayerLists(
+    status.players.list,
+    ping?.players?.list,
+  );
 
   return {
     maintenance: Boolean(status.maintenance),
     linkedAccounts: null as number | null,
     pendingLinkCodes: null as number | null,
     spmoneyAvailable: null as boolean | null,
-    onlinePlayers: status.players.list ?? [],
+    onlinePlayers,
     status: {
       online: status.online,
       players: { online: status.players.online, max: status.players.max },
