@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AdminBlockButton } from "@/components/admin-block-button";
-import { ProfilePostsSection, type ProfilePostItem } from "@/components/profile-posts-section";
 import { ProfileSettingsForm } from "@/components/profile-settings-form";
 import { ContentCard } from "@/components/page-shell";
 import type { AdvancementsSummary } from "@/lib/minecraft-advancements";
@@ -16,7 +15,6 @@ export type ProfileViewProps = {
   avatar: string | null;
   advancements: AdvancementsSummary;
   profileSettings: ProfileSettings;
-  profilePosts: ProfilePostItem[];
   isOwner: boolean;
   roles?: RoleChip[];
   hasWhitelist?: boolean;
@@ -34,7 +32,6 @@ export function ProfileView({
   avatar,
   advancements,
   profileSettings,
-  profilePosts,
   isOwner,
   roles = [],
   hasWhitelist,
@@ -162,12 +159,6 @@ export function ProfileView({
           />
         </ContentCard>
       ) : null}
-
-      <ProfilePostsSection
-        initialPosts={profilePosts}
-        isOwner={isOwner}
-        displayName={displayName}
-      />
     </div>
   );
 }

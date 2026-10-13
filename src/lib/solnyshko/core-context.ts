@@ -1,7 +1,6 @@
 import {
   formatShopPrice,
   shopDurations,
-  shopOriginItem,
   shopPlans,
   shopSkillResetItem,
 } from "@/lib/shop-catalog";
@@ -11,7 +10,8 @@ import { serverModsPromptBlurb } from "@/lib/solnyshko/server-mods-index";
 import { fishPromptBlurb } from "@/lib/solnyshko/fish-index";
 
 /** Всегда в промпте — чтобы не было «в базе пусто» по базовым темам. */
-export function buildCoreContext(audience: SolAudience): string {
+export function buildCoreContext(_audience?: SolAudience): string {
+  void _audience;
   const shop = [
     "МАГАЗИН /shop:",
     ...shopPlans.map(
@@ -20,26 +20,13 @@ export function buildCoreContext(audience: SolAudience): string {
           .map((d) => `${d.label} ${formatShopPrice(p.prices[d.id])}`)
           .join(", ")}.`,
     ),
-    `Перерождение (покупка смены Origin на сайте): ${shopOriginItem.description} Цена ${formatShopPrice(shopOriginItem.price)}.`,
     `Сфера перепрокачки (сброс навыков): ${shopSkillResetItem.description} Цена ${formatShopPrice(shopSkillResetItem.price)}.`,
-  ].join("\n");
-
-  const originItem = [
-    "СФЕРА ПРОИСХОЖДЕНИЯ (Origins):",
-    "Предмет: origins:orb_of_origin (в игре «Сфера происхождения»).",
-    "Команда выдачи (только у тех, кто может /give, обычно admin): /minecraft:give <ник> origins:orb_of_origin 1",
-    "Также: /minecraft:give @p origins:orb_of_origin 1",
-    "Игрок сам себе через /give обычно НЕ может — нет права. Игроку: купить «Перерождение» на /shop или попросить администрацию выдать сферу.",
-    audience === "administrator"
-      ? "Сейчас собеседник ADMIN — смело давай точную команду /minecraft:give."
-      : audience === "moderator" || audience === "helper"
-        ? "Собеседник staff, но не admin: можешь назвать команду, уточни что выдаёт admin/консоль."
-        : "Собеседник игрок: НЕ пиши «команды нет». Скажи: у админов команда есть; тебе — [магазин](/shop) «Перерождение» или попроси staff.",
   ].join("\n");
 
   const cmds = [
     "ИГРОК-КОМАНДЫ: /cd меню, /bal /pay /baltop, /msg /reply, /report /ask, /skin, /sit /lay /crawl /spin, /afk, /list, /dslink.",
-    "СКИЛЛЫ: клавиша K (Puffish). Сфера перепрокачки из /shop сбрасывает все 4 дерева, возвращает потраченные очки, сохраняет опыт веток и расходуется по ПКМ. Команда выдачи для admin: /solarskills give <игрок>. Origin активка часто G. Голос V. Пинг часто Mouse5 (/pingwheel config).",
+    "СКИЛЛЫ: клавиша K (Puffish). Сфера перепрокачки из /shop сбрасывает все 4 дерева, возвращает потраченные очки, сохраняет опыт веток и расходуется по ПКМ. Команда выдачи для admin: /solarskills give <игрок>. Голос V. Пинг часто Mouse5 (/pingwheel config).",
+    "Мод Origins (расы) с сезона снят — не советуй расы и не обещай смену происхождения.",
     "Донат SONNE: hat, workbench, 1 пассивный pet, maphide /hide /show, промо, без КД чата/скина. Нет nick/ec/fly/kits/homes/tpa.",
     "SONNE+: всё SONNE + 1 pet любых типов, pet hat, HEX имени питомца.",
     "ПРОХОДКА (важно): 1) войти на сайт через Discord (/api/auth/discord) 2) открыть страницу заявок /applications и подать заявку ТАМ. Это НЕ Discord-slash команда.",
@@ -52,7 +39,6 @@ export function buildCoreContext(audience: SolAudience): string {
     "Только Minecraft Java 1.21.1. Bedrock / телефон — нельзя.",
     "Ссылки в ответах всегда markdown: [войти через Discord](/api/auth/discord), [заявки](/applications), [лаунчер](/launcher), [карту](/map), [вики](/docs), [магазин](/shop), [статус](/status), [поддержку](/support). Не пиши голые /applications /map /docs.",
     "Координаты данжей/боссов/сиды — НЕ выдавать.",
-    "РАСЫ Origins: Human, Avian, Arachnid, Elytrian, Shulk, Feline, Enderian, Merling, Blazeborn, Phantom. Смена: [магазин](/shop) Перерождение или сфера origins:orb_of_origin у admin.",
     "КОРАБЛИ = мод Shippy Ships (НЕ Small Ships!). Сборка: скрафти Ship Builder (3 бревна) → поставь → ПКМ → по шагам кидай ресурсы в верфь → дотащи корабль до воды. Типы: Sailboat (лёгкий), Cog (толстый склад), Caravel (океан, нужна команда). Управление: W раскрыть парус, S убрать. Ремонт — досками ПКМ. Гайд: [корабли](/docs/mods/shippy-ships).",
     "АРТЕФАКТЫ: не крафтятся. Сундуки/мимик. Гайд [артефакты](/docs/mods/artefakty).",
     "ЭНДЕРИТ: взорвать руду в Краю, незеритовая кирка, доменная печь, 4 обломка+4 алмаза=слиток. Шаблон из города Края. Копия шаблона: 7 слитков незерита + эндерняк + шаблон → 2. Стол кузнеца: шаблон + незерит-вещь + слиток. [эндерит](/docs/mods/enderit).",
@@ -75,5 +61,5 @@ export function buildCoreContext(audience: SolAudience): string {
     fishPromptBlurb(),
   ].join("\n");
 
-  return `${shop}\n\n${originItem}\n\n${cmds}`;
+  return `${shop}\n\n${cmds}`;
 }

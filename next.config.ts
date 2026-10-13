@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: "/social", destination: "/", permanent: false },
+      { source: "/feed", destination: "/", permanent: false },
+    ];
+  },
   serverExternalPackages: ["node:sqlite"],
   images: {
     remotePatterns: [

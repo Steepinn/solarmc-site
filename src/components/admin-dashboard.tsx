@@ -488,7 +488,6 @@ function OverviewPanel({
             { href: "/status", label: "Статус публичный" },
             { href: "/shop", label: "Магазин" },
             { href: "/terms", label: "Соглашение" },
-            { href: "/feed", label: "Лента" },
           ].map((l) => (
             <Link key={l.href} href={l.href} className="menu-item justify-center">
               {l.label}
