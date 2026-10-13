@@ -4,6 +4,7 @@ import {
   resolvePublicProfile,
 } from "@/lib/public-profile";
 import { getPublicProjectRoles } from "@/lib/public-roles";
+import { listFeedPostsByDiscordId } from "@/lib/feed-posts";
 import { getProfileSettings } from "@/lib/profile-settings";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +23,7 @@ export async function GET(_req: NextRequest, ctx: RouteContext) {
     return NextResponse.json({ ok: false, error: "not_found" }, { status: 404 });
   }
 
-  const [advancements, publicRoles, profileSettings] = await Promise.all([
+  const [advancements, publicRoles, profileSettings, feedPosts] = await Promise.all([
     loadAdvancementsForProfile(profile),
     profile.discordId
       ? getPublicProjectRoles(profile.discordId)
@@ -36,6 +37,9 @@ export async function GET(_req: NextRequest, ctx: RouteContext) {
           bannerUrl: null,
           updatedAt: new Date(0).toISOString(),
         }),
+    profile.discordId
+      ? listFeedPostsByDiscordId(profile.discordId, 20)
+      : Promise.resolve([]),
   ]);
 
   const mcNick = profile.mcNick?.trim() || profile.displayName;
@@ -53,6 +57,19 @@ export async function GET(_req: NextRequest, ctx: RouteContext) {
   }));
 
   const bio = profileSettings.bio?.trim() || "";
+  const posts = feedPosts.map((p) => ({
+    id: p.id,
+    text: p.content,
+    body: p.content,
+    date: p.createdAt,
+    created_at: p.createdAt,
+    media_url: p.mediaUrl ?? "",
+    likes: p.likedBy?.length ?? 0,
+  }));
+  const posts_empty =
+    posts.length > 0
+      ? ""
+      : `${profile.displayName} ещё ничего не публиковал.`;
 
   return NextResponse.json({
     ok: true,
@@ -62,8 +79,8 @@ export async function GET(_req: NextRequest, ctx: RouteContext) {
     avatar_url: profile.avatar,
     stats,
     roles,
-    posts: [],
-    posts_empty: `${profile.displayName} ещё ничего не публиковал.`,
+    posts,
+    posts_empty,
     bio,
     slug: profile.slug,
   });
