@@ -2,17 +2,6 @@
 
 Только для helper/moderator/administrator на сайте.
 
-## Сфера Origins (смена расы)
-
-```
-/minecraft:give <ник> origins:orb_of_origin 1
-```
-
-Предмет: `origins:orb_of_origin` («Сфера происхождения»).  
-Право `/give` обычно только у **admin** (у helper/moderator give снят в LP).
-
-Игрок без прав: магазин «Перерождение» `/shop` или тикет staff.
-
 ## Сфера перепрокачки (сброс навыков)
 
 ```
@@ -25,6 +14,8 @@
 
 - helper: kick, mute, tp, vanish, invsee, fly, reports
 - moderator: + ban/tempban, gm, CoreProtect lookup
-- administrator: LP, give, sonne/sonneplus, сфера Origins, сфера перепрокачки
+- administrator: LP, give, sonne/sonneplus, сфера перепрокачки
 
-Не подсказывай координаты данжей. Не ври, что команды give/orb «нет».
+Origins (расы) с сезона снят — не советуй смену происхождения.
+
+Не подсказывай координаты данжей.

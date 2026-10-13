@@ -53,12 +53,10 @@
 | `/cr book` | Книга кастомных крафтов |
 | `/co i` / inspect | История блока (CoreProtect inspect) |
 | `/dslink` | Привязка Discord ↔ Minecraft |
-| `/origin` | Меню Origin (обычно недоступно после выбора) |
 
 ### Клавиши
 
 * **`K`** — скиллы (Puffish)
-* **`G`** — активная способность Origin (у многих рас)
 * **`V`** — голосовой чат (по умолчанию)
 * **Mouse5** (часто) — пинг по миру; иначе `/pingwheel config`
 * Рации — [гайд](/docs/mods/radio)

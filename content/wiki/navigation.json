@@ -35,7 +35,6 @@
     "items": [
       { "title": "Клиент", "href": "/docs/mods/client-mods" },
       { "title": "Вход и список игроков", "href": "/docs/mods/solarauth-diary" },
-      { "title": "Расы", "href": "/docs/mods/origins" },
       { "title": "Скиллы", "href": "/docs/mods/levelz" },
       { "title": "Квесты", "href": "/docs/mods/questlog" },
       { "title": "Сезоны", "href": "/docs/mods/serene-seasons" },

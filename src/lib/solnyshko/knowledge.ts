@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import {
   shopDurations,
-  shopOriginItem,
   shopPlans,
   shopSkillResetItem,
   formatShopPrice,
@@ -80,6 +79,7 @@ function walkMd(
     }
     if (!entry.name.endsWith(".md")) continue;
     const name = entry.name.replace(/\.md$/, "");
+    if (name === "origins") continue;
     const slug = [...parts, name];
     if (slug[0] === "informaciya" && slug.length === 1) continue;
     const raw = fs.readFileSync(full, "utf8");
@@ -117,8 +117,6 @@ function walkMd(
 function shopChunks(): KnowledgeChunk[] {
   const lines: string[] = [
     "Магазин /shop. Донат без P2W.",
-    `Перерождение: ${shopOriginItem.description} Цена ${formatShopPrice(shopOriginItem.price)}. Покупка на сайте, не /give.`,
-    ...shopOriginItem.privileges.map((p) => `Перерождение: ${p}`),
     `Сфера перепрокачки: ${shopSkillResetItem.description} Цена ${formatShopPrice(shopSkillResetItem.price)}.`,
     ...shopSkillResetItem.privileges.map(
       (p) => `Сфера перепрокачки: ${p}`,
@@ -152,7 +150,7 @@ function coreFacts(): KnowledgeChunk {
     text: [
       "Solar Season 3 PvE, MC Java 1.21.1 Fabric.",
       "Проходка: войти через Discord на сайте, затем подать заявку на /applications. Вики /docs, карта /map, поддержка /support, магазин /shop.",
-      "Скиллы K (Puffish). Origin при входе, активка часто G. Голос V. Меню команд /cd.",
+      "Скиллы K (Puffish). Голос V. Меню команд /cd. Мод Origins (расы) снят с сервера.",
       "Игрок: /bal /pay /report /ask /msg /skin /sit /lay. Discord https://discord.gg/DjmJzUARCy",
     ].join(" "),
     section: "core",
@@ -233,9 +231,6 @@ function tokenize(q: string) {
 }
 
 const BOOST: Record<string, string[]> = {
-  перерожден: ["перерожден", "рас", "origin", "происхожден", "shop", "орб", "rebirth"],
-  орб: ["перерожден", "origin", "рас", "shop"],
-  рас: ["перерожден", "origin", "происхожден", "орб"],
   sonne: ["sonne", "донат", "привилег", "магазин"],
   донат: ["sonne", "магазин", "привилег"],
   проходк: ["заявк", "applications", "discord", "старт"],
@@ -275,7 +270,7 @@ export function searchKnowledge(
       }
       if (
         chunk.section === "shop" &&
-        /магазин|донат|sonne|перерожден|рас|origin/i.test(q)
+        /магазин|донат|sonne|перепрок|скилл/i.test(q)
       ) {
         score += 8;
       }

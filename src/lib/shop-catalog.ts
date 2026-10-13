@@ -76,21 +76,6 @@ export const shopPlans: ShopPlan[] = [
   },
 ];
 
-/** Разовая смена Origins */
-export const shopOriginItem: ShopItem = {
-  id: "rebirth",
-  name: "Перерождение",
-  tagline: "Новая сущность в мире Solar",
-  description:
-    "Один раз перепиши свою природу: выбери другое происхождение и начни сезон с новой силой и слабостями. На геймплей-прогресс и лут не влияет — только твоя раса.",
-  privileges: [
-    "Смена происхождения на любое доступное",
-    "Применяется на твоём аккаунте после активации",
-    "Старое происхождение снимается без штрафа к скиллам",
-  ],
-  price: 249,
-};
-
 /** Разовый сброс всех деревьев Puffish Skills */
 export const shopSkillResetItem: ShopItem = {
   id: "skill-reset",
@@ -106,7 +91,7 @@ export const shopSkillResetItem: ShopItem = {
   price: 199,
 };
 
-export const shopItems: ShopItem[] = [shopOriginItem, shopSkillResetItem];
+export const shopItems: ShopItem[] = [shopSkillResetItem];
 
 export function formatShopPrice(amount: number) {
   return `${amount.toLocaleString("ru-RU")} ₽`;
