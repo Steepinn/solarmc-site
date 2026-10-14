@@ -11,6 +11,7 @@ const FADE_MS = 400;
 
 function readMode(): Mode {
   if (typeof window === "undefined") return "hidden";
+  if (window.location.pathname.startsWith("/launcher")) return "hidden";
   const params = new URLSearchParams(window.location.search);
   const login = params.get("login");
   if (login === "ok") return "login-ok";

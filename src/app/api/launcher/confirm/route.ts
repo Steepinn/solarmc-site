@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getEnrichedSession } from "@/lib/auth";
+import { getEnrichedSession, getPublicOriginFromRequest } from "@/lib/auth";
 import { completeLauncherDevice, failLauncherDevice } from "@/lib/launcher-auth";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +10,7 @@ export const runtime = "nodejs";
  * Сессию сайта не трогает.
  */
 export async function GET(req: NextRequest) {
-  const origin = req.nextUrl.origin;
+  const origin = getPublicOriginFromRequest(req);
   const device = req.nextUrl.searchParams.get("device")?.trim() ?? "";
 
   if (!device || device.length < 8 || device.length > 128) {
