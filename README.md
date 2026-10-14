@@ -25,7 +25,6 @@ npm run dev
 | Суды | `/courts` |
 | Баны | `/bans` |
 | Команда | `/team` |
-| Лента (соцсеть) | `/feed` |
 | Профиль | `/profile` |
 | Discord auth | `/auth/discord` |
 

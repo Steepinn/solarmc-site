@@ -13,20 +13,8 @@ export type FaqHit = {
   sources: { title: string; href: string }[];
 };
 
-const ORIGINS_LIST = `Расы (Origins) на Solar — выбираешь при входе, активка часто на **G**:
-
-• **Human** — без плюсов/минусов
-• **Avian** — птица, планирование, нельзя мясо, спать только высоко
-• **Arachnid** — паук, лазает по стенам, только мясо, меньше HP
-• **Elytrian** — почти всегда на крыльях, без тяжёлой брони
-• **Shulk** — доп. карман, лут не теряется при смерти
-• **Feline** — кот, нет урона от падения, криперы боятся
-• **Enderian** — телепорт, вода жжёт
-• **Merling** — водяной, на суше задыхается
-• **Blazeborn** — огонь ок, вода/снежки вредят
-• **Phantom** — «призрак» сквозь стены, на солнце плохо
-
-Сменить потом: товар «Перерождение» в [магазине](/shop) или сфера у админов. Детали рас — [Origins](/docs/mods/origins)`;
+const ORIGINS_REMOVED =
+  "Мод **Origins (расы)** с сезона **снят** — выбора расы и перерождения больше нет. Качай скиллы на **K**, старт — [как начать](/docs/guides/how-to-start).";
 
 const SONNE = `**SONNE** — префикс ☀, /hat, /wb, 1 пассивный pet, /hide /show, промо, без КД чата и /skin. Без nick, /ec, fly, kits, homes, tpa.
 
@@ -39,12 +27,12 @@ const START = `Короче старт:
 2) Открой [заявки](/applications) и подай заявку там
 3) После одобрения скачай [лаунчер](/launcher) (официалка или TLauncher — разные сборки)
 4) Запускай мир только из [лаунчера](/launcher) — лаунчер сам подставит подключение
-5) Зашёл — выбери Origin, качай скиллы на **K**
+5) Зашёл — качай скиллы на **K**
 
 Карта мира — [карта](/map), вики — [вики](/docs).`;
 
 const PLAYER_CMDS = `Частые команды игрока: **/cd** (меню), /bal /pay, /msg, /report /ask, /skin, /sit /lay, /dslink, /pingwheel config, **/fdguide** (рецепты кухни).
-Скиллы — **K**, Origin-активка часто **G**, голос **V**, пинг часто **Mouse5**.`;
+Скиллы — **K**, голос **V**, пинг часто **Mouse5**.`;
 
 const SKILL_RESET = `**Сфера перепрокачки** сбрасывает сразу все 4 дерева навыков: выживание, бой, добычу и ремесло. Потраченные очки возвращаются, опыт веток и прогресс мира остаются.
 
@@ -82,15 +70,6 @@ const LAUNCHER_GENERAL = `На Solar **две разные** клиентски�
 • **TLauncher** → отдельный zip «TLauncher»
 
 Не путай их. Версия: **Java 1.21.1 Fabric**. После установки — вход только через [лаунчер](/launcher), проходка через [заявки](/applications). Гайд: [как начать](/docs/guides/how-to-start).`;
-
-const ORIGIN_ADVICE = `Имхо, если без заморочек — бери **Human**.
-Хочешь вайб и мобильность — **Elytrian** (небо/Энд) или **Enderian** (телепорт, но вода — боль).
-Океан/рыбалка — однозначно **Merling**.
-Незер и огонь — **Blazeborn**.
-Боишься потерять лут — **Shulk**, имба для осторожных.
-Пауки/пещеры — **Arachnid**.
-
-Активка часто на **G**. Список всех рас могу кинуть отдельно.`;
 
 const SHIPS = `На Solar корабли — мод **Shippy Ships** (это НЕ Small Ships!).
 
@@ -136,9 +115,9 @@ const CRITTERS = `Сейчас звери — **Faunus** и утки/гуси (C
 
 const VINERY = `**Vinery (вино):** 6 ягод в кадку → топчешься → 2 бутылки сока (винные бутылки!). Бродильная бочка: сок слева → ингредиенты + пустая винная бутылка → ~5 мин → выход справа. Shift+ПКМ — слить сок. Пиво/водка — другой мод (Brewery). [гайд](/docs/mods/vinery).`;
 
-const SERVER_BLURB = `Solar Season 3 — ваниль+моды Minecraft 1.21.1 Fabric: Origins, скиллы (K), Questlog, Shippy Ships, Farmers Delight (+аддоны), Vinery, Faunus/утки, рации, пинг, данжи Arise/YUNG, артефакты, эндерит, почта, банкомат, донат SONNE в [магазине](/shop).
+const SERVER_BLURB = `Solar Season 3 — ваниль+моды Minecraft 1.21.1 Fabric: скиллы (K), Questlog, Shippy Ships, Farmers Delight (+аддоны), Vinery, Faunus/утки, рации, пинг, данжи Arise/YUNG, артефакты, эндерит, почта, банкомат, донат SONNE в [магазине](/shop).
 Проходка: [войти через Discord](/api/auth/discord) → подать заявку на [странице заявок](/applications). Вход на сервер — только [лаунчер](/launcher). Вики — [вики](/docs), карта — [карта](/map), онлайн — [статус](/status).
-Я «Солнышко» — помогу по командам, расам, еде, донату. Координаты данжей не сливаю.`;
+Я «Солнышко» — помогу по командам, еде, донату, старту. Координаты данжей не сливаю.`;
 
 export function tryFaqAnswer(question: string): FaqHit | null {
   const q = question.toLowerCase().replace(/ё/g, "е");
@@ -171,46 +150,17 @@ export function tryFaqAnswer(question: string): FaqHit | null {
     };
   }
 
-  // совет по расе (мнение)
   if (
-    /(совет|посовет|рекоменд|лучш|взять|выбрать|выберу).{0,25}(рас[аыуе]|origin|происхожд)/i.test(
+    /орб|сфер(а|у|ы)?\s+происхожд|перерожден|смен.{0,24}рас\w*|расм\w*|origin|происхожд|orb_of_origin/i.test(
       q,
-    ) ||
-    /(рас[аыуе]|origin).{0,20}(совет|посовет|рекоменд|лучш)/i.test(q) ||
-    /какую\s+рас/i.test(q)
+    ) &&
+    !/расскаж/i.test(q)
   ) {
     return {
-      answer: ORIGIN_ADVICE,
-      sources: [{ title: "Origins", href: "/docs/mods/origins" }],
-    };
-  }
-
-  // список рас — НЕ матчить «расскажи» через ^рас
-  if (
-    /(какие|какой|список|перечисл|есть\s+ли).{0,24}(рас[аыуе]?|origin|происхожд)/i.test(
-      q,
-    ) ||
-    /^(рас[аыуе]?|origins?|происхожд)\b/i.test(q.trim()) ||
-    /(рас[аыуе]?|origin|происхожд).{0,15}(какие|есть|список)/i.test(q) ||
-    /какие\s+есть\s+рас/i.test(q)
-  ) {
-    return {
-      answer: ORIGINS_LIST,
-      sources: [{ title: "Origins", href: "/docs/mods/origins" }],
-    };
-  }
-
-  if (
-    /орб|сфер(а|у|ы)?\s+происхожд|перерожден|смен.{0,24}рас\w*|расм\w*|выдач.{0,40}(рас\w*|origin|сфер|орб|предмет)|команд.{0,24}(рас\w*|сфер|орб|origin|происхожд)/i.test(
-      q,
-    )
-  ) {
-    return {
-      answer:
-        "Смена расы: предмет **origins:orb_of_origin** («Сфера происхождения»).\nКоманда админа: `/minecraft:give <ник> origins:orb_of_origin 1`\nИгроку без /give — «Перерождение» в [магазине](/shop) или попроси staff.",
+      answer: ORIGINS_REMOVED,
       sources: [
-        { title: "Магазин", href: "/shop" },
-        { title: "Origins", href: "/docs/mods/origins" },
+        { title: "Скиллы", href: "/docs/mods/levelz" },
+        { title: "Как начать", href: "/docs/guides/how-to-start" },
       ],
     };
   }

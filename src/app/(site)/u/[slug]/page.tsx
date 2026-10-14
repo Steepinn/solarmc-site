@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { ProfileView } from "@/components/profile-view";
 import { getEnrichedSession } from "@/lib/auth";
 import { getLatestUserApplication } from "@/lib/db";
-import { listFeedPostsByDiscordId } from "@/lib/feed-posts";
 import {
   loadAdvancementsForProfile,
   resolvePublicProfile,
@@ -37,7 +36,7 @@ export default async function PublicProfilePage({ params }: Props) {
       session.discordId === profile.discordId,
   );
 
-  const [advancements, application, publicRoles, block, profileSettings, feedPosts] =
+  const [advancements, application, publicRoles, block, profileSettings] =
     await Promise.all([
       loadAdvancementsForProfile(profile),
       isOwner && session
@@ -56,9 +55,6 @@ export default async function PublicProfilePage({ params }: Props) {
             bannerUrl: null,
             updatedAt: new Date(0).toISOString(),
           }),
-      profile.discordId
-        ? listFeedPostsByDiscordId(profile.discordId)
-        : Promise.resolve([]),
     ]);
 
   const statusLabel =
@@ -70,15 +66,6 @@ export default async function PublicProfilePage({ params }: Props) {
           ? "Отклонено"
           : null;
 
-  const profilePosts = feedPosts.map((p) => ({
-    id: p.id,
-    content: p.content,
-    createdAt: p.createdAt,
-    mediaUrl: p.mediaUrl ?? null,
-    mediaType: p.mediaType ?? null,
-    likes: p.likedBy.length,
-  }));
-
   return (
     <ProfileView
       displayName={profile.displayName}
@@ -87,7 +74,6 @@ export default async function PublicProfilePage({ params }: Props) {
       avatar={profile.avatar}
       advancements={advancements}
       profileSettings={profileSettings}
-      profilePosts={profilePosts}
       isOwner={isOwner}
       roles={publicRoles.roles}
       hasWhitelist={publicRoles.hasWhitelist}

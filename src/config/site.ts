@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "SolarMC",
   shortName: "Solar",
   description:
-    "SolarMC Season 3 — Minecraft 1.21.1 с PvE-данжами, боссами, Origins и скиллами. Выживание, города и совместный геймплей.",
+    "SolarMC Season 3 — Minecraft 1.21.1 с PvE-данжами, боссами и скиллами. Выживание, города и совместный геймплей.",
   themeColor: "#fff200",
   links: {
     discord: "https://discord.gg/DjmJzUARCy",
@@ -31,7 +31,6 @@ export const mainNav: NavItem[] = [
   { label: "Статус", href: "/status" },
   { label: "Магазин", href: "/shop" },
   { label: "Города", href: "/cities" },
-  { label: "Соцсеть", href: "/social" },
   { label: "Ивенты", href: "/events" },
   { label: "Суды", href: "/courts" },
   { label: "Заявки", href: "/applications" },
@@ -42,13 +41,11 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   navigation: [
     { label: "Вики", href: "/docs/informaciya/home" },
-    { label: "Соцсеть", href: "/social" },
     { label: "Города", href: "/cities" },
     { label: "Ивенты", href: "/events" },
     { label: "Команда", href: "/team" },
   ],
   sections: [
-    { label: "Лента", href: "/feed" },
     { label: "Магазин", href: "/shop" },
     { label: "Заявки", href: "/applications" },
     { label: "Техподдержка", href: "/support" },
@@ -103,12 +100,6 @@ export const homeLinks = [
     icon: "wiki" as const,
   },
   {
-    title: "Соцсеть",
-    description: "Лента, профили игроков, города и ивенты — сообщество Solar.",
-    href: "/social",
-    icon: "wiki" as const,
-  },
-  {
     title: "Карта",
     description:
       "Онлайн-карта мира со спавном, городами и интересными точками.",
@@ -152,7 +143,6 @@ export const searchItems = [
   { title: "Эмоции", href: "/docs/mods/emotecraft", group: "Вики" },
   { title: "Общие схемы", href: "/docs/mods/syncmatica", group: "Вики" },
   { title: "Вход и список игроков", href: "/docs/mods/solarauth-diary", group: "Вики" },
-  { title: "Расы", href: "/docs/mods/origins", group: "Вики" },
   { title: "Скиллы", href: "/docs/mods/levelz", group: "Вики" },
   { title: "Сезоны", href: "/docs/mods/serene-seasons", group: "Вики" },
   { title: "Кухня", href: "/docs/mods/farmers-delight", group: "Вики" },
@@ -172,15 +162,12 @@ export const searchItems = [
     group: "Вики",
   },
   { title: "Полезные команды", href: "/docs/server-content/poleznye-komandy-dlya-igrokov", group: "Вики" },
-  { title: "Социальная сеть", href: "/social", group: "Соцсеть" },
-  { title: "Лента", href: "/feed", group: "Соцсеть" },
   { title: "Города", href: "/cities", group: "Разделы" },
   { title: "Ивенты", href: "/events", group: "Разделы" },
   { title: "Лаунчер", href: "/launcher", group: "Сервер" },
   { title: "Статус сервера", href: "/status", group: "Сервер" },
   { title: "Онлайн карта", href: "/map", group: "Сервер" },
   { title: "Магазин", href: "/shop", group: "Магазин" },
-  { title: "Лента", href: "/feed", group: "Соцсеть" },
   { title: "Профиль", href: "/profile", group: "Аккаунт" },
   { title: "Заявки на проходку", href: "/applications", group: "Аккаунт" },
   { title: "Техподдержка", href: "/support", group: "Аккаунт" },
