@@ -88,6 +88,24 @@ export async function clearSessionCookie() {
   cookieStore.delete(SESSION_COOKIE);
 }
 
+function isLocalDevHost(hostWithPort: string) {
+  const host = hostWithPort.split(":")[0]?.replace(/^\[|\]$/g, "").toLowerCase();
+  return host === "localhost" || host === "127.0.0.1" || host === "::1";
+}
+
+/** Локальный dev почти всегда без TLS — https://localhost даёт ERR_SSL_PROTOCOL_ERROR в браузере. */
+export function normalizePublicOrigin(origin: string): string {
+  try {
+    const u = new URL(origin);
+    if (isLocalDevHost(u.host)) {
+      u.protocol = "http:";
+    }
+    return u.origin.replace(/\/$/, "");
+  } catch {
+    return origin.replace(/\/$/, "");
+  }
+}
+
 /** Origin за reverse-proxy (Render/Vercel): https + реальный host. */
 export function buildPublicOrigin(
   host: string | null | undefined,
@@ -95,12 +113,13 @@ export function buildPublicOrigin(
   fallbackOrigin: string,
 ): string {
   const h = host?.split(",")[0]?.trim();
-  if (!h) return fallbackOrigin.replace(/\/$/, "");
+  if (!h) return normalizePublicOrigin(fallbackOrigin);
   let p = proto?.split(",")[0]?.trim();
   if (!p) {
-    p = h.includes("localhost") || h.startsWith("127.") ? "http" : "https";
+    p = isLocalDevHost(h) ? "http" : "https";
   }
-  return `${p}://${h}`.replace(/\/$/, "");
+  if (isLocalDevHost(h)) p = "http";
+  return normalizePublicOrigin(`${p}://${h}`);
 }
 
 export function getPublicOriginFromRequest(req: {
