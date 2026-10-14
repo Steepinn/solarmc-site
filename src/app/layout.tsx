@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Nunito, Pixelify_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteSplash } from "@/components/site-splash";
+import {
+  SPLASH_BOOTSTRAP_SCRIPT,
+  SplashBootstrapShell,
+} from "@/components/splash-bootstrap";
 import { CursorTrail } from "@/components/cursor-trail";
 import { CookieConsent } from "@/components/cookie-consent";
 import { siteConfig } from "@/config/site";
@@ -46,9 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: SPLASH_BOOTSTRAP_SCRIPT }} />
+      </head>
       <body
         className={`${fontPixel.variable} ${fontSans.variable} bg-background font-sans text-foreground`}
       >
+        <SplashBootstrapShell />
         <SiteSplash />
         <ThemeProvider>
           <CursorTrail />
