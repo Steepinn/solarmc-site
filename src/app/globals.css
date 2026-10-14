@@ -1378,6 +1378,21 @@ summary {
   box-shadow: var(--neon-glow);
 }
 
+/* До гидрации React: скрипт в <head> вешает splash-pending */
+html.splash-pending .site-shell,
+html.splash-pending .cookie-consent {
+  visibility: hidden !important;
+}
+
+html.splash-pending #splash-bootstrap {
+  display: grid;
+}
+
+#splash-bootstrap.site-splash--bootstrapped {
+  display: none;
+  z-index: 99;
+}
+
 .site-splash {
   position: fixed;
   inset: 0;

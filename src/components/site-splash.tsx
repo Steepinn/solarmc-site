@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLayoutEffect, useRef, useState } from "react";
+import { clearSplashBootstrap } from "@/components/splash-bootstrap";
 
 type Mode = "boot" | "login-ok" | "login-fail" | "hidden";
 
@@ -46,11 +47,13 @@ export function SiteSplash() {
     const m = readMode();
     setMode(m);
     if (m === "hidden") {
+      clearSplashBootstrap();
       setPhase("done");
       return;
     }
 
     setPhase("show");
+    requestAnimationFrame(() => clearSplashBootstrap());
     if (m === "boot") {
       sessionStorage.setItem("solar-splash-seen", "1");
     }
@@ -76,7 +79,10 @@ export function SiteSplash() {
       window.setTimeout(() => {
         setPhase("leave");
         clearLoginParam();
-        window.setTimeout(() => setPhase("done"), FADE_MS);
+        window.setTimeout(() => {
+          setPhase("done");
+          clearSplashBootstrap();
+        }, FADE_MS);
       }, 80);
     };
 
