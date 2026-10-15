@@ -3,7 +3,7 @@
 {% hint style="info" %}
 Виды наказаний\
 1\. <mark style="color:$danger;">Mute</mark> - блокировка текстового чата в игре или дискорде.\
-2\. <mark style="color:$danger;">Wortex</mark> - тюрьма, в которой надо прожить какое то количество времени (при выходе время срока  останавливается).\
+2\. <mark style="color:$danger;">Light ban (лайт-бан)</mark> — ограниченный режим на срок (при выходе с сервера срок, как правило, останавливается).\
 3\. <mark style="color:$danger;">Ban</mark> - блокировка аккаунта на определённый срок.\
 4\. <mark style="color:$danger;">Hardban</mark> - блокировка аккаунта навсегда.
 {% endhint %}
@@ -20,11 +20,11 @@
 
 1.4 Администрация сама выбирает наказание в рамках правил.
 
-1.5 Запрещено мешать работе администрации. <mark style="color:$danger;">\[wortex 30m / ban 1d]</mark>
+1.5 Запрещено мешать работе администрации. <mark style="color:$danger;">\[lightban 30m / ban 1d]</mark>
 
-1.6 Запрещено обманывать администрацию. <mark style="color:$danger;">\[wortex 1h / ban 3d]</mark>
+1.6 Запрещено обманывать администрацию. <mark style="color:$danger;">\[lightban 1h / ban 3d]</mark>
 
-1.7 Запрещено неуважение к администрации. <mark style="color:$danger;">\[wortex 30m]</mark>
+1.7 Запрещено неуважение к администрации. <mark style="color:$danger;">\[lightban 30m]</mark>
 
 1.8 Запрещено злоупотребление правами администрации. <mark style="color:$danger;">\[hardban]</mark>
 
@@ -34,19 +34,19 @@
 
 ## **2. Игровой процесс**
 
-**2.1** Гриф и его любая форма. <mark style="color:$danger;">\[wortex 1h / ban 3d / ban 7d]</mark>\
+**2.1** Гриф и его любая форма. <mark style="color:$danger;">\[lightban 1h / ban 3d / ban 7d]</mark>\
 \&#xNAN;*<mark style="color:yellow;">Доп. - к грифу относится кража, ломание или изменение построек, убийства (см п. 2.3)</mark>*
 
-2.2 Убийства вне PvP зоны или без договорённости. <mark style="color:$danger;">\[wortex 1h / ban 3d]</mark>\
+2.2 Убийства вне PvP зоны или без договорённости. <mark style="color:$danger;">\[lightban 1h / ban 3d]</mark>\
 \&#xNAN;*<mark style="color:yellow;">Исключение: разрешено убийство при обоюдном согласии или в PvP зоне.</mark>*
 
-2.3 Урон без причины. <mark style="color:$danger;">\[wortex 15m /</mark> <mark style="color:$danger;">wortex 30m / ban 1d]</mark>
+2.3 Урон без причины. <mark style="color:$danger;">\[lightban 15m /</mark> <mark style="color:$danger;">lightban 30m / ban 1d]</mark>
 
-2.4 Использование чужих ферм и механизмов без разрешения. <mark style="color:$danger;">\[wortex 1h /</mark> <mark style="color:$danger;">ban 1d]</mark>
+2.4 Использование чужих ферм и механизмов без разрешения. <mark style="color:$danger;">\[lightban 1h /</mark> <mark style="color:$danger;">ban 1d]</mark>
 
-2.5 Спам предметами, влияющими на мир (перлы, яйца, снежки). <mark style="color:$danger;">\[wortex 30m]</mark>
+2.5 Спам предметами, влияющими на мир (перлы, яйца, снежки). <mark style="color:$danger;">\[lightban 30m]</mark>
 
-2.6 Помеха игрокам (спам атаками, поджоги, подставы, спам звуками). <mark style="color:$danger;">\[wortex 30m / ban 1d]</mark>
+2.6 Помеха игрокам (спам атаками, поджоги, подставы, спам звуками). <mark style="color:$danger;">\[lightban 30m / ban 1d]</mark>
 
 2.7 Дюп ресурсов (кроме разрешённых механик). <mark style="color:$danger;">\[ban 7d / hardban]</mark>
 
@@ -68,7 +68,7 @@
 
 ## **3. Чат**
 
-3.1 Флуд и капс. <mark style="color:$danger;">\[wortex 30m]</mark>
+3.1 Флуд и капс. <mark style="color:$danger;">\[lightban 30m]</mark>
 
 3.2 Оскорбления любого типа. <mark style="color:$danger;">\[mute 1h / mute 6h]</mark>\
 \&#xNAN;*<mark style="color:yellow;">Доп. - использование запрещённых слов, также карается. Просмотрите</mark>* [*<mark style="color:yellow;">список таких слов!</mark>*](https://mcsolar.gitbook.io/solar/~/revisions/wunAxW0cQG5nxTEpvuk1/informaciya/rules/zapreshennye-slova)
@@ -105,11 +105,11 @@
 
 4.7 Захват неактивной территории разрешен, если владелец не заходил на сервер больше *<mark style="color:yellow;">30ти дней</mark>*. <mark style="color:$danger;">\[ban 1d при нарушении условий]</mark>
 
-<mark style="color:$warning;">4.8 Если постройка не является общественной, или она закрыта, то вход внутрь строго запрещен. (даже если просто дверь, которая закрыта).</mark> <mark style="color:$danger;">\[warn /</mark> <mark style="color:$danger;">wortex / ban]</mark>
+<mark style="color:$warning;">4.8 Если постройка не является общественной, или она закрыта, то вход внутрь строго запрещен. (даже если просто дверь, которая закрыта).</mark> <mark style="color:$danger;">\[warn /</mark> <mark style="color:$danger;">lightban / ban]</mark>
 
 4.9 Перегруз территории (мобы, сущности.). <mark style="color:$danger;">\[warn /</mark> <mark style="color:$danger;">снос постройки / ban]</mark>
 
-4.10 Вандализм (столбы, дыры, обрубки деревьев, спам блоков). <mark style="color:$danger;">\[warn /</mark> <mark style="color:$danger;">wortex 15m /</mark> <mark style="color:$danger;">ban 1d]</mark>
+4.10 Вандализм (столбы, дыры, обрубки деревьев, спам блоков). <mark style="color:$danger;">\[warn /</mark> <mark style="color:$danger;">lightban 15m /</mark> <mark style="color:$danger;">ban 1d]</mark>
 
 ***
 

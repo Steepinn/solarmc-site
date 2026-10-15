@@ -26,7 +26,7 @@
 
 ### <mark style="color:$success;">Обязательная сборка Season 3</mark>
 
-Клиентские моды сервера (Origins, Puffish Skills, Tide, Farmers Delight, WDA, YUNG, BOMD, SolarAuth, SolarDiary и зависимости) — **обязательны**. Список и установка: [клиентские моды](/docs/mods/client-mods).
+Клиентские моды сервера (Puffish Skills, Tide, Farmers Delight, WDA, YUNG, BOMD, SolarAuth, SolarDiary и зависимости) — **обязательны**. Список и установка: [клиентские моды](/docs/mods/client-mods).
 
 ### <mark style="color:$success;">Разрешено</mark> использовать дополнительно
 

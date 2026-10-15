@@ -5,6 +5,7 @@ import {
   FormEvent,
   type ReactNode,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -380,13 +381,14 @@ export function SolnyshkoChat() {
     if (el) el.scrollTop = el.scrollHeight;
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const stored = loadStoredMessages();
     setMessages(stored ?? [pickWelcome()]);
   }, []);
 
   useEffect(() => {
-    if (messages.length > 0) saveMessages(messages);
+    if (messages.length === 0) return;
+    saveMessages(messages);
   }, [messages]);
 
   // При открытии не подкидывать новое «привет», если чат уже живой

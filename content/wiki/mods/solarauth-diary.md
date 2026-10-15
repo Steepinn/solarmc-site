@@ -19,4 +19,4 @@
 
 ## Совет
 
-Сначала пароль и раса, потом [квесты](/docs/mods/questlog) и [скиллы](/docs/mods/levelz).
+Сначала пароль и вход, потом [квесты](/docs/mods/questlog) и [скиллы](/docs/mods/levelz).

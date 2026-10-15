@@ -8,7 +8,7 @@
 * [ ] У sonneplus `pet.amount.1`, **нет** `pet.amount.2`
 * [ ] Обновить [/shop](/shop) (`shop-catalog.ts`) и публичный [донат](/docs/informaciya/donat)
 * [ ] Datapack скиллов `solar_skills`, ачивки `solar_achievements`
-* [ ] Origins политика + товар Перерождение
+* [x] Origins снят — в вики и [магазине](/shop) нет рас и «Перерождения»
 * [ ] Questlog главы / квесты актуальны
 * [ ] Discord: проходка, репорты; сайт: заявки открыты
 
