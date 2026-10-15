@@ -57,7 +57,7 @@
 
 ### Это ванилла?
 
-Почти: ванильный геймплей + расы, скиллы, сезоны, кухня с аддонами, [виноградник](/docs/mods/vinery), рыбалка, [звери](/docs/mods/zveri) (Faunus + утки), данжи, боссы, [артефакты](/docs/mods/artefakty), [эндерит](/docs/mods/enderit), [почта](/docs/mods/pochta), [банкомат](/docs/mods/dengi), [рации](/docs/mods/radio), [пинг](/docs/mods/ping). Vanilla-прогресс (алмазы, Энд) никуда не делся.
+Почти: ванильный геймплей + скиллы, сезоны, кухня с аддонами, [виноградник](/docs/mods/vinery), рыбалка, [звери](/docs/mods/zveri) (Faunus + утки), данжи, боссы, [артефакты](/docs/mods/artefakty), [эндерит](/docs/mods/enderit), [почта](/docs/mods/pochta), [банкомат](/docs/mods/dengi), [рации](/docs/mods/radio), [пинг](/docs/mods/ping). Vanilla-прогресс (алмазы, Энд) никуда не делся.
 
 ### Как говорить на расстоянии / ткнуть точку?
 
