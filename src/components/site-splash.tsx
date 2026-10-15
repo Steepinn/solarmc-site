@@ -29,21 +29,15 @@ function clearLoginParam() {
 }
 
 export function SiteSplash() {
-  // Сразу показываем boot на клиенте — без кадра «пустого» экрана
-  const [mode, setMode] = useState<Mode>(() =>
-    typeof window === "undefined" ? "hidden" : readMode(),
-  );
-  const [phase, setPhase] = useState<"show" | "leave" | "done">(() =>
-    typeof window === "undefined"
-      ? "done"
-      : readMode() === "hidden"
-        ? "done"
-        : "show",
-  );
+  /** SSR и 1-й клиентский кадр — null (bootstrap в layout). Без mismatch с сервером. */
+  const [hydrated, setHydrated] = useState(false);
+  const [mode, setMode] = useState<Mode>("hidden");
+  const [phase, setPhase] = useState<"show" | "leave" | "done">("done");
   const [progress, setProgress] = useState(0);
   const doneRef = useRef(false);
 
   useLayoutEffect(() => {
+    setHydrated(true);
     const m = readMode();
     setMode(m);
     if (m === "hidden") {
@@ -53,7 +47,7 @@ export function SiteSplash() {
     }
 
     setPhase("show");
-    requestAnimationFrame(() => clearSplashBootstrap());
+    clearSplashBootstrap();
     if (m === "boot") {
       sessionStorage.setItem("solar-splash-seen", "1");
     }
@@ -90,7 +84,7 @@ export function SiteSplash() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  if (phase === "done" || mode === "hidden") return null;
+  if (!hydrated || phase === "done" || mode === "hidden") return null;
 
   const title =
     mode === "login-ok"

@@ -22,6 +22,7 @@ export function SplashBootstrapShell() {
       id="splash-bootstrap"
       className="site-splash site-splash--bootstrapped"
       aria-hidden="true"
+      suppressHydrationWarning
     >
       <div className="site-splash__bg" aria-hidden>
         <span className="site-splash__orb site-splash__orb--a" />
@@ -46,8 +47,9 @@ export function SplashBootstrapShell() {
   );
 }
 
+/** Только снимаем класс — DOM не трогаем, иначе ломается гидрация React. */
 export function clearSplashBootstrap() {
   if (typeof document === "undefined") return;
   document.documentElement.classList.remove("splash-pending");
-  document.getElementById("splash-bootstrap")?.remove();
+  document.documentElement.classList.add("splash-handoff");
 }

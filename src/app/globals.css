@@ -1391,6 +1391,11 @@ html.splash-pending #splash-bootstrap {
 #splash-bootstrap.site-splash--bootstrapped {
   display: none;
   z-index: 99;
+  pointer-events: none;
+}
+
+html.splash-handoff #splash-bootstrap {
+  display: none !important;
 }
 
 .site-splash {
