@@ -105,7 +105,7 @@ export function NotificationsBell() {
       </button>
 
       {open ? (
-        <div className="absolute end-0 top-[calc(100%+8px)] z-[60] w-[min(92vw,360px)] overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+        <div className="solar-notifications-panel absolute end-0 top-[calc(100%+8px)] z-[60] w-[min(92vw,360px)] overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
           <div className="flex items-center justify-between border-b border-border px-4 py-3">
             <p className="font-display text-sm font-bold">Уведомления</p>
             <button

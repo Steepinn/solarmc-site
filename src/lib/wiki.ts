@@ -56,7 +56,7 @@ export function getWikiNavigation(): WikiNavSection[] {
 export const wikiNavigation = getWikiNavigation();
 
 export function preprocessWikiMarkdown(raw: string): string {
-  let md = raw;
+  let md = raw.replace(/\r\n?/g, "\n");
 
   md = md.replace(
     /\{%\s*hint\s+style="(\w+)"[^%]*%\}([\s\S]*?)\{%\s*endhint\s*%\}/g,
@@ -126,7 +126,7 @@ export function extractHeadings(content: string): WikiHeading[] {
   const headings: WikiHeading[] = [];
   const seen = new Map<string, number>();
   // Считаем h2–h4 в том же порядке, что WikiContent, в TOC только h2–h3
-  for (const line of content.split("\n")) {
+  for (const line of content.replace(/\r\n?/g, "\n").split("\n")) {
     const match = line.match(/^(#{2,4})\s+(.+)$/);
     if (!match) continue;
     const level = match[1].length;
@@ -140,7 +140,9 @@ export function extractHeadings(content: string): WikiHeading[] {
 }
 
 export function getWikiPage(slug: string[]): WikiPage | null {
-  const filePath = path.join(WIKI_ROOT, ...slug) + ".md";
+  if (!slug.length || slug.some(part => !part || part === "." || part === ".." || /[\\/\0]/.test(part))) return null;
+  const filePath = path.resolve(WIKI_ROOT, ...slug) + ".md";
+  if (!filePath.startsWith(WIKI_ROOT + path.sep)) return null;
   if (!fs.existsSync(filePath)) return null;
 
   const raw = fs.readFileSync(filePath, "utf8");

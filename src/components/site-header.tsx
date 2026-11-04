@@ -83,12 +83,13 @@ export function SiteHeader() {
             className="brand-face size-10"
             priority
           />
+          <span className="solar-header-wordmark">solar<span className="text-solar-gold">.</span></span>
         </Link>
 
         <Link
           href="/launcher"
           className={cn(
-            "pressable inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors hover:bg-accent",
+            "solar-header-launcher pressable inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors hover:bg-accent",
             pathname.startsWith("/launcher") && "bg-accent text-solar-gold neon-glow",
           )}
           aria-label="Скачать лаунчер"
@@ -97,6 +98,9 @@ export function SiteHeader() {
           <span className="hidden sm:inline">Лаунчер</span>
         </Link>
 
+        <nav className="solar-desktop-nav" aria-label="Основные разделы">
+          {[{ href: "/docs/informaciya/home", label: "Вики" }, { href: "/map", label: "Карта" }, { href: "/cities", label: "Города" }, { href: "/shop", label: "Магазин" }, { href: "/status", label: "Статус" }].map(item => <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</Link>)}
+        </nav>
         <div className="ms-auto flex items-center gap-1">
           <NotificationsBell />
           <SoundToggle />

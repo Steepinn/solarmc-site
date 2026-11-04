@@ -67,6 +67,7 @@ function WikiTreeItem({
       <div className="flex items-center gap-0.5">
         <Link
           href={item.href}
+          aria-current={active ? "page" : undefined}
           className={cn(
             "wiki-nav-link min-w-0 flex-1 rounded-xl px-2.5 py-2 text-[0.875rem] leading-snug outline-none",
             depth > 0 && "text-[0.8125rem]",
@@ -80,6 +81,7 @@ function WikiTreeItem({
         {item.children.length > 0 && (
           <button
             type="button"
+            aria-expanded={open}
             aria-label={open ? "Свернуть" : "Развернуть"}
             className="wiki-nav-btn inline-flex size-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground outline-none hover:bg-accent hover:text-foreground"
             onClick={() => setOpen((v) => !v)}
@@ -160,6 +162,12 @@ function WikiNavPanel({
   navigation: WikiNavSection[];
   pathname: string;
 }) {
+  const [query, setQuery] = useState("");
+  const filteredNavigation = useMemo(() => {
+    const value = query.trim().toLocaleLowerCase("ru");
+    if (!value) return navigation;
+    return navigation.map(section => ({ ...section, items: section.items.filter(item => `${section.title} ${item.title}`.toLocaleLowerCase("ru").includes(value)) })).filter(section => section.items.length > 0);
+  }, [navigation, query]);
   const activeTitle =
     navigation.find((s) => sectionHasActive(s, pathname))?.title ?? null;
 
@@ -179,16 +187,18 @@ function WikiNavPanel({
         </p>
         <p className="mt-0.5 text-xs text-muted-foreground">Разделы и гайды</p>
       </div>
+      <input type="search" className="wiki-search" aria-label="Поиск разделов вики" placeholder="Найти в вики…" value={query} onChange={event => setQuery(event.target.value)} />
       <div
         className="wiki-nav-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain pt-2"
         onWheel={(e) => e.stopPropagation()}
       >
-        {navigation.map((section) => (
+        {filteredNavigation.length === 0 && <p role="status" className="wiki-search-empty">Ничего не найдено. Попробуйте другой запрос.</p>}
+        {filteredNavigation.map((section) => (
           <WikiSection
             key={section.title}
             section={section}
             pathname={pathname}
-            open={openTitle === section.title}
+            open={query.trim().length > 0 || openTitle === section.title}
             onToggle={() =>
               setOpenTitle((prev) =>
                 prev === section.title ? null : section.title,

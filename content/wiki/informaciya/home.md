@@ -51,3 +51,13 @@
 * [Частые вопросы](/docs/informaciya/faq)
 * В игре: `/ask` · `/report`
 * [Техподдержка](/support)
+
+
+## Обновления Solar
+
+- [Меню Solar, игроки и репутация](/docs/mods/solar-hub)
+- [Гардероб, плащи и Solar Points](/docs/mods/solar-cosmetics)
+- [Отдых и восстановление здоровья](/docs/mods/solar-rest)
+- [Новые зачарования](/docs/mods/incantationem)
+- [Мир, животные и новые взаимодействия](/docs/mods/world-additions)
+- [Полный состав серверной сборки и изменения](/docs/mods/server-build)

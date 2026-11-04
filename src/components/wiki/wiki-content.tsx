@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import { slugifyHeading, uniqueHeadingId } from "@/lib/wiki";
 import { cn } from "@/lib/utils";
@@ -31,7 +32,7 @@ export function WikiContent({ content }: { content: string }) {
     <article className="wiki-prose">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[rehypeRaw, [rehypeSanitize, { ...defaultSchema, attributes: { ...defaultSchema.attributes, "*": [...(defaultSchema.attributes?.["*"] ?? []), "className"] } }]]}
         components={{
           h2: ({ children }) => {
             const id = headingId(children);

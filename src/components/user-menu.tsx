@@ -33,7 +33,7 @@ export function UserMenu() {
 
   if (!user) {
     return (
-      <Link href="/api/auth/discord" className="btn-discord">
+      <Link href="/api/auth/discord" className="btn-discord" aria-label="Войти через Discord">
         <DiscordIcon />
         <span className="hidden sm:inline">Войти</span>
       </Link>
@@ -45,7 +45,8 @@ export function UserMenu() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex min-h-11 items-center gap-2 rounded-xl border border-border bg-card/80 px-2.5 py-1.5 transition-colors hover:bg-accent"
+        aria-label="Меню профиля"
+        className="solar-profile-button flex min-h-11 items-center gap-2 rounded-xl border border-border bg-card/80 px-2.5 py-1.5 transition-colors hover:bg-accent"
         aria-expanded={open}
         aria-haspopup="menu"
       >

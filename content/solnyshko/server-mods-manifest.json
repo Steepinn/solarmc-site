@@ -1,6 +1,6 @@
 {
-  "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\mods",
-  "updated": "2026-10-10",
+  "source": "mods",
+  "updated": "2026-11-04",
   "note": "Активные jar на сервере (без .prev/.old/.disabled).",
   "mods": [
     {
@@ -16,8 +16,8 @@
       "id": "another-furniture-fabric-4-0-2"
     },
     {
-      "file": "appleskin-fabric-mc1.21-3.0.6.jar",
-      "id": "appleskin-fabric-mc1-21-3-0-6"
+      "file": "antixray-fabric-1.4.8+1.21.1.jar",
+      "id": "antixray-fabric-1-4-8-1-21-1"
     },
     {
       "file": "architectury-13.0.11-fabric.jar",
@@ -44,12 +44,24 @@
       "id": "cardinal-components-api-6-1-3"
     },
     {
+      "file": "CinematicInteraction-0.1-Fabric-1.21.1.jar",
+      "id": "cinematicinteraction-0-1-fabric-1-21-1"
+    },
+    {
       "file": "cloth-config-15.0.140-fabric.jar",
       "id": "cloth-config-15-0-140-fabric"
     },
     {
+      "file": "Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "id": "clumps-fabric-1-21-1-19-0-0-1"
+    },
+    {
       "file": "common-networking-fabric-1.0.21-1.21.1.jar",
       "id": "common-networking-fabric-1-0-21-1-21-1"
+    },
+    {
+      "file": "connectiblechains-2.5.7+1.21.1.jar",
+      "id": "connectiblechains-2-5-7-1-21-1"
     },
     {
       "file": "CreativeCore_FABRIC_v2.13.39_mc1.21.1.jar",
@@ -80,8 +92,8 @@
       "id": "envelope-fabric-1-21-1-0-7-4"
     },
     {
-      "file": "fabric-api-0.116.14+1.21.1.jar",
-      "id": "fabric-api-0-116-14-1-21-1"
+      "file": "fabric-api-0.116.17+1.21.1.jar",
+      "id": "fabric-api-0-116-17-1-21-1"
     },
     {
       "file": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
@@ -94,6 +106,14 @@
     {
       "file": "faunus-1.0.5.jar",
       "id": "faunus-1-0-5"
+    },
+    {
+      "file": "ferritecore-7.0.3-fabric.jar",
+      "id": "ferritecore-7-0-3-fabric"
+    },
+    {
+      "file": "fishingreal-fabric-1.21.1-1.9.1.jar",
+      "id": "fishingreal-fabric-1-21-1-1-9-1"
     },
     {
       "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
@@ -110,6 +130,14 @@
     {
       "file": "GoodEnding-1.21.1-1.1.0-Fabric.jar",
       "id": "goodending-1-21-1-1-1-0-fabric"
+    },
+    {
+      "file": "Incantationem-2.0.3+1.21.jar",
+      "id": "incantationem-2-0-3-1-21"
+    },
+    {
+      "file": "IronChests-2.0.4.jar",
+      "id": "ironchests-2-0-4"
     },
     {
       "file": "krypton-0.2.8.jar",
@@ -132,6 +160,10 @@
       "id": "lithium-fabric-0-15-4-mc1-21-1"
     },
     {
+      "file": "midnightlib-fabric-1.10.0+1.21.1.jar",
+      "id": "midnightlib-fabric-1-10-0-1-21-1"
+    },
+    {
       "file": "moonlight-fabric-1.21.1-3.0.22.jar",
       "id": "moonlight-fabric-1-21-1-3-0-22"
     },
@@ -152,6 +184,10 @@
       "id": "onceuponastroll-fabric-1-21-1-1-10-0"
     },
     {
+      "file": "PassiveSkillTree-Fabric-1.21.1-0.7.6+c-solar-arclight.jar",
+      "id": "passiveskilltree-fabric-1-21-1-0-7-6-c-solar-arclight"
+    },
+    {
       "file": "Ping-Wheel-1.12.2-fabric-1.21.1.jar",
       "id": "ping-wheel-1-12-2-fabric-1-21-1"
     },
@@ -164,20 +200,12 @@
       "id": "prickle-fabric-1-21-1-21-1-11"
     },
     {
-      "file": "puffish_skills-0.19.1-1.21-fabric.jar",
-      "id": "puffish-skills-0-19-1-1-21-fabric"
-    },
-    {
       "file": "pumpkin_pie_delight-1.0.2+1.21.jar",
       "id": "pumpkin-pie-delight-1-0-2-1-21"
     },
     {
-      "file": "questlog-fabric-1.21.1-3.3.0.jar",
-      "id": "questlog-fabric-1-21-1-3-3-0"
-    },
-    {
-      "file": "QuickSkin-1.21.1-2.6.2.4.jar",
-      "id": "quickskin-1-21-1-2-6-2-4"
+      "file": "Quick Skin - Fabric - 1.21.1-4.0.0.jar",
+      "id": "quick-skin-fabric-1-21-1-4-0-0"
     },
     {
       "file": "ranged_weapon_api-fabric-2.3.3+1.21.1.jar",
@@ -186,6 +214,10 @@
     {
       "file": "resourcefulconfig-fabric-1.21-3.0.11.jar",
       "id": "resourcefulconfig-fabric-1-21-3-0-11"
+    },
+    {
+      "file": "resourcefullib-fabric-1.21-3.0.12.jar",
+      "id": "resourcefullib-fabric-1-21-3-0-12"
     },
     {
       "file": "SereneSeasons-fabric-1.21.1-10.1.0.1.jar",
@@ -204,28 +236,56 @@
       "id": "smartbrainlib-fabric-1-21-1-1-16-11"
     },
     {
-      "file": "solar_ui_ru-1.0.11.jar",
-      "id": "solar-ui-ru-1-0-11"
+      "file": "solar_ui_ru-1.0.24.jar",
+      "id": "solar-ui-ru-1-0-24"
     },
     {
-      "file": "solarauth-1.0.19.jar",
-      "id": "solarauth-1-0-19"
+      "file": "solar-bumblezone-7.16.0-1.21.1-fabric.jar",
+      "id": "solar-bumblezone-7-16-0-1-21-1-fabric"
     },
     {
-      "file": "solardiary-1.3.1.jar",
-      "id": "solardiary-1-3-1"
+      "file": "solarauth-1.1.0.jar",
+      "id": "solarauth-1-1-0"
+    },
+    {
+      "file": "solarbrbcompat-1.0.6.jar",
+      "id": "solarbrbcompat-1-0-6"
+    },
+    {
+      "file": "solarcosmetics-1.4.7.jar",
+      "id": "solarcosmetics-1-4-7"
+    },
+    {
+      "file": "solardiary-1.3.10.jar",
+      "id": "solardiary-1-3-10"
+    },
+    {
+      "file": "solardiary-1.3.9.jar",
+      "id": "solardiary-1-3-9"
+    },
+    {
+      "file": "solarhub-1.4.9.jar",
+      "id": "solarhub-1-4-9"
     },
     {
       "file": "solartideocean-1.0.1.jar",
       "id": "solartideocean-1-0-1"
     },
     {
+      "file": "spark-1.10.109-fabric.jar",
+      "id": "spark-1-10-109-fabric"
+    },
+    {
+      "file": "structure_layout_optimizer-fabric-1.0.12.jar",
+      "id": "structure-layout-optimizer-fabric-1-0-12"
+    },
+    {
       "file": "syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
       "id": "syncmatica-fabric-1-21-0-3-14-sakura-5"
     },
     {
-      "file": "tide-fabric-1.21.1-2.1.jar",
-      "id": "tide-fabric-1-21-1-2-1"
+      "file": "tide-fabric-1.21.1-2.1.1.jar",
+      "id": "tide-fabric-1-21-1-2-1-1"
     },
     {
       "file": "trinkets-3.10.0.jar",
@@ -254,10 +314,6 @@
     {
       "file": "watervision-FB-mc1.21.1-v0.1.0-alpha.jar",
       "id": "watervision-fb-mc1-21-1-v0-1-0-alpha"
-    },
-    {
-      "file": "webcam-fabric-4.4.0-1.21.1.jar",
-      "id": "webcam-fabric-4-4-0-1-21-1"
     },
     {
       "file": "wiretap-1.3.0+1.21.1.fabric.jar",

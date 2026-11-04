@@ -1,0 +1,12 @@
+import fs from "node:fs";
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+const files = ["content/wiki/mods/server-build.md", "content/solnyshko/wiki-server-snapshot.json"];
+const before = files.map(file => fs.readFileSync(file,"utf8"));
+const same = spawnSync(process.execPath,["scripts/sync-wiki-server.mjs"],{encoding:"utf8",windowsHide:true});
+assert.equal(same.status,0,same.stderr);
+files.forEach((file,index)=>assert.equal(fs.readFileSync(file,"utf8"),before[index]));
+const missing=spawnSync(process.execPath,["scripts/sync-wiki-server.mjs"],{encoding:"utf8",windowsHide:true,env:{...process.env,SOLAR_SERVER_MODS:"C:/__solar_missing_test__/mods",SOLAR_SERVER_PLUGINS:"C:/__solar_missing_test__/plugins"}});
+assert.equal(missing.status,0,missing.stderr);
+files.forEach((file,index)=>assert.equal(fs.readFileSync(file,"utf8"),before[index]));
+console.log("PASS wiki sync is idempotent and retains the last snapshot when server folders are unavailable");

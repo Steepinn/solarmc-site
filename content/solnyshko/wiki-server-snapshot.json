@@ -1,0 +1,1212 @@
+{
+  "updated": "2026-11-04T12:52:01.131Z",
+  "digest": "ff2d9008f6e148bce38313d45ab48c598ddbb3461175a09ba0cdb90231ebd401",
+  "packages": [
+    {
+      "file": "BOMD-1.10.2-1.21.1.jar",
+      "kind": "mod",
+      "id": "bosses_of_mass_destruction",
+      "name": "Bosses of Mass Destruction (Beta)",
+      "version": "1.10.2-1.21.1",
+      "description": "Adds high threat mobs for players to take on.",
+      "sha256": "0bacd6867ef89c92307dd811ec6a5584e987ef367ab90a89c9ca2f6901fe5e97"
+    },
+    {
+      "file": "CinematicInteraction-0.1-Fabric-1.21.1.jar",
+      "kind": "mod",
+      "id": "cinematic",
+      "name": "Cinematic Interactions",
+      "version": "0.12.2",
+      "description": "First-person cinematic interactions with crafting tables, furnaces and other workstations.",
+      "sha256": "0d08e45b8432740f4fb9235b7c96ad1c49c64501ae1bf1277783779fb28a9f87"
+    },
+    {
+      "file": "Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "kind": "mod",
+      "id": "clumps",
+      "name": "Clumps",
+      "version": "19.0.0.1",
+      "description": "Clumps xp orbs together.",
+      "sha256": "49e406cb2872e24a2d2dbe461b93f0c8fbee1748d14c2a941e54f785e3a1e1a7"
+    },
+    {
+      "file": "CreativeCore_FABRIC_v2.13.39_mc1.21.1.jar",
+      "kind": "mod",
+      "id": "creativecore",
+      "name": "CreativeCore",
+      "version": "2.13.39",
+      "description": "A simple but powerful coremod.",
+      "sha256": "a0813d3b342fae016eaad9b11a3f153efba01a2caa1221033adb865c49140f70"
+    },
+    {
+      "file": "DungeonsArise-1.21.1-2.1.68-fabric-release.jar",
+      "kind": "mod",
+      "id": "dungeons_arise",
+      "name": "When Dungeons Arise",
+      "version": "2.1.68",
+      "description": "Adds various elegant -and likely hostile- roguelike dungeons and structures that generate on your worlds!",
+      "sha256": "914190f6f899fca0f4b67595c6f7c53f8c736f6d1049a48fef8cfba46871d865"
+    },
+    {
+      "file": "Emojiful-Fabric-1.21-5.2.4.jar",
+      "kind": "mod",
+      "id": "emojiful",
+      "name": "Emojiful",
+      "version": "5.2.4",
+      "description": "Adds Emojis to the Game Chat!!!",
+      "sha256": "ef6aef0cc8772ef1660203b1e419f27f5bd70609dc620b5176d95c4ba1ecd36e"
+    },
+    {
+      "file": "FarmersDelight-1.21.1-3.2.7+refabricated.jar",
+      "kind": "mod",
+      "id": "farmersdelight",
+      "name": "Farmer's Delight",
+      "version": "1.21.1-3.2.7+refabricated",
+      "description": "A cozy expansion to farming and cooking!",
+      "sha256": "f56c49b896aa1e369ee51c15eaa41296b01f88ec7cf78e4967d1e9f7b40d0975"
+    },
+    {
+      "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "kind": "mod",
+      "id": "forgeconfigapiport",
+      "name": "Forge Config API Port",
+      "version": "21.1.6",
+      "description": "Provides NeoForge's & Forge's config systems to other modding ecosystems. Designed for a multi-loader architecture.",
+      "sha256": "2e3a8f0e3bda85a7d722720e7ce879cbd9d028d9395c6fc224d329b3c982d9b1"
+    },
+    {
+      "file": "GlitchCore-fabric-1.21.1-2.1.0.2.jar",
+      "kind": "mod",
+      "id": "glitchcore",
+      "name": "GlitchCore",
+      "version": "2.1.0.2",
+      "description": "A library mod aimed at abstracting mod loaders and providing various utilities for our mods.",
+      "sha256": "7cbec4ae898c3011bf785dd58155e3478ed2bc92ff240ec39a607951e7c1b139"
+    },
+    {
+      "file": "GoodEnding-1.21.1-1.1.0-Fabric.jar",
+      "kind": "mod",
+      "id": "goodending",
+      "name": "Good Ending",
+      "version": "1.1.0",
+      "description": "This mod aims to revitalise Minecraft's Overworld by adding new fleshed out content and changing existing features to enhance the biome diversity",
+      "sha256": "b7a83b326318f9c0885b3d72e133d6875712c932d2c75fdbde47b6499305afe3"
+    },
+    {
+      "file": "Incantationem-2.0.3+1.21.jar",
+      "kind": "mod",
+      "id": "incantationem",
+      "name": "Incantationem",
+      "version": "2.0.3+1.21",
+      "description": "Adds vanilla+, configurable enchantments",
+      "sha256": "8f64305ec917ff4a696a10b025ef6e5f7e65acd0cca1850b584272f83d2786fc"
+    },
+    {
+      "file": "IronChests-2.0.4.jar",
+      "kind": "mod",
+      "id": "ironchest",
+      "name": "Iron Chests",
+      "version": "2.0.4",
+      "description": "Bigger Chests for Minecraft",
+      "sha256": "1829b11371aa462bd3f5f7416fd5460fd2cd8642631921ae17bcd713a3476f54"
+    },
+    {
+      "file": "PassiveSkillTree-Fabric-1.21.1-0.7.6+c-solar-arclight.jar",
+      "kind": "mod",
+      "id": "skilltree",
+      "name": "Passive Skill Tree",
+      "version": "0.7.6+c",
+      "description": "Adds passive skill tree with player class system",
+      "sha256": "89522d3d2f51edd3ee7c17a78afbcf7fe333c115f265bd9903f52d503fb28f69"
+    },
+    {
+      "file": "Ping-Wheel-1.12.2-fabric-1.21.1.jar",
+      "kind": "mod",
+      "id": "pingwheel",
+      "name": "Ping Wheel",
+      "version": "1.12.2",
+      "description": "Mark locations similar to the ping mechanism found in modern co-op multiplayer games.",
+      "sha256": "9ba63ca5f33c86d0ce3aec2b04fafcc2fbcb8e705e46a7be20ff66382331c3e3"
+    },
+    {
+      "file": "Quick Skin - Fabric - 1.21.1-4.0.0.jar",
+      "kind": "mod",
+      "id": "quickskin",
+      "name": "Quick Skin",
+      "version": "4.0.0",
+      "description": "Change, preview, and synchronize local skins, capes, and CPM models in-game across Fabric, Forge, and NeoForge.",
+      "sha256": "5ac58432aaa0a0bbd6271c1a2ecb5ca23970027080fdb06f6c02055a471eeb42"
+    },
+    {
+      "file": "SereneSeasons-fabric-1.21.1-10.1.0.1.jar",
+      "kind": "mod",
+      "id": "sereneseasons",
+      "name": "SereneSeasons",
+      "version": "10.1.0.1",
+      "description": "Adds seasons with changing colors, temperature shifting, and more!",
+      "sha256": "c1e3b3db7a2a8052d4bafe5430ce90cbf2c91f71bc86c57f52bc9c3795e4061c"
+    },
+    {
+      "file": "SmartBrainLib-fabric-1.21.1-1.16.11.jar",
+      "kind": "mod",
+      "id": "smartbrainlib",
+      "name": "SmartBrainLib",
+      "version": "1.16.11",
+      "description": "A library mod for smarter Brains and easier usage of the Brain system.",
+      "sha256": "a9ade3f9d2dbd229c3d679c20c5bff7b49b11ad5bdae18281003ca1bf717ad1c"
+    },
+    {
+      "file": "YungsApi-1.21.1-Fabric-5.1.6.jar",
+      "kind": "mod",
+      "id": "yungsapi",
+      "name": "YUNG's API",
+      "version": "1.21.1-Fabric-5.1.6",
+      "description": "API Library for YUNG's minecraft mods.",
+      "sha256": "36fb903a1ebcf1511745be2da9e5144f1d2465bff7a5c17beffd347399acd1ba"
+    },
+    {
+      "file": "YungsBetterDungeons-1.21.1-Fabric-5.1.4.jar",
+      "kind": "mod",
+      "id": "betterdungeons",
+      "name": "YUNG's Better Dungeons",
+      "version": "1.21.1-Fabric-5.1.4",
+      "description": "A complete redesign of Minecraft's dungeons!",
+      "sha256": "69fe7d93afa1803d7658df3f861213f8255f68d4e976d66ddce66fba08d120bc"
+    },
+    {
+      "file": "YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar",
+      "kind": "mod",
+      "id": "betterfortresses",
+      "name": "YUNG's Better Nether Fortresses",
+      "version": "1.21.1-Fabric-3.1.5",
+      "description": "A complete redesign of Minecraft's Nether Fortresses!",
+      "sha256": "77a258e499559f1190c872277f8eecf202dd4ef0681674dce941003fa4367f78"
+    },
+    {
+      "file": "YungsBetterOceanMonuments-1.21.1-Fabric-4.1.2.jar",
+      "kind": "mod",
+      "id": "betteroceanmonuments",
+      "name": "YUNG's Better Ocean Monuments",
+      "version": "1.21.1-Fabric-4.1.2",
+      "description": "A complete redesign of Minecraft's ocean monuments!",
+      "sha256": "4cfbb226bd1db17032ac7e7306e94ed27f1a8e2f3e09fb62c47688f8a527adec"
+    },
+    {
+      "file": "YungsBetterStrongholds-1.21.1-Fabric-5.1.3.jar",
+      "kind": "mod",
+      "id": "betterstrongholds",
+      "name": "YUNG's Better Strongholds",
+      "version": "1.21.1-Fabric-5.1.3",
+      "description": "A complete redesign of Minecraft's strongholds!",
+      "sha256": "1cb412c83aa0e8273d29a1122c5799eb15a48acc8f0b770efe451c516647f5f8"
+    },
+    {
+      "file": "additionalentityattributes-fabric-2.0.2+1.21.1.jar",
+      "kind": "mod",
+      "id": "additionalentityattributes",
+      "name": "Additional Entity Attributes",
+      "version": "2.0.2+1.21.1",
+      "description": "Additional Entity Attributes",
+      "sha256": "b71ac8714192ba70a40ffcd894291375703d844204c8f4cf057452af093a1579"
+    },
+    {
+      "file": "amendments-fabric-1.21-2.1.7.jar",
+      "kind": "mod",
+      "id": "amendments",
+      "name": "Amendments",
+      "version": "1.21-2.1.7",
+      "description": "Many tweaks to Vanilla Blocks",
+      "sha256": "1db7750238c389c9f04f0266240c8795b9301b2455c27328d9ebbb4320ca890a"
+    },
+    {
+      "file": "another_furniture-fabric-4.0.2.jar",
+      "kind": "mod",
+      "id": "another_furniture",
+      "name": "Another Furniture",
+      "version": "4.0.2",
+      "description": "Decorating your home just got better! Another Furniture adds various furniture, with the goal of staying vanilla-styled and consistently sized, keeping normal blocks and player sizes in mind.",
+      "sha256": "3f0e6c276dde5cd6390e9c14bc4c283e4043f25d812c1f5ecc36b7b2f61642b5"
+    },
+    {
+      "file": "antixray-fabric-1.4.8+1.21.1.jar",
+      "kind": "mod",
+      "id": "antixray",
+      "name": "AntiXray",
+      "version": "1.4.8",
+      "description": "This mod implements Papers 0367-Anti-Xray.patch!",
+      "sha256": "2bcc655529e243eb8773caf8f2e7bc0f550ac70e7d392d96fb48e924b51a61cc"
+    },
+    {
+      "file": "architectury-13.0.11-fabric.jar",
+      "kind": "mod",
+      "id": "architectury",
+      "name": "Architectury",
+      "version": "13.0.11",
+      "description": "A intermediary api aimed to ease developing multiplatform mods.",
+      "sha256": "ab17d5c7d8d8c93cc713437ed426f0ff0d6f802a48fff0c579a9bd3aaa833efd"
+    },
+    {
+      "file": "artifacts-fabric-13.2.1.jar",
+      "kind": "mod",
+      "id": "artifacts",
+      "name": "Artifacts",
+      "version": "13.2.1",
+      "description": "Adds various new powerful uncraftable items to make exploration a bit more interesting",
+      "sha256": "b6701cbc14b43e0c2d1b90b121c04ade492dd813502d856a49dbf01f00201b29"
+    },
+    {
+      "file": "attributefix-fabric-1.21.1-21.1.2.jar",
+      "kind": "mod",
+      "id": "attributefix",
+      "name": "AttributeFix",
+      "version": "21.1.2",
+      "description": "Extends the maximum attribute ranges to allow for higher values.",
+      "sha256": "d5755346bcb4364a543ea732a0280faf1895ff6e31db152a22b8bc7f5f8fd592"
+    },
+    {
+      "file": "bookshelf-fabric-1.21.1-21.1.8.jar",
+      "kind": "mod",
+      "id": "bookshelf",
+      "name": "Bookshelf",
+      "version": "21.1.8",
+      "description": "Bookshelf is a library mod that provides code, frameworks, and utilities for other mods. Many mods make use of Bookshelf and are powered by its code.",
+      "sha256": "07d18fb41a829baff9b3aca0bc2b2a821ad3ea2bf474fe81be9132b4d9d987ae"
+    },
+    {
+      "file": "cardinal-components-api-6.1.3.jar",
+      "kind": "mod",
+      "id": "cardinal-components",
+      "name": "Cardinal Components API",
+      "version": "6.1.3",
+      "description": "Attaching more data to various game objects",
+      "sha256": "302a8a4bc2e34cbffaf61af75ab5de47c06bfa159436665870ae61092b0f69a2"
+    },
+    {
+      "file": "cloth-config-15.0.140-fabric.jar",
+      "kind": "mod",
+      "id": "cloth-config",
+      "name": "Cloth Config v15",
+      "version": "15.0.140",
+      "description": "An API for config screens.",
+      "sha256": "33894e95da3af59014b39d126586d5241e07ea39f8618763e30dab637405f95f"
+    },
+    {
+      "file": "common-networking-fabric-1.0.21-1.21.1.jar",
+      "kind": "mod",
+      "id": "commonnetworking",
+      "name": "Common Network",
+      "version": "1.0.21-1.21.1",
+      "description": "This mod unifies networking in to a single location to work with Forge and Fabric, so developers only need to work in the common module.",
+      "sha256": "87dc5bc3fe57b7e0f88cea0e9a05b414cedcf2fcf0276758ef9ca7e3fb3d462b"
+    },
+    {
+      "file": "connectiblechains-2.5.7+1.21.1.jar",
+      "kind": "mod",
+      "id": "connectiblechains",
+      "name": "Connectible Chains",
+      "version": "2.5.7+1.21.1",
+      "description": "Connect your fences with a decorative chain!",
+      "sha256": "f2b98b471212fbef4d5ec4b3c26bb5b3c6f0a8d0db21f6993831a45a2f917754"
+    },
+    {
+      "file": "display-delight-1.6.1-mc1.21.1.jar",
+      "kind": "mod",
+      "id": "displaydelight",
+      "name": "Display Delight [Fabric]",
+      "version": "1.6.1-mc1.21.1",
+      "description": "Allows to place every food item in Farmer's Delight in 3D",
+      "sha256": "884ba595356bb6cbd500e3e8adb37ddb07d3f86c056545fdc9f1e1a27c4d375c"
+    },
+    {
+      "file": "emotecraft-for-MC1.21.1-2.4.12-fabric.jar",
+      "kind": "mod",
+      "id": "emotecraft",
+      "name": "Emotecraft",
+      "version": "2.4.12",
+      "description": "Play emotes in Minecraft\nOpen the menu to setup your fast-choose wheel\n\nYou can add custom emotes, and you can play these even if nobody else has them\n\nSpecial thanks:\nKale Ko for creating emotes and help in the UI design\nOrsond for inspiring me and providing CollarMC\nArchitectury for the Forge build tools",
+      "sha256": "633a77711f650dbf0bd071a43c086b7946d6e117b28ac1a414d038ea7b339f7c"
+    },
+    {
+      "file": "enderitemod-fabric-1.6.2-1.21.1.jar",
+      "kind": "mod",
+      "id": "enderitemod",
+      "name": "Enderite Mod",
+      "version": "1.6.2",
+      "description": "Adds Enderite tools and armor with void float ability. Translation: ES:CamoloQlo",
+      "sha256": "05f377e39148c635b07bdda7e3bb4193f3a6e448e6db60468adeb36adcce77a2"
+    },
+    {
+      "file": "envelope-fabric-1.21.1-0.7.4.jar",
+      "kind": "mod",
+      "id": "envelope",
+      "name": "Envelope",
+      "version": "0.7.4",
+      "description": "Letters and Packages. And Pigeons to deliver them.",
+      "sha256": "8a641d5ae7d0b80336f06a53b0e619b2d2f336a39ac7148697c2b7d972794ea9"
+    },
+    {
+      "file": "fabric-api-0.116.17+1.21.1.jar",
+      "kind": "mod",
+      "id": "fabric-api",
+      "name": "Fabric API",
+      "version": "0.116.17+1.21.1",
+      "description": "Core API module providing key hooks and intercompatibility features.",
+      "sha256": "79ac44b40780acbd884b34c50be1e39af682847e5f5cb3b1fddeeaa768dce800"
+    },
+    {
+      "file": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "kind": "mod",
+      "id": "fabric-language-kotlin",
+      "name": "Fabric Language Kotlin",
+      "version": "1.13.13+kotlin.2.4.10",
+      "description": "Fabric language module for Kotlin.",
+      "sha256": "34ccdacf13bb9351fe43ce61912c2e09b72364e43e787d36ba3d2d04dec75a52"
+    },
+    {
+      "file": "faunus-1.0.5.jar",
+      "kind": "mod",
+      "id": "faunus",
+      "name": "Faunus",
+      "version": "1.0.5",
+      "description": "Adds a variety of animal mobs",
+      "sha256": "e1220564679362581b17614c00269e062720a844fece8604d40bccef774a2686"
+    },
+    {
+      "file": "ferritecore-7.0.3-fabric.jar",
+      "kind": "mod",
+      "id": "ferritecore",
+      "name": "FerriteCore",
+      "version": "7.0.3",
+      "description": "Reduces memory usage",
+      "sha256": "98c3ab1d5aab8f14b5d082d3f1a467727fd335f02d124555c94339761c4c18f2"
+    },
+    {
+      "file": "fishingreal-fabric-1.21.1-1.9.1.jar",
+      "kind": "mod",
+      "id": "fishingreal",
+      "name": "FishingReal",
+      "version": "1.9.1",
+      "description": "A mod which allows you to reel in real fish instead of the fish in item form.",
+      "sha256": "2d78434eaeca97732da7b34f6cec882f82ee92b382bdd3e9171b6ff37b5e1818"
+    },
+    {
+      "file": "geckolib-fabric-1.21.1-4.9.2-arclight.jar",
+      "kind": "mod",
+      "id": "geckolib",
+      "name": "GeckoLib 4",
+      "version": "4.9.2",
+      "description": "GeckoLib is an animation engine for Minecraft Mods, with support for complex 3D keyframe-based animations, 30+ easings, concurrent animation support, sound and particle keyframes, event keyframes, and more.",
+      "sha256": "cf1c16f4238127460f2dda7c3a17fd73577f733d753d8d205751436e660adad6"
+    },
+    {
+      "file": "krypton-0.2.8.jar",
+      "kind": "mod",
+      "id": "krypton",
+      "name": "Krypton",
+      "version": "0.2.8",
+      "description": "A Fabric mod that optimizes the Minecraft networking stack and entity tracker.",
+      "sha256": "94f195819b24e5da64effdc9da15cdd84836cc75e8ff0fd098bab6bc2f49e3fe"
+    },
+    {
+      "file": "letsdo-vinery-fabric-1.5.3.jar",
+      "kind": "mod",
+      "id": "vinery",
+      "name": "[Let's Do] Vinery",
+      "version": "1.5.3",
+      "description": "In Vino Veritas - it's time for wine! Build your own vineyard, produce wine, and establish your own winery.",
+      "sha256": "5cc95cd4aabc477bda57f004f1c6d3c8e5e9445048e895b81e95c07071f6b064"
+    },
+    {
+      "file": "lexiconfig-fabric-1.4.21-novel.jar",
+      "kind": "mod",
+      "id": "lexiconfig",
+      "name": "Lexiconfig",
+      "version": "1.4.21-novel",
+      "description": "This is a config API that aims to provide many integrations alongside other libraries, and to be as easy as possible to use, for both developers and users alike.",
+      "sha256": "d5e3765199a0197b2f019f502056fd326a08bcc302b195bb16599ad0be3347fc"
+    },
+    {
+      "file": "libz-1.1.0.jar",
+      "kind": "mod",
+      "id": "libz",
+      "name": "LibZ",
+      "version": "1.1.0",
+      "description": "Library for Globox_Z mods",
+      "sha256": "ee175b45aecc79d864ea6839e5164febc6b4046255868a9734e3d8f084b6bd30"
+    },
+    {
+      "file": "lithium-fabric-0.15.4+mc1.21.1.jar",
+      "kind": "mod",
+      "id": "lithium",
+      "name": "Lithium",
+      "version": "0.15.4+mc1.21.1",
+      "description": "Lithium is a free and open-source optimization mod for Minecraft which makes a wide range of performance improvements to the game.",
+      "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa"
+    },
+    {
+      "file": "midnightlib-fabric-1.10.0+1.21.1.jar",
+      "kind": "mod",
+      "id": "midnightlib",
+      "name": "MidnightLib",
+      "version": "1.10.0",
+      "description": "Lightweight config library with config screens and commands.",
+      "sha256": "1fce2e43c5deece2fd277663b01ff94ce0dc92f03041164bed1808996c13f2dd"
+    },
+    {
+      "file": "moonlight-fabric-1.21.1-3.0.22.jar",
+      "kind": "mod",
+      "id": "moonlight",
+      "name": "Moonlight Lib",
+      "version": "1.21.1-3.0.22",
+      "description": "A small library with many cool unique features, from dynamic asset generation to dynamic villager schedules, data driven trades and Map Markers, simple multi loader utilities and more",
+      "sha256": "3b4f21dfc1576f4985c1e8fc7f5577380c93de901d505167976eb216c67ea4ac"
+    },
+    {
+      "file": "moredelight-25.07.28-1.21-fabric.jar",
+      "kind": "mod",
+      "id": "moredelight",
+      "name": "More Delight",
+      "version": "25.07.28-1.21-fabric",
+      "description": "An addon mod for Farmer's Delight that adds extra features to the base mod.",
+      "sha256": "338053ad350fc0c533842a3c315f5cb1e8b0b105ed0dc649cd17de4a00bfa2a7"
+    },
+    {
+      "file": "morevillagers-re-1.21.1-fabric-5.1.2.jar",
+      "kind": "mod",
+      "id": "morevillagers",
+      "name": "MoreVillagers",
+      "version": "5.1.2",
+      "description": "Adds new villager jobs, trades, and workstations!",
+      "sha256": "80fa54b7aa8192be50ace258018efe9dc16b3d82fc801a8ef75ea5737cb06c0a"
+    },
+    {
+      "file": "oceansdelight-fdrf-fabric-1.0.3-1.21.1.jar",
+      "kind": "mod",
+      "id": "oceansdelight",
+      "name": "Ocean's Delight",
+      "version": "1.0.3+fabric.1.21.1",
+      "description": "This is a mod that adds food based on the creatures in the ocean",
+      "sha256": "4d5f95fde2ceee2cb85bf587fbf443ed8ef2e8be2b6d5626b2aa713a52f528d6"
+    },
+    {
+      "file": "onceuponastroll-fabric-1.21.1-1.10.0.jar",
+      "kind": "mod",
+      "id": "onceuponastroll",
+      "name": "Once Upon A Stroll",
+      "version": "1.10.0",
+      "description": "Traveling on the ground makes paths over time.",
+      "sha256": "04ffcf502f1da495869571b7b08844e023518a728de9169e71f6aea8dbb68612"
+    },
+    {
+      "file": "player-animation-lib-fabric-2.0.4+1.21.1.jar",
+      "kind": "mod",
+      "id": "playeranimator",
+      "name": "Player Animator",
+      "version": "2.0.4+1.21.1",
+      "description": "A lightweight library to easily animate the player",
+      "sha256": "86ef8a23a5bc8f86d67ed37f3a93380d3946bad64123b22862ed057e7b624efd"
+    },
+    {
+      "file": "prickle-fabric-1.21.1-21.1.11.jar",
+      "kind": "mod",
+      "id": "prickle",
+      "name": "PrickleMC",
+      "version": "21.1.11",
+      "description": "Bringing Prickle, the JSON based configuration file format to Minecraft.",
+      "sha256": "d6d639078aecb72770f287d8253e4634114e2536ac9a2ad6ec5f442eb27dd07f"
+    },
+    {
+      "file": "pumpkin_pie_delight-1.0.2+1.21.jar",
+      "kind": "mod",
+      "id": "pumpkin_pie",
+      "name": "Pumpkin Pie Delight",
+      "version": "1.0.2+1.21",
+      "description": "A Farmer's Delight addon that makes pumpkin pies placeable and sliceable",
+      "sha256": "d451d5255eb01c5c493f563af79c44fb96f67d2fdc5ccc6c085e9218089375bf"
+    },
+    {
+      "file": "ranged_weapon_api-fabric-2.3.3+1.21.1.jar",
+      "kind": "mod",
+      "id": "ranged_weapon_api",
+      "name": "RangedWeaponAPI",
+      "version": "2.3.3+1.21.1",
+      "description": "Allows creating bows and crossbows, with just a few line of code",
+      "sha256": "a1421c0c4f037a495a40d95f417dd92f4763211ef74f6f789bd9f778be7e5f35"
+    },
+    {
+      "file": "resourcefulconfig-fabric-1.21-3.0.11.jar",
+      "kind": "mod",
+      "id": "resourcefulconfig",
+      "name": "Resourcefulconfig",
+      "version": "3.0.11",
+      "description": "",
+      "sha256": "8c2624ddeda09d00c42095a37281dc502c6dcaffae68a3e08c3ea57fef28425e"
+    },
+    {
+      "file": "resourcefullib-fabric-1.21-3.0.12.jar",
+      "kind": "mod",
+      "id": "resourcefullib",
+      "name": "Resourceful Lib",
+      "version": "3.0.12",
+      "description": "Library Mod by Team Resourceful",
+      "sha256": "93064c5aff85bf5e6385470f311fd1c7de172f58b02fefb1d2920db76f8cd8b5"
+    },
+    {
+      "file": "shippy-ships-1.0.8-FABRIC-MC-1.21.1.jar",
+      "kind": "mod",
+      "id": "shippy-ships",
+      "name": "Shippy Ships",
+      "version": "1.0.8",
+      "description": "It's time to sail for new adventures!",
+      "sha256": "6553dbe70207ad532b97865dd6e1c329f6d92d88e014aaaede3d232bd1abaaf1"
+    },
+    {
+      "file": "simpleradio-fabric-1.21.1-4.4.7.9.jar",
+      "kind": "mod",
+      "id": "simpleradio",
+      "name": "Simple Radio",
+      "version": "1.21.1-4.4.7.9",
+      "description": "Adds a simple radio item for the Simple Voice Chat mod!",
+      "sha256": "9bea79558e9c2fb0aeddbeb04f75fa76b395466662daefa1ff7bb13bf63be052"
+    },
+    {
+      "file": "solar-bumblezone-7.16.0-1.21.1-fabric.jar",
+      "kind": "mod",
+      "id": "the_bumblezone",
+      "name": "SOLAR Ambient",
+      "version": "7.16.0+1.21.1-fabric",
+      "description": "Internal world ambience and structures.",
+      "sha256": "b0d9d5222e9ea4152db7ad001c8c79ec6adf7ec9d45c398efeeba7b7b18f6da1"
+    },
+    {
+      "file": "solar_ui_ru-1.0.24.jar",
+      "kind": "mod",
+      "id": "solar_ui_ru",
+      "name": "SOLAR UI RU",
+      "version": "1.0.24",
+      "description": "SOLAR RU: Origins, Passive Skill Tree, FD, Faunus, Vinery, Tide, Display Delight",
+      "sha256": "157a0c278287712b4e3b1f1c8c8fb93f5b015ba66ab7453ab1a3bed0f2d143eb"
+    },
+    {
+      "file": "solarauth-1.1.0.jar",
+      "kind": "mod",
+      "id": "solarauth",
+      "name": "Solar Auth",
+      "version": "1.1.0",
+      "description": "SOLAR login and registration UI for offline servers",
+      "sha256": "5b7ba8750a8e3e8886dff65f35f84e71ba2490bedb7939e3f107bc3c5a274dcb"
+    },
+    {
+      "file": "solarbrbcompat-1.0.6.jar",
+      "kind": "mod",
+      "id": "solarbrbcompat",
+      "name": "SOLAR BRB Compat",
+      "version": "1.0.6",
+      "description": "Fixes Better Recipe Book crash when recipe list is empty (null lastClicked).",
+      "sha256": "21492870ebc7e119c07f3edfa3444a4dca8547e7e187a76c3a1a187e07f2018a"
+    },
+    {
+      "file": "solarcosmetics-1.4.7.jar",
+      "kind": "mod",
+      "id": "solarcosmetics",
+      "name": "SOLAR Cosmetics",
+      "version": "1.4.7",
+      "description": "Server-owned Solar Points shop and synchronized player accessories",
+      "sha256": "dc955a4db435c136390b87d696e95d9226928664c5195f02db5a2e2312f6f2b8"
+    },
+    {
+      "file": "solardiary-1.3.10.jar",
+      "kind": "mod",
+      "id": "solardiary",
+      "name": "Solar Diary",
+      "version": "1.3.10",
+      "description": "TAB book — online players",
+      "sha256": "9a8f88debc2d21e726aaaf92b9a326a1b2465043ee8d7bd0ffd621d60a96c33f"
+    },
+    {
+      "file": "solardiary-1.3.9.jar",
+      "kind": "mod",
+      "id": "solardiary",
+      "name": "Solar Diary",
+      "version": "1.3.9",
+      "description": "TAB book — online players",
+      "sha256": "2c790ff6940ea8abcd8f6e7bd2786f18e72adeb46fb86d7affbff06527f8b6af"
+    },
+    {
+      "file": "solarhub-1.4.9.jar",
+      "kind": "mod",
+      "id": "solarhub",
+      "name": "SOLAR Hub",
+      "version": "1.4.9",
+      "description": "Unified HUD and menu for voice and Quick Skin settings",
+      "sha256": "3821e63f4c9eff0c1d9aa0fcb9cbe098eb7cb22d17ba90b66c6f51337851749b"
+    },
+    {
+      "file": "solartideocean-1.0.1.jar",
+      "kind": "mod",
+      "id": "solartideocean",
+      "name": "SOLAR Tide Ocean",
+      "version": "1.0.1",
+      "description": "Boosts Tide fish schools in ocean and river biomes",
+      "sha256": "b54994a9cda84727c0e8816a3d37a980887806564c1e2725f54e71b6f51ed6e8"
+    },
+    {
+      "file": "spark-1.10.109-fabric.jar",
+      "kind": "mod",
+      "id": "spark",
+      "name": "spark",
+      "version": "1.10.109",
+      "description": "spark is a performance profiling plugin/mod for Minecraft clients, servers and proxies.",
+      "sha256": "fafc121ac53dab1c32e74b7a1cae47d54435ba4cbeeda1180dc96675a7757047"
+    },
+    {
+      "file": "structure_layout_optimizer-fabric-1.0.12.jar",
+      "kind": "mod",
+      "id": "structure_layout_optimizer",
+      "name": "Structure Layout Optimizer",
+      "version": "1.0.12",
+      "description": "An attempt at optimizing jigsaw generation",
+      "sha256": "38c4066ded870f21d60deeb2e05cb30d00d1db0f930c92f8fdd2f85098cb03fe"
+    },
+    {
+      "file": "syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
+      "kind": "mod",
+      "id": "syncmatica",
+      "name": "Syncmatica",
+      "version": "0.3.14-sakura.5",
+      "description": "Server-wide shared litematics.",
+      "sha256": "90d7ecb611d612afc6cc0f83bfd144b38d5958228abc784969d773ce8e90294c"
+    },
+    {
+      "file": "tide-fabric-1.21.1-2.1.1.jar",
+      "kind": "mod",
+      "id": "tide",
+      "name": "Tide",
+      "version": "2.1.1",
+      "description": "Expands the fishing system and adds 100+ new fish.",
+      "sha256": "498a5e8dda940866c9b0decadf7960724ef489fb49215b30f70c18d12f07b1c8"
+    },
+    {
+      "file": "trinkets-3.10.0.jar",
+      "kind": "mod",
+      "id": "trinkets",
+      "name": "Trinkets",
+      "version": "3.10.0",
+      "description": "Adds a data-driven accessory system to Minecraft",
+      "sha256": "349fd2aa8930b232050ee5304db55e4ef738b017971afe7c84acd589a95fda2f"
+    },
+    {
+      "file": "untitledduckmod-1.6.0-fabric-1.21.1.jar",
+      "kind": "mod",
+      "id": "untitledduckmod",
+      "name": "Untitled Duck Mod",
+      "version": "1.6.0",
+      "description": "Ducks and Geese for Forge and Fabric! Powered by geckolib and architectury.",
+      "sha256": "d37167aaefec9d4c7cdef2db3029a7b9f2dbcac155ad799a6fc41efe08cbcbc4"
+    },
+    {
+      "file": "vcinteraction-fabric-1.21.1-1.0.8.jar",
+      "kind": "mod",
+      "id": "vcinteraction",
+      "name": "Voice Chat Interaction",
+      "version": "1.21.1-1.0.8",
+      "description": "Voice Chat Interaction",
+      "sha256": "692ff228cdd397e5690f09881704b6c11e655b609dd0b17fc0a99846dc232a24"
+    },
+    {
+      "file": "voicechat-fabric-1.21.1-2.6.12.jar",
+      "kind": "mod",
+      "id": "voicechat",
+      "name": "Simple Voice Chat",
+      "version": "1.21.1-2.6.12",
+      "description": "A working voice chat in Minecraft!",
+      "sha256": "24950f92c4afdcbd39f1421320d9daa2261c074589885a41e88b8944462fc29a"
+    },
+    {
+      "file": "waterframes-FABRIC-mc1.21.1-v2.1.22.jar",
+      "kind": "mod",
+      "id": "waterframes",
+      "name": "WaterFrames",
+      "version": "2.1.22",
+      "description": "Display custom video and pictures in your world.",
+      "sha256": "7c6a79c48132f74543784dc325895ac8061fe4ff0a8712a08ec8c36516f97844"
+    },
+    {
+      "file": "watermedia-2.1.37.jar",
+      "kind": "mod",
+      "id": "watermedia",
+      "name": "WaterMedia",
+      "version": "2.1.37",
+      "description": "Library with an API using VLC for multimedia integration with Minecraft. Works also standalone",
+      "sha256": "cdd8e1b50e4dee0892c5ed02724cea6b1a74d2b718c7e974c9cfc0efa8c10389"
+    },
+    {
+      "file": "watervision-FB-mc1.21.1-v0.1.0-alpha.jar",
+      "kind": "mod",
+      "id": "watervision",
+      "name": "WaterVision",
+      "version": "0.1.0-alpha",
+      "description": "Record, Watch and Broadcast videos in game",
+      "sha256": "e60f274d66309909d4fb7cb610df4a31aed76b15fd4f37aad79461abcc82ba20"
+    },
+    {
+      "file": "wiretap-1.3.0+1.21.1.fabric.jar",
+      "kind": "mod",
+      "id": "wiretap",
+      "name": "Wiretap",
+      "version": "1.3.0+1.21.1.fabric",
+      "description": "Wiretap",
+      "sha256": "2ce5b02933792b7e8decebb87a4e794d3a98db1ca310be50dceab6d48c93c586"
+    },
+    {
+      "file": "BreweryX-3.6.4.jar",
+      "kind": "plugin",
+      "id": "BreweryX",
+      "name": "BreweryX",
+      "version": "3.6.4;HEAD",
+      "description": "",
+      "sha256": "dc5d880741f59c7143a6bf59ed04bda2ef32e7903024fc7377315187194427d0"
+    },
+    {
+      "file": "Chunky-Bukkit-1.4.40.jar",
+      "kind": "plugin",
+      "id": "Chunky",
+      "name": "Chunky",
+      "version": "1.4.40",
+      "description": "Pre-generates chunks, quickly, efficiently, and safely",
+      "sha256": "2a5477fc80f71012e15ade1ce34dbeb836e17623b28db112492c0f1443c09721"
+    },
+    {
+      "file": "CommandAPI-11.2.0-Spigot.jar",
+      "kind": "plugin",
+      "id": "CommandAPI",
+      "name": "CommandAPI",
+      "version": "11.2.0",
+      "description": "An API to use Minecraft 1.13s new command UI",
+      "sha256": "75c3f8b68b4413ba7db36ebb90623d1df3939ecb9008c30fb2a787d03a36ea60"
+    },
+    {
+      "file": "CoralStay-1.2.jar",
+      "kind": "plugin",
+      "id": "CoralStay",
+      "name": "CoralStay",
+      "version": "1.2",
+      "description": "Prevent coral from drying up.",
+      "sha256": "abf8e115b664e67baa1f6ce49027a979b8c827586b77af11e4528420ee8a5721"
+    },
+    {
+      "file": "CoreProtect-CE-23.1.jar",
+      "kind": "plugin",
+      "id": "CoreProtect",
+      "name": "CoreProtect",
+      "version": "23.1",
+      "description": ">",
+      "sha256": "813082b4ec51d8026e1d6e8a8a1dc3c7e68bf4ba9774dd1dd03c5fa8588ea2e2"
+    },
+    {
+      "file": "CustomRecipes-2.0.6.3.jar",
+      "kind": "plugin",
+      "id": "CustomRecipes",
+      "name": "CustomRecipes",
+      "version": "2.0.6.3",
+      "description": "An easy-to-use remastered custom recipe plugin!",
+      "sha256": "acc7b4203f7e91db643760bb710e6fba22072c2ee324fdc9752e5263ded7549b"
+    },
+    {
+      "file": "DeluxeMenus-1.14.1-Release.jar",
+      "kind": "plugin",
+      "id": "DeluxeMenus",
+      "name": "DeluxeMenus",
+      "version": "1.14.1-Release",
+      "description": "All in one inventory menu system",
+      "sha256": "ec10a1317152aa57d76eec8cb3e1e7dc7f52e45c7a5d742c0baa1e394496ec20"
+    },
+    {
+      "file": "DimensionControl-1.0.2.jar",
+      "kind": "plugin",
+      "id": "DimensionControl",
+      "name": "DimensionControl",
+      "version": "1.0.2",
+      "description": "",
+      "sha256": "49e6ddebad01dc71e54e010ddea3d9a82823afcc2f98845bcae500c00d9759a6"
+    },
+    {
+      "file": "EssentialsX-2.22.0-dev+94-63e7c4d.jar",
+      "kind": "plugin",
+      "id": "Essentials",
+      "name": "Essentials",
+      "version": "2.22.0-dev+94-63e7c4d",
+      "description": "Provides an essential, core set of commands for Bukkit.",
+      "sha256": "b59e80d9551cc258df0c331412ba2853eac07b26761f130b324fc32792634cf4"
+    },
+    {
+      "file": "GPlayerID-1.0.0-all.jar",
+      "kind": "plugin",
+      "id": "GPlayerID",
+      "name": "GPlayerID",
+      "version": "1.0.0",
+      "description": "Система коротких ID для игроков с перехватом команд и отслеживанием твинков.",
+      "sha256": "a323b32d4af5e4b2550fdc00557308cf59bf0d88fb759b85b9a063b1e618ef6a"
+    },
+    {
+      "file": "GSit-3.2.0.jar",
+      "kind": "plugin",
+      "id": "GSit",
+      "name": "GSit",
+      "version": "3.2.0",
+      "description": "Relax with other players on nice seats!",
+      "sha256": "8a0c26a698eb9937b5b64d394f69cc45f01dfdefd0a4b5f46fd6329205eff62e"
+    },
+    {
+      "file": "HeadDB-6.0.1.jar",
+      "kind": "plugin",
+      "id": "HeadDB",
+      "name": "HeadDB",
+      "version": "6.0.1",
+      "description": "Head Database",
+      "sha256": "8e1308285dbe3a61c630bceb80abcc191a91890ae0bd7b405e8e5cee3447abb6"
+    },
+    {
+      "file": "InvBackup-1.0-SNAPSHOT.jar",
+      "kind": "plugin",
+      "id": "InvBackup",
+      "name": "InvBackup",
+      "version": "1.0-SNAPSHOT",
+      "description": "",
+      "sha256": "2ad714b7995b693a862d993189e3696bbb188c16a3dd4153260a37bcb0ea9409"
+    },
+    {
+      "file": "LuckPerms-Bukkit-5.5.36.jar",
+      "kind": "plugin",
+      "id": "LuckPerms",
+      "name": "LuckPerms",
+      "version": "5.5.36",
+      "description": "A permissions plugin",
+      "sha256": "9ba13c47700dc7c8e36743d91cb18ada26ba55a75c65f193207a9eeca295f75c"
+    },
+    {
+      "file": "PlaceholderAPI-2.12.2.jar",
+      "kind": "plugin",
+      "id": "PlaceholderAPI",
+      "name": "PlaceholderAPI",
+      "version": "2.12.2",
+      "description": "An awesome placeholder provider!",
+      "sha256": "ff76af20c7acf327ff2a28fb2dbd6694e3f946503e72635a5f7b6cb2e64fc014"
+    },
+    {
+      "file": "PlugManX-3.0.4.jar",
+      "kind": "plugin",
+      "id": "PlugManX",
+      "name": "PlugManX",
+      "version": "3.0.4",
+      "description": "Plugin manager for Bukkit servers",
+      "sha256": "2cb6fb0dd7e6f5867bca9bfa3f03751d6d89d6b949e8b6d3740507b55ae6a9c0"
+    },
+    {
+      "file": "SPReferal-1.1.1.jar",
+      "kind": "plugin",
+      "id": "SPReferal",
+      "name": "SPReferal",
+      "version": "1.1.0",
+      "description": "",
+      "sha256": "6c3363f3bea7dd848e6dc503f92a1efd880e8f0d76914c1c9da0622c0eb4627d"
+    },
+    {
+      "file": "SPcancelitem-1.2.1.jar",
+      "kind": "plugin",
+      "id": "SPcancelitem",
+      "name": "SPcancelitem",
+      "version": "1.2.1",
+      "description": "Блокировка использования конкретного предмета (метка на стек)",
+      "sha256": "4c24c0df9febf54b29ad93f7347ed6bfb4f296327212ff861e1f7885c4f11ffe"
+    },
+    {
+      "file": "SPgfactions-1.0.4.jar",
+      "kind": "plugin",
+      "id": "SPgfactions",
+      "name": "SPgfactions",
+      "version": "1.0.4",
+      "description": "Faction addon for gChat (faction tags in chat via PlaceholderAPI).",
+      "sha256": "6069b7f70abf1f902817a08b100d99264606281353a5be5c8ea4b252cafc79ea"
+    },
+    {
+      "file": "SPmagnifying-1.2.19.jar",
+      "kind": "plugin",
+      "id": "SPmagnifying",
+      "name": "SPmagnifying",
+      "version": "1.2.19",
+      "description": "Историческая лупа — включает режим CoreProtect inspect при держании в руке",
+      "sha256": "86ff833e4e7ab4764d5cd9fd34eeb6817fb2caec35836929e67897a215520432"
+    },
+    {
+      "file": "SPsolards-1.2.42.jar",
+      "kind": "plugin",
+      "id": "SPSolards",
+      "name": "SPSolards",
+      "version": "1.2.42",
+      "description": "Discord привязка, роль, подтверждение входа, статус, консоль в канале.",
+      "sha256": "65b4e4831b848cf4f5c89e47003325c29ff71f0f46825ec3cce1b93a788a73dc"
+    },
+    {
+      "file": "SPsolards-1.2.43.jar",
+      "kind": "plugin",
+      "id": "SPSolards",
+      "name": "SPSolards",
+      "version": "1.2.43",
+      "description": "Discord привязка, роль, подтверждение входа, статус, консоль в канале.",
+      "sha256": "e9846c5805b634a7ede2855277fa4c841024aea50fdf2a2afec6ae4f29349136"
+    },
+    {
+      "file": "SPvillager-1.4.1.jar",
+      "kind": "plugin",
+      "id": "SPvillager",
+      "name": "SPvillager",
+      "version": "1.4.1",
+      "description": "Настройка кастомных трейдов жителей и спавна странствующего жителя.",
+      "sha256": "63de4320b11138027298f4bb9e2f39582079621859c497b138592365db820c06"
+    },
+    {
+      "file": "SeasonStart-1.0.20.jar",
+      "kind": "plugin",
+      "id": "SeasonStart",
+      "name": "SeasonStart",
+      "version": "1.0.20",
+      "description": "Система старта сезона с кубом барьеров и запуском игроков",
+      "sha256": "d1d63e5bbb6780c5f416d857ed4d50371aa426ca48360a2078d967e8254f5040"
+    },
+    {
+      "file": "SimpleAutoSort-1.0.1.jar",
+      "kind": "plugin",
+      "id": "AutoSort",
+      "name": "AutoSort",
+      "version": "1.0.0",
+      "description": "Auto-sort chest contents plugin for Minecraft",
+      "sha256": "d494bc0145bf1e32d137ee7dd7932a54d1edc5b9feff9b693cb8bd599783dd78"
+    },
+    {
+      "file": "SkinsRestorer.jar",
+      "kind": "plugin",
+      "id": "SkinsRestorer",
+      "name": "SkinsRestorer",
+      "version": "15.12.6",
+      "description": "Ability to restore/change skins on servers!",
+      "sha256": "a85b4a370f988741c9a38f4d0498262edacbf3220314790ac1c127461996359c"
+    },
+    {
+      "file": "SolarAdvChat-1.0.3.jar",
+      "kind": "plugin",
+      "id": "SolarAdvChat",
+      "name": "SolarAdvChat",
+      "version": "1.0.1",
+      "description": "Achievements in gChat style — nickname + star with hover",
+      "sha256": "370d8f35ce44c6079f324bac9e1a8c0f99ef0fddbc3ce678c08773ac88d42886"
+    },
+    {
+      "file": "SolarBgm-1.1.0.jar",
+      "kind": "plugin",
+      "id": "SolarBgm",
+      "name": "SolarBgm",
+      "version": "1.1.0",
+      "description": "Auth theme + sleep lullaby via Simple Voice Chat",
+      "sha256": "9f986023cb05a9fffc55734021c073db694de3a1e16d182f5bd11b4ea4bdcb91"
+    },
+    {
+      "file": "SolarConfigGuard-1.0.0.jar",
+      "kind": "plugin",
+      "id": "SolarConfigGuard",
+      "name": "SolarConfigGuard",
+      "version": "1.0.0",
+      "description": "",
+      "sha256": "dffc2e99992c063aff4e3474a8ee2622b5cf438699ad89cfa1f6560cf60d2a68"
+    },
+    {
+      "file": "SolarFdGuide.jar",
+      "kind": "plugin",
+      "id": "SolarFdGuide",
+      "name": "SolarFdGuide",
+      "version": "1.0.0",
+      "description": "",
+      "sha256": "c25c50d68c4db717a87cf43bfea7e7b2eb28f695d4494a88643304d6f42c6792"
+    },
+    {
+      "file": "SolarMapVis.jar",
+      "kind": "plugin",
+      "id": "SolarMapVis",
+      "name": "SolarMapVis",
+      "version": "1.0.1",
+      "description": "",
+      "sha256": "262aed8bda98fbbe04469ff582419c6ac0868bc975723b448e70c4d30e05503b"
+    },
+    {
+      "file": "SolarPets.jar",
+      "kind": "plugin",
+      "id": "SolarPets",
+      "name": "SolarPets.jar",
+      "version": "1.0.0",
+      "description": "Arclight-safe companion pets (replaces SimplePets)",
+      "sha256": "5d6efff2dbd28f22ccc502a47f52b41db2befb7c9f35392dfa7acf8dbcebc208"
+    },
+    {
+      "file": "SolarPingGroups-1.0.1.jar",
+      "kind": "plugin",
+      "id": "SolarPingGroups",
+      "name": "SolarPingGroups",
+      "version": "1.0.1",
+      "description": "Группы меток Ping Wheel с паролем",
+      "sha256": "5244e24c111e2814519d610c88a16705e26634876accfe42e9d19bda361ede13"
+    },
+    {
+      "file": "SolarRest-1.2.6.jar",
+      "kind": "plugin",
+      "id": "SolarRest",
+      "name": "SolarRest",
+      "version": "1.2.6",
+      "description": "AFK-кик, дневной отдых в кровати и защита лёжа",
+      "sha256": "2ace964955296b31c09d4c7dd8403c25bc6ec42180e438fa9b3fbd1d462e922c"
+    },
+    {
+      "file": "TAB v5.5.0.jar",
+      "kind": "plugin",
+      "id": "TAB",
+      "name": "TAB",
+      "version": "5.5.0",
+      "description": "An all-in-one solution that works",
+      "sha256": "829e7ec22bc41069d93b53479a8fe4a335a579c9c5b37a4cf140da176aea65f6"
+    },
+    {
+      "file": "UltimateAutoRestart-2026.05.jar",
+      "kind": "plugin",
+      "id": "UltimateAutoRestart",
+      "name": "UltimateAutoRestart",
+      "version": "2026.05",
+      "description": "",
+      "sha256": "30b6692d20063b42a67e2f19f386364cae011261005efd7bd11e52df46dec0cf"
+    },
+    {
+      "file": "Vault.jar",
+      "kind": "plugin",
+      "id": "Vault",
+      "name": "Vault",
+      "version": "1.7.3-b131",
+      "description": "Vault is a Permissions & Economy API to allow plugins to more easily hook into these systems without needing to hook each individual system themselves.",
+      "sha256": "a6b5ed97f43a5cf5bbaf00a7c8cd23c5afc9bd003f849875af8b36e6cf77d01d"
+    },
+    {
+      "file": "WolfToFriend-1.0.jar",
+      "kind": "plugin",
+      "id": "WolfToFriend",
+      "name": "WolfToFriend",
+      "version": "1.0",
+      "description": "",
+      "sha256": "5f8864d59923757e6e0d2a5c900da1d2b99f1bed1f406a8c7db687018d79e0f3"
+    },
+    {
+      "file": "anonymous-1.3.jar",
+      "kind": "plugin",
+      "id": "Anonymous",
+      "name": "Anonymous",
+      "version": "1.3",
+      "description": "",
+      "sha256": "dd2b5d9eefb482544efd10399f74ee8187f5955bdbd62d3631d45ae9a192ab8e"
+    },
+    {
+      "file": "bluemap-5.16-spigot.jar",
+      "kind": "plugin",
+      "id": "BlueMap",
+      "name": "BlueMap",
+      "version": "5.16",
+      "description": "A 3d-map of your Minecraft worlds view-able in your browser using three.js (WebGL)",
+      "sha256": "a31e6cfbae08da882d46b2fc3c40927784ab17f70dbe4feb5d07557dc45d65a1"
+    },
+    {
+      "file": "fast-leaf-decay-2.0.0.jar",
+      "kind": "plugin",
+      "id": "fast-leaf-decay",
+      "name": "fast-leaf-decay",
+      "version": "2.0.0",
+      "description": "",
+      "sha256": "ca7be2e288cc11de6888c572783710cd422ba75c58570d5e8bdc58081fbd969d"
+    },
+    {
+      "file": "gChat-2.7.1.jar",
+      "kind": "plugin",
+      "id": "gChat",
+      "name": "gChat",
+      "version": "2.7.1",
+      "description": "",
+      "sha256": "3165a760e1025c7905d642917c493c6430846ec2b67a70ac4e22612981940ea4"
+    },
+    {
+      "file": "gChatGui-1.0.jar",
+      "kind": "plugin",
+      "id": "gChat-GUI",
+      "name": "gChat-GUI",
+      "version": "1.0",
+      "description": "",
+      "sha256": "6a807c7797c1239637adabc77186b83ce37b32e733b4b8653a7f91f52d3e3672"
+    },
+    {
+      "file": "gReports-1.2.0.jar",
+      "kind": "plugin",
+      "id": "gReports",
+      "name": "gReports",
+      "version": "1.2.0",
+      "description": "",
+      "sha256": "b45ab95b298d4f02d252d5d6714c6d5aca49353678c98aec81cfa0b67c8f11fa"
+    },
+    {
+      "file": "grimac-bukkit-2.3.74.jar",
+      "kind": "plugin",
+      "id": "GrimAC",
+      "name": "GrimAC",
+      "version": "2.3.74",
+      "description": "Libre simulation anticheat designed for 26.3 with 1.8–26.3 support,\\",
+      "sha256": "3ac71c0b6ef8ab586c1dd3ab4c0b3254394ef39d048e4985efb2898b9fef628c"
+    },
+    {
+      "file": "images-2.5.9.jar",
+      "kind": "plugin",
+      "id": "Images",
+      "name": "Images",
+      "version": "2.5.9",
+      "description": "A plugin to load and render images on maps.",
+      "sha256": "53760bfc8ec012ed8a08bdaa50816f30fd9b0dda0dbba13008420729ee41a50a"
+    },
+    {
+      "file": "multiverse-core-5.5.3.jar",
+      "kind": "plugin",
+      "id": "Multiverse-Core",
+      "name": "Multiverse-Core",
+      "version": "5.5.3",
+      "description": "",
+      "sha256": "51f7bbb5c4ed527c4801c99e4b5d7c7c117124dc3ffbc27f013fcd58ff3da617"
+    },
+    {
+      "file": "multiverse-portals-5.2.1.jar",
+      "kind": "plugin",
+      "id": "Multiverse-Portals",
+      "name": "Multiverse-Portals",
+      "version": "5.2.1",
+      "description": "",
+      "sha256": "7e8a39886663649bd00cba7d2d76f5725625b8cc083112f8d3990a331134c7a4"
+    },
+    {
+      "file": "voicechat-bukkit-2.6.12.jar",
+      "kind": "plugin",
+      "id": "voicechat",
+      "name": "voicechat",
+      "version": "2.6.12",
+      "description": "A working voice chat in Minecraft",
+      "sha256": "366a2b6c66158a4be274e70267cd145486a0754527a5abb04cab5005119ffffc"
+    },
+    {
+      "file": "worldedit-bukkit-7.3.10-beta-01.jar",
+      "kind": "plugin",
+      "id": "WorldEdit",
+      "name": "WorldEdit",
+      "version": "7.3.10-beta-01+cb9fd58",
+      "description": "",
+      "sha256": "bb02602f352b7df9440a14eb3e26d589d62dc32bcd25f3fc6666512dedd24760"
+    }
+  ]
+}

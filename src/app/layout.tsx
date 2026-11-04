@@ -10,6 +10,7 @@ import { CursorTrail } from "@/components/cursor-trail";
 import { CookieConsent } from "@/components/cookie-consent";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
+import "./redesign.css";
 
 const fontPixel = Pixelify_Sans({
   variable: "--font-pixel",

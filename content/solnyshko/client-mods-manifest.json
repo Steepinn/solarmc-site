@@ -1,6 +1,6 @@
 {
-  "source": "C:\\Users\\Steep\\OneDrive\\Рабочий стол\\Солярка закрытая\\client-mods",
-  "updated": "2026-10-10",
+  "source": "client-mods",
+  "updated": "2026-11-04",
   "note": "Актуальная клиентская сборка Season 3 (без .prev/.old/.disabled). optional/ отдельно.",
   "mods": [
     {
@@ -10,6 +10,10 @@
     {
       "file": "AdvancementPlaques-1.21.1-fabric-1.6.8.jar",
       "id": "advancementplaques-1-21-1-fabric-1-6-8"
+    },
+    {
+      "file": "afk-cinematics-1.21.1.jar",
+      "id": "afk-cinematics-1-21-1"
     },
     {
       "file": "amendments-fabric-1.21-2.1.7.jar",
@@ -40,6 +44,10 @@
       "id": "betterf3-11-0-3-fabric-1-21-1"
     },
     {
+      "file": "betterstats-3.13.9+fabric-1.21.jar",
+      "id": "betterstats-3-13-9-fabric-1-21"
+    },
+    {
       "file": "BOMD-1.10.2-1.21.1.jar",
       "id": "bomd-1-10-2-1-21-1"
     },
@@ -64,6 +72,14 @@
       "id": "cicada-lib-0-14-3-1-21-1-21-1"
     },
     {
+      "file": "cinematic_respawn-1.21.1-fabric-1.4.3.jar",
+      "id": "cinematic-respawn-1-21-1-fabric-1-4-3"
+    },
+    {
+      "file": "CinematicInteraction-0.1-Fabric-1.21.1.jar",
+      "id": "cinematicinteraction-0-1-fabric-1-21-1"
+    },
+    {
       "file": "click-through-0.1.0+1.21.jar",
       "id": "click-through-0-1-0-1-21"
     },
@@ -72,8 +88,16 @@
       "id": "cloth-config-15-0-140-fabric"
     },
     {
+      "file": "Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "id": "clumps-fabric-1-21-1-19-0-0-1"
+    },
+    {
       "file": "common-networking-fabric-1.0.21-1.21.1.jar",
       "id": "common-networking-fabric-1-0-21-1-21-1"
+    },
+    {
+      "file": "connectiblechains-2.5.7+1.21.1.jar",
+      "id": "connectiblechains-2-5-7-1-21-1"
     },
     {
       "file": "continuity-3.0.0+1.21.jar",
@@ -88,10 +112,6 @@
       "id": "display-delight-1-6-1-mc1-21-1"
     },
     {
-      "file": "do_a_barrel_roll-fabric-3.7.3+1.21.jar",
-      "id": "do-a-barrel-roll-fabric-3-7-3-1-21"
-    },
-    {
       "file": "DumplingsDelightRewrapped-1.21.1-1.3.0+fabric.jar",
       "id": "dumplingsdelightrewrapped-1-21-1-1-3-0-fabric"
     },
@@ -104,6 +124,10 @@
       "id": "dynamic-fps-3-11-4-minecraft-1-21-0-fabric"
     },
     {
+      "file": "eating-animation-1.21+1.9.72.jar",
+      "id": "eating-animation-1-21-1-9-72"
+    },
+    {
       "file": "Emojiful-Fabric-1.21-5.2.4.jar",
       "id": "emojiful-fabric-1-21-5-2-4"
     },
@@ -114,6 +138,10 @@
     {
       "file": "enderitemod-fabric-1.6.2-1.21.1.jar",
       "id": "enderitemod-fabric-1-6-2-1-21-1"
+    },
+    {
+      "file": "enhancedblockentities-0.10.2+1.21.jar",
+      "id": "enhancedblockentities-0-10-2-1-21"
     },
     {
       "file": "entity_model_features-3.2.4-1.21-fabric.jar",
@@ -136,8 +164,8 @@
       "id": "envelope-fabric-1-21-1-0-7-4"
     },
     {
-      "file": "fabric-api-0.116.14+1.21.1.jar",
-      "id": "fabric-api-0-116-14-1-21-1"
+      "file": "fabric-api-0.116.17+1.21.1.jar",
+      "id": "fabric-api-0-116-17-1-21-1"
     },
     {
       "file": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
@@ -148,6 +176,10 @@
       "id": "farmersdelight-1-21-1-3-2-7-refabricated"
     },
     {
+      "file": "fastquit-3.0.0+1.20.6.jar",
+      "id": "fastquit-3-0-0-1-20-6"
+    },
+    {
       "file": "faunus-1.0.5.jar",
       "id": "faunus-1-0-5"
     },
@@ -156,12 +188,24 @@
       "id": "ferritecore-7-0-3-fabric"
     },
     {
+      "file": "fishingreal-fabric-1.21.1-1.9.1.jar",
+      "id": "fishingreal-fabric-1-21-1-1-9-1"
+    },
+    {
       "file": "ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
       "id": "forgeconfigapiport-v21-1-6-1-21-1-fabric"
     },
     {
       "file": "FuelInfo-2.1+1.21.jar",
       "id": "fuelinfo-2-1-1-21"
+    },
+    {
+      "file": "fwa+1.21.1-1.2.31.jar",
+      "id": "fwa-1-21-1-1-2-31"
+    },
+    {
+      "file": "fzzy_config-0.7.7+1.21.jar",
+      "id": "fzzy-config-0-7-7-1-21"
     },
     {
       "file": "geckolib-fabric-1.21.1-4.9.2-arclight.jar",
@@ -184,12 +228,20 @@
       "id": "immediatelyfast-fabric-1-6-11-1-21-1"
     },
     {
+      "file": "Incantationem-2.0.3+1.21.jar",
+      "id": "incantationem-2-0-3-1-21"
+    },
+    {
       "file": "InvMove-0.9.3+1.21.1-Fabric.jar",
       "id": "invmove-0-9-3-1-21-1-fabric"
     },
     {
       "file": "iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
       "id": "iris-fabric-1-8-14-beta-1-mc1-21-1"
+    },
+    {
+      "file": "IronChests-2.0.4.jar",
+      "id": "ironchests-2-0-4"
     },
     {
       "file": "krypton-0.2.8.jar",
@@ -228,6 +280,10 @@
       "id": "malilib-fabric-1-21-0-21-10"
     },
     {
+      "file": "midnightlib-fabric-1.10.0+1.21.1.jar",
+      "id": "midnightlib-fabric-1-10-0-1-21-1"
+    },
+    {
       "file": "modmenu-11.0.4.jar",
       "id": "modmenu-11-0-4"
     },
@@ -260,8 +316,16 @@
       "id": "onceuponastroll-fabric-1-21-1-1-10-0"
     },
     {
+      "file": "particle_core-0.3.3+1.21.jar",
+      "id": "particle-core-0-3-3-1-21"
+    },
+    {
       "file": "particle-rain-3.0.5.jar",
       "id": "particle-rain-3-0-5"
+    },
+    {
+      "file": "PassiveSkillTree-Fabric-1.21.1-0.7.6+c.jar",
+      "id": "passiveskilltree-fabric-1-21-1-0-7-6-c"
     },
     {
       "file": "Ping-Wheel-1.12.2-fabric-1.21.1.jar",
@@ -276,20 +340,16 @@
       "id": "prickle-fabric-1-21-1-21-1-11"
     },
     {
-      "file": "puffish_skills-0.19.1-1.21-fabric.jar",
-      "id": "puffish-skills-0-19-1-1-21-fabric"
-    },
-    {
       "file": "pumpkin_pie_delight-1.0.2+1.21.jar",
       "id": "pumpkin-pie-delight-1-0-2-1-21"
     },
     {
-      "file": "questlog-fabric-1.21.1-3.3.0.jar",
-      "id": "questlog-fabric-1-21-1-3-3-0"
+      "file": "Quick Skin - Fabric - 1.21.1-4.0.0.jar",
+      "id": "quick-skin-fabric-1-21-1-4-0-0"
     },
     {
-      "file": "QuickSkin-1.21.1-2.6.2.4.jar",
-      "id": "quickskin-1-21-1-2-6-2-4"
+      "file": "raised-fabric-1.21.1-6.0.2.jar",
+      "id": "raised-fabric-1-21-1-6-0-2"
     },
     {
       "file": "ranged_weapon_api-fabric-2.3.3+1.21.1.jar",
@@ -304,8 +364,16 @@
       "id": "resourcefulconfig-fabric-1-21-3-0-11"
     },
     {
+      "file": "resourcefullib-fabric-1.21-3.0.12.jar",
+      "id": "resourcefullib-fabric-1-21-3-0-12"
+    },
+    {
       "file": "Resourcify (1.21.1-fabric)-1.8.5.jar",
       "id": "resourcify-1-21-1-fabric-1-8-5"
+    },
+    {
+      "file": "screenshotgallery-fabric-1.2.jar",
+      "id": "screenshotgallery-fabric-1-2"
     },
     {
       "file": "SereneSeasons-fabric-1.21.1-10.1.0.1.jar",
@@ -318,10 +386,6 @@
     {
       "file": "simpleradio-fabric-1.21.1-4.4.7.9.jar",
       "id": "simpleradio-fabric-1-21-1-4-4-7-9"
-    },
-    {
-      "file": "sleep_tight-1.21-1.4.1-fabric-solar-arclight.jar",
-      "id": "sleep-tight-1-21-1-4-1-fabric-solar-arclight"
     },
     {
       "file": "SmartBrainLib-fabric-1.21.1-1.16.11.jar",
@@ -340,40 +404,72 @@
       "id": "sodium-fabric-0-8-12-mc1-21-1"
     },
     {
-      "file": "solar_ui_ru-1.0.11.jar",
-      "id": "solar-ui-ru-1-0-11"
+      "file": "solar_ui_ru-1.0.24.jar",
+      "id": "solar-ui-ru-1-0-24"
     },
     {
-      "file": "solarauth-1.0.19.jar",
-      "id": "solarauth-1-0-19"
+      "file": "solar-bumblezone-7.16.0-1.21.1-fabric.jar",
+      "id": "solar-bumblezone-7-16-0-1-21-1-fabric"
     },
     {
-      "file": "solardiary-1.3.1.jar",
-      "id": "solardiary-1-3-1"
+      "file": "solarauth-1.1.0.jar",
+      "id": "solarauth-1-1-0"
+    },
+    {
+      "file": "solarbrbcompat-1.0.6.jar",
+      "id": "solarbrbcompat-1-0-6"
+    },
+    {
+      "file": "solarcosmetics-1.4.7.jar",
+      "id": "solarcosmetics-1-4-7"
+    },
+    {
+      "file": "solardiary-1.3.10.jar",
+      "id": "solardiary-1-3-10"
+    },
+    {
+      "file": "solardiary-1.3.5.jar",
+      "id": "solardiary-1-3-5"
+    },
+    {
+      "file": "solardiary-1.3.6.jar",
+      "id": "solardiary-1-3-6"
+    },
+    {
+      "file": "solardiary-1.3.9.jar",
+      "id": "solardiary-1-3-9"
     },
     {
       "file": "solarfdcompat-1.0.1.jar",
       "id": "solarfdcompat-1-0-1"
     },
     {
-      "file": "solarhub-1.0.6.jar",
-      "id": "solarhub-1-0-6"
+      "file": "solarhub-1.4.9.jar",
+      "id": "solarhub-1-4-9"
     },
     {
       "file": "solartideocean-1.0.1.jar",
       "id": "solartideocean-1-0-1"
     },
     {
-      "file": "solartitle-1.0.6.jar",
-      "id": "solartitle-1-0-6"
-    },
-    {
-      "file": "solarwebcamfix-1.0.0.jar",
-      "id": "solarwebcamfix-1-0-0"
+      "file": "solartitle-1.1.2.jar",
+      "id": "solartitle-1-1-2"
     },
     {
       "file": "sound-physics-remastered-fabric-1.21.1-1.5.1.jar",
       "id": "sound-physics-remastered-fabric-1-21-1-1-5-1"
+    },
+    {
+      "file": "spark-1.10.109-fabric.jar",
+      "id": "spark-1-10-109-fabric"
+    },
+    {
+      "file": "structure_layout_optimizer-fabric-1.0.12.jar",
+      "id": "structure-layout-optimizer-fabric-1-0-12"
+    },
+    {
+      "file": "studious-keybinds-fabric-1.21.1-1.0.8-beta.1.jar",
+      "id": "studious-keybinds-fabric-1-21-1-1-0-8-beta-1"
     },
     {
       "file": "syncmatica-fabric-1.21-0.3.14-sakura.5.jar",
@@ -384,8 +480,12 @@
       "id": "talking-heads-1-1-3-1-21-1-fabric"
     },
     {
-      "file": "tide-fabric-1.21.1-2.1.jar",
-      "id": "tide-fabric-1-21-1-2-1"
+      "file": "tcdcommons-3.12.7+fabric-1.21.jar",
+      "id": "tcdcommons-3-12-7-fabric-1-21"
+    },
+    {
+      "file": "tide-fabric-1.21.1-2.1.1.jar",
+      "id": "tide-fabric-1-21-1-2-1-1"
     },
     {
       "file": "trinkets-3.10.0.jar",
@@ -414,10 +514,6 @@
     {
       "file": "watervision-FB-mc1.21.1-v0.1.0-alpha.jar",
       "id": "watervision-fb-mc1-21-1-v0-1-0-alpha"
-    },
-    {
-      "file": "webcam-fabric-4.4.0-1.21.1.jar",
-      "id": "webcam-fabric-4-4-0-1-21-1"
     },
     {
       "file": "wiretap-1.3.0+1.21.1.fabric.jar",
