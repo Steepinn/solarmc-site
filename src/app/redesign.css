@@ -70,3 +70,10 @@ body,.font-sans,.font-display,h1,h2,h3,h4,.wiki-prose,.wiki-h2,.wiki-h3,.wiki-h4
 @media (max-width: 767px) {
   input:not([type="checkbox"]):not([type="radio"]), textarea, select { font-size: 16px; }
 }
+
+/* Warm lantern-lit palette */
+:root{--background:#f7efdf;--foreground:#382719;--card:#fff9ec;--muted:#efe1c8;--muted-foreground:#75604a;--border:#dfcaa8;--primary:#d99a37;--primary-foreground:#2e1c0d;--accent:#f3dfba}
+.dark{--background:#1c1510;--foreground:#f6ead6;--card:#2a1e16;--muted:#38291e;--muted-foreground:#c7b298;--border:#58412d;--primary:#efbd69;--primary-foreground:#30200f;--accent:#493421;--panel:#2a1e16;--ui-color:#efbd69}
+.solar-hero-shade{background:linear-gradient(90deg,rgba(35,21,11,.95),rgba(48,29,13,.63) 53%,rgba(51,30,12,.15)),linear-gradient(0deg,#1c1510 0%,transparent 48%)}
+.solar-hero-content>p,.solar-hero-note{color:#ead5b3}.solar-eyebrow,.solar-hero-caption{color:#e3c9a0}.solar-feature-image>span{background:#382414cc}.solar-feature-card,.solar-community,.wiki-shell section[aria-label="Статья вики"]>div>article{box-shadow:0 8px 28px #4c2c1010!important}.wiki-prose a{color:var(--color-solar-gold);text-decoration:underline;text-underline-offset:3px}.wiki-prose blockquote{border-left:3px solid var(--primary);background:var(--accent);padding:12px 18px;border-radius:0 8px 8px 0}.wiki-prose table{border-collapse:collapse;width:100%}.wiki-prose th,.wiki-prose td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}.wiki-prose tr:nth-child(even){background:var(--muted)}
+@media(max-width:767px){.solar-hero-shade{background:linear-gradient(90deg,#23150bf0,#30200f99),linear-gradient(0deg,#1c1510,transparent)}}
