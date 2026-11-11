@@ -19,9 +19,10 @@ export default async function AdminPage() {
 
   return (
     <PageShell
-      title="Админ-панель"
-      eyebrow="Staff"
-      description="Обзор, заявки, тикеты, пользователи, ачивки, роли и рассылки."
+      title="За кулисами Solar"
+      eyebrow="Команда проекта"
+      className="solar-admin-page"
+      description="Всё, что помогает заботиться о мире и его игроках. Заявки, обращения и управление — в одном месте."
     >
       <AdminDashboard initialApps={apps} initialSupport={support} />
     </PageShell>

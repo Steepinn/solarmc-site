@@ -21,6 +21,7 @@ type Filter = "all" | ApplicationStatus;
 
 export function AdminApplications({ initialApps }: { initialApps: Application[] }) {
   const [apps, setApps] = useState(initialApps);
+  const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("pending");
   const [selectedId, setSelectedId] = useState<string | null>(
     initialApps.find((a) => a.status === "pending")?.id ?? null,
@@ -29,11 +30,11 @@ export function AdminApplications({ initialApps }: { initialApps: Application[] 
   const [message, setMessage] = useState("");
 
   const filtered = useMemo(() => {
-    if (filter === "all") return apps;
-    return apps.filter((a) => a.status === filter);
-  }, [apps, filter]);
+    const search = query.trim().toLowerCase();
+    return apps.filter((application) => (filter === "all" || application.status === filter) && (!search || `${application.mcNick} ${application.discordUsername} ${application.ticketNumber ?? ""}`.toLowerCase().includes(search)));
+  }, [apps, filter, query]);
 
-  const selected = apps.find((a) => a.id === selectedId) ?? filtered[0] ?? null;
+  const selected = filtered.find((a) => a.id === selectedId) ?? filtered[0] ?? null;
 
   async function importFromDiscord() {
     setImporting(true);
@@ -125,6 +126,8 @@ export function AdminApplications({ initialApps }: { initialApps: Application[] 
           ))}
         </div>
 
+        <input type="search" aria-label="Поиск заявок" placeholder="Ник, Discord или номер заявки" value={query} onChange={event => setQuery(event.target.value)} className="input-field mb-4 w-full text-sm" />
+        <p className="mb-3 text-xs text-muted-foreground" role="status">Найдено: {filtered.length}</p>
         <ul className="space-y-2">
           {filtered.length === 0 ? (
             <li className="text-sm text-muted-foreground">Нет заявок в этом фильтре</li>

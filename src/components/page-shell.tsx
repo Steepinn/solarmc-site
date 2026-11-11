@@ -19,11 +19,11 @@ export function PageShell({
   return (
     <div
       className={cn(
-        "relative z-[1] mx-auto max-w-[1400px] min-w-0 px-3 py-3 sm:px-4 sm:py-5",
+        "solar-page-shell relative z-[1] mx-auto max-w-[1400px] min-w-0 px-3 py-3 sm:px-4 sm:py-5",
         className,
       )}
     >
-      <div className="panel-surface rounded-2xl px-4 py-3 sm:px-7 sm:py-5">
+      <div className="solar-page-heading panel-surface rounded-2xl px-4 py-3 sm:px-7 sm:py-5">
         {eyebrow && (
           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-solar-gold sm:text-xs">
             {eyebrow}

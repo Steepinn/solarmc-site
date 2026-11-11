@@ -113,7 +113,7 @@ export function ApplicationChat({
         : "Отклонено";
 
   return (
-    <div className="flex h-[calc(100svh-var(--site-shell-offset)-1.5rem)] flex-col gap-3">
+    <div className="solar-application-chat flex h-[calc(100svh-var(--site-shell-offset)-1.5rem)] flex-col gap-3">
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-3">
         <Link
           href={backHref}
@@ -136,8 +136,7 @@ export function ApplicationChat({
             Переписка по проходке
           </h1>
           <p className="mt-1.5 text-xs text-muted-foreground">
-            Общайся здесь. В Discord модераторы видят копию; игрока в канал
-            добавляют вручную при необходимости.
+            Здесь можно уточнить детали и ответить команде. Статус заявки обновится после решения модераторов.
             {isStaff && app.discordChannelId ? (
               <>
                 {" "}

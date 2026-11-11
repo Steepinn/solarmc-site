@@ -1,33 +1,33 @@
-import { ArrowUpRight, BookOpen, Compass, Download, Map, ShieldCheck, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowDown, ArrowUpRight, BookOpen, Compass, Download, Map, MessageCircle, ShieldCheck, Sun, Swords, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import "./private-server.css";
+import { SiteMenu } from "./site-menu";
 
-const features = [
-  { n: "01", icon: Compass, title: "Мир, который хочется исследовать", text: "Древние крепости, океанские глубины и данжи. Собирай друзей и отправляйся за своей историей.", href: "/docs/mods/dungeons-pve", image: "/gallery/screenshot-2.png", tag: "Исследование" },
-  { n: "02", icon: Sparkles, title: "Твой персонаж. Твой путь.", text: "Развивай навыки, находи артефакты и выбирай свой стиль. Здесь всегда есть к чему стремиться.", href: "/docs/mods/levelz", image: "/gallery/solar-flight.jpg", tag: "Развитие" },
-  { n: "03", icon: Map, title: "Место для своих", text: "Основывай города, строй вместе и наполняй мир жизнью. Большие проекты начинаются с маленькой идеи.", href: "/cities", image: "/gallery/solar-campfire-ai.png", tag: "Сообщество" },
+const stories = [
+  { image: "/gallery/screenshot-7.png", icon: Users, title: "Найди своих", text: "Знакомься, объединяйся с соседями и превращай маленькое поселение в город.", href: "/cities", label: "Города и сообщество" },
+  { image: "/gallery/screenshot-3.png", icon: Swords, title: "Шагни в неизвестность", text: "Собирай команду, исследуй данжи и открывай новые стороны привычного мира.", href: "/docs/mods/dungeons-pve", label: "Приключения и PvE" },
+  { image: "/gallery/screenshot-8.png", icon: Compass, title: "Оставь свой след", text: "Первый дом, большой проект или тихая жизнь у воды. Твой путь выбираешь ты.", href: "/map", label: "Открытый мир" },
 ];
+
 export function HeroSection() {
-  return <section className="solar-hero">
-    <Image src="/gallery/screenshot-1.png" alt="Мир сервера Solar" fill priority sizes="100vw" className="solar-hero-image" />
-    <div className="solar-hero-shade" />
-    <div className="solar-hero-content">
-      <div className="solar-eyebrow"><span /> MINECRAFT 1.21.1 <i /> СЕЗОН 03</div>
-      <h1>Твоя история.<br />Под солнцем <em>Solar.</em></h1>
-      <p>Уютное выживание с большим миром возможностей.<br className="hidden sm:block" /> Исследуй, создавай и находи своих.</p>
-      <div className="solar-hero-actions"><Link href="/applications" className="btn-primary">Начать приключение <ArrowUpRight size={18} /></Link><Link href="/launcher" className="solar-button-secondary"><Download size={18} /> Скачать лаунчер</Link></div>
-      <div className="solar-hero-note"><ShieldCheck size={15} /> Вход по заявке <span>·</span> Своя атмосфера <span>·</span> Общий мир</div>
-    </div>
-    <div className="solar-hero-caption"><span>НОВАЯ ГЛАВА ТВОЕГО ВЫЖИВАНИЯ</span><span>Листай и открывай мир ↓</span></div>
+  return <section className="orbit-hero" aria-labelledby="orbit-title">
+    <Image src="/gallery/solar-campfire-ai.png" alt="Уютный вечер у костра в блочном мире Minecraft" fill priority sizes="100vw" className="orbit-cover" />
+    <div className="orbit-shade" />
+    <div className="orbit-hero-copy"><p className="orbit-eyebrow"><span /> ПРИВАТНЫЙ MINECRAFT-СЕРВЕР · СЕЗОН 03</p><h1 id="orbit-title">Здесь начинается<br />твоя <em>история.</em></h1><p className="orbit-lead">Один мир. Свои люди. Тысячи идей.<br />Место, где хочется остаться после первого «привет».</p><div className="orbit-actions"><Link href="/applications" className="orbit-btn">Хочу к вам <ArrowUpRight size={19} /></Link><a href="#world" className="orbit-btn orbit-btn-clear">Познакомиться с миром <ArrowDown size={17} /></a></div><p className="orbit-small"><ShieldCheck size={15} /> Вход по заявке <span> / </span> Minecraft 1.21.1</p></div>
+    <div className="orbit-hero-bottom"><span>НЕ ПРОСТО БЛОКИ. МЕСТО, ГДЕ ТЫ ДОМА.</span><a href="#world" aria-label="Перейти к описанию мира"><ArrowDown size={19} /></a><span>SOLARMC — EST. TOGETHER</span></div>
   </section>;
 }
 export function LinksSection() {
-  return <section className="solar-explore">
-    <div className="solar-section-heading"><div><p className="solar-kicker">БОЛЬШЕ, ЧЕМ ВЫЖИВАНИЕ</p><h2>Найди своё приключение</h2></div><Link href="/docs/mods/obzor">Всё о сервере <ArrowUpRight size={17} /></Link></div>
-    <div className="solar-feature-grid">{features.map(({icon: Icon, ...f}) => <Link key={f.n} href={f.href} className="solar-feature-card"><div className="solar-feature-image"><Image src={f.image} alt={f.tag} fill sizes="(max-width: 767px) 100vw, 33vw" /><span>{f.tag}</span></div><div className="solar-feature-copy"><div><Icon size={20} /><span>{f.n}</span></div><h3>{f.title}</h3><p>{f.text}</p><span className="solar-feature-arrow"><ArrowUpRight size={20} /></span></div></Link>)}</div>
-    <div className="solar-community"><div><p className="solar-kicker">НА СВЯЗИ</p><h2>Хорошие истории начинаются вместе.</h2><p>Знакомься с игроками, делись постройками и следи за новостями.</p></div><Link href={siteConfig.links.discord} target="_blank" rel="noopener noreferrer" className="solar-button-secondary">Наш Discord <ArrowUpRight size={18} /></Link></div>
-    <div className="solar-quick-links"><Link href="/docs/informaciya/home"><BookOpen size={19} /><span>База знаний<small>Гайды и ответы на вопросы</small></span><ArrowUpRight size={18} /></Link><Link href="/map"><Map size={19} /><span>Карта мира<small>Найди своё место на Solar</small></span><ArrowUpRight size={18} /></Link><Link href="/support"><ShieldCheck size={19} /><span>Мы рядом<small>Помощь и техподдержка</small></span><ArrowUpRight size={18} /></Link></div>
-  </section>;
+  return <>
+    <section id="world" className="orbit-section"><div className="orbit-heading"><div><p className="orbit-eyebrow">01 / МИР БЕЗ ЧУЖИХ</p><h2>Маленькое сообщество.<br /><span>Большие приключения.</span></h2></div><p>Мы играем ради историй, которые создаём вместе.<br />Выживаем, строим и делаем этот мир своим.</p></div><div className="orbit-stories">{stories.map(({ icon: Icon, ...story }) => <Link href={story.href} key={story.title} className="orbit-story"><div className="orbit-story-image"><Image src={story.image} alt={story.label} fill sizes="(max-width: 700px) 100vw, 33vw" /><span><Icon size={15} />{story.label}</span><b><ArrowUpRight size={21} /></b></div><h3>{story.title}</h3><p>{story.text}</p></Link>)}</div></section>
+    <section className="orbit-invite orbit-section"><div className="orbit-invite-art"><Image src="/gallery/screenshot-1.png" alt="Ночное небо над океаном сервера SolarMC" fill sizes="(max-width: 700px) 100vw, 50vw" /><span><Sun size={26} /> ТВОЙ НОВЫЙ ЛЮБИМЫЙ МИР</span></div><div className="orbit-invite-copy"><p className="orbit-eyebrow">02 / УСТРАИВАЙСЯ ПОУДОБНЕЕ</p><h2>Твой дом может<br />быть <em>где угодно.</em></h2><p>На краю леса. В шумном городе. На острове, который ты найдёшь первым. Посмотри на наш мир — возможно, твоё место уже ждёт.</p><Link href="/map" className="orbit-inline">Открыть карту мира <Map size={18} /></Link></div></section>
+    <section id="start" className="orbit-section"><div className="orbit-heading"><div><p className="orbit-eyebrow">03 / ДО ВСТРЕЧИ НА СПАВНЕ</p><h2>Три шага до <span>«я дома».</span></h2></div><Link href="/docs/guides/how-to-start" className="orbit-inline">Гайд для новичка <ArrowUpRight size={17} /></Link></div><div className="orbit-steps">{[{ number: "01", icon: BookOpen, title: "Познакомься с правилами", text: "Уважение к игрокам и их постройкам — основа нашего мира.", href: "/docs/informaciya/rules", action: "Читать правила" }, { number: "02", icon: MessageCircle, title: "Расскажи немного о себе", text: "Заполни заявку на проходку и дождись решения команды.", href: "/applications", action: "Подать заявку" }, { number: "03", icon: Download, title: "Загружайся в приключение", text: "Установи лаунчер с нужной сборкой и заходи после одобрения.", href: "/launcher", action: "Скачать лаунчер" }].map(({ icon: Icon, ...step }) => <article key={step.number}><div><span>{step.number}</span><Icon size={23} /></div><h3>{step.title}</h3><p>{step.text}</p><Link href={step.href}>{step.action} <ArrowUpRight size={16} /></Link></article>)}</div></section>
+    <section className="orbit-section orbit-faq"><div><p className="orbit-eyebrow">ЕЩЁ ПАРА МОМЕНТОВ</p><h2>Перед первым<br /><span>приключением.</span></h2></div><div>{[{ q: "Что значит приватный сервер?", a: "Доступ в мир открывается после одобрения заявки. Так мы знакомимся с новыми игроками и сохраняем атмосферу сообщества." }, { q: "Какая версия игры нужна?", a: "Minecraft 1.21.1. Используй лаунчер SolarMC, чтобы установить сборку сервера." }, { q: "Можно играть с друзьями?", a: "Да! Каждый из друзей подаёт отдельную заявку. После одобрения вы сможете поселиться рядом и играть вместе." }].map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+    <section className="orbit-community"><Sun size={45} strokeWidth={1.3} /><p className="orbit-eyebrow">ХОРОШИЕ ИСТОРИИ НАЧИНАЮТСЯ С ОБЩЕНИЯ</p><h2>Залетай на <em>огонёк.</em></h2><p>Знакомства, новости и планы на следующий вечер.<br />Наше сообщество живёт и за пределами игры.</p><Link className="orbit-btn" href={siteConfig.links.discord} target="_blank" rel="noopener noreferrer">Наш Discord <ArrowUpRight size={19} /></Link></section>
+  </>;
 }
-export function HomePage() { return <><HeroSection /><LinksSection /></>; }
+export function HomePage() {
+  return <div className="orbit-site"><header className="orbit-nav"><div className="orbit-nav-brand"><SiteMenu /><Link href="/" className="orbit-logo" aria-label="SolarMC — главная"><Image src="/logo.png" alt="Solar — логотип с улыбкой вместо О" width={661} height={168} priority className="orbit-brand-image" /><sup>03</sup></Link></div><nav aria-label="Основная навигация"><a href="#world">О сервере</a><Link href="/docs/informaciya/home">Вики <ArrowUpRight size={12} /></Link><Link href="/map">Карта мира</Link><Link href="/launcher">Лаунчер</Link></nav><Link href="/applications" className="orbit-nav-join">Начать играть <ArrowUpRight size={16} /></Link></header><HeroSection /><LinksSection /><footer className="orbit-footer"><Link href="/" className="orbit-logo"><Image src="/logo.png" alt="Solar" width={661} height={168} className="orbit-brand-image" /></Link><span>Свой мир. Своя история. © {new Date().getFullYear()} SolarMC</span><div><Link href="/docs/informaciya/rules">Правила</Link><Link href="/support">Поддержка</Link><Link href={siteConfig.links.telegram} target="_blank" rel="noopener noreferrer">Telegram ↗</Link></div></footer></div>;
+}

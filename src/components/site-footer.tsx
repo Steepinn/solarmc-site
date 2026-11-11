@@ -42,8 +42,7 @@ export function SiteFooter() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2">
-              <Image src="/logo.png" alt="SolarMC" width={36} height={36} />
-              <span className="font-display font-bold tracking-tight">SOLAR</span>
+              <Image src="/logo.png" alt="SolarMC" width={661} height={168} className="solar-shared-logo" />
             </Link>
             <p className="mt-2 max-w-xs text-sm leading-snug text-muted-foreground">
               Season 3 · Minecraft 1.21.1 — выживание, города, данжи.

@@ -9,6 +9,8 @@ import { AdminSupportTickets } from "@/components/admin-support-tickets";
 import { RoleAssignPanel } from "@/components/role-assign-panel";
 import { ContentCard } from "@/components/page-shell";
 import { cn } from "@/lib/utils";
+import { Activity, ArrowUpRight, Headphones, LayoutDashboard, ListChecks, Server, ShieldCheck, Trophy, Users, Wrench } from "lucide-react";
+const tabIcons = { overview: LayoutDashboard, applications: ListChecks, support: Headphones, server: Server, players: Activity, users: Users, achievements: Trophy, roles: ShieldCheck, tools: Wrench };
 
 type Tab =
   | "overview"
@@ -147,16 +149,17 @@ export function AdminDashboard({
   ];
 
   return (
-    <div className="space-y-4">
-      <div className="panel-surface flex flex-wrap gap-2 rounded-2xl p-3 sm:p-3.5">
+    <div className="solar-admin-workspace">
+      <aside className="solar-admin-sidebar"><p className="solar-admin-kicker">SOLAR / УПРАВЛЕНИЕ</p><h2>Панель команды</h2><nav aria-label="Разделы админки">
         {tabs.map((t) => (
           <button
             key={t.id}
             type="button"
             onClick={() => setTab(t.id)}
-            className={cn("tab-btn", tab === t.id && "tab-btn-active")}
+            aria-current={tab === t.id ? "page" : undefined}
+            className={cn("solar-admin-tab", tab === t.id && "solar-admin-tab-active")}
           >
-            {t.label}
+            {(() => { const Icon = tabIcons[t.id]; return <Icon size={17} />; })()}<span>{t.label}</span>
             {t.badge ? (
               <span className="ms-1.5 rounded-full bg-amber-500/20 px-2 py-0.5 text-xs text-amber-300">
                 {t.badge}
@@ -164,8 +167,9 @@ export function AdminDashboard({
             ) : null}
           </button>
         ))}
-      </div>
-
+      </nav><Link className="solar-admin-return" href="/">На сайт <ArrowUpRight size={16} /></Link></aside>
+      <section className="solar-admin-content" aria-label={tabs.find(item => item.id === tab)?.label}>
+      <div className="solar-admin-section-heading"><div><p className="solar-admin-kicker">РАБОЧЕЕ ПРОСТРАНСТВО</p><h2>{tabs.find(item => item.id === tab)?.label}</h2></div><span><ShieldCheck size={15} /> Доступ команды</span></div>
       {tab === "overview" ? (
         <OverviewPanel
           stats={stats}
@@ -411,6 +415,7 @@ export function AdminDashboard({
       ) : null}
 
       {tab === "tools" ? <ToolsPanel /> : null}
+      </section>
     </div>
   );
 }

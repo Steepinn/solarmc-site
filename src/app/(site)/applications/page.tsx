@@ -18,9 +18,11 @@ export default async function ApplicationsPage({ searchParams }: Props) {
   return (
     <PageShell
       title="Заявка на проходку"
-      description="Подай заявку на whitelist SolarMC. Модерация в Discord с кнопками одобрения, переписка — на сайте."
+      description="Давай познакомимся. Расскажи о себе, получи проходку и начни свою историю в мире Solar."
+      className="solar-applications-page"
       eyebrow="Проходка"
     >
+      <div className="application-journey"><div><span>01</span><strong>Знакомство</strong><p>Войди через Discord и заполни анкету.</p></div><div><span>02</span><strong>Рассмотрение</strong><p>Следи за статусом и отвечай в чате заявки.</p></div><div><span>03</span><strong>Добро пожаловать</strong><p>После одобрения скачай лаунчер и заходи.</p></div></div>
       {sent ? (
         <ContentCard className="mb-6 border-green-500/20 bg-green-500/5">
           <p className="text-sm text-green-400">
@@ -42,7 +44,7 @@ export default async function ApplicationsPage({ searchParams }: Props) {
 
       <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
         <ContentCard className="order-1">
-          <h2 className="text-xl font-semibold">Подать заявку</h2>
+          <h2 className="text-xl font-semibold">Твоё место в Solar</h2>
           {!session ? (
             <div className="mt-6 space-y-4">
               <p className="text-sm text-muted-foreground">
@@ -89,6 +91,7 @@ export default async function ApplicationsPage({ searchParams }: Props) {
         </ContentCard>
 
         <aside className="order-2 space-y-4">
+          <ContentCard><p className="application-aside-kicker">ПЕРЕД ОТПРАВКОЙ</p><h3 className="text-lg font-bold">Будь собой.</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Здесь нет идеальных ответов. Расскажи о своих интересах и планах — так нам будет проще познакомиться.</p><Link href="/docs/informaciya/rules" className="mt-4 inline-block text-sm text-solar-gold">Прочитать правила ↗</Link></ContentCard>
           <div>
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               Недавние заявки

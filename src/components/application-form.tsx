@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 const hourOptions = ["До 1 часа", "От 1 до 3 часов", "От 3 до 5 часов", "6+ часов"];
@@ -10,6 +10,18 @@ const yesNo = ["Да", "Нет"];
 
 export function ApplicationForm() {
   const router = useRouter();
+  const [step, setStep] = useState(0);
+  const formRef = useRef<HTMLFormElement>(null);
+  const stepTitles = ["Знакомство", "Твоя история", "Перед входом"];
+  function nextStep() {
+    const fields = formRef.current?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("fieldset:not([disabled]) input, fieldset:not([disabled]) textarea");
+    if (fields) for (const field of fields) if (!field.reportValidity()) return;
+    setError("");
+    setStep(current => Math.min(2, current + 1));
+  }
+  useEffect(() => {
+    formRef.current?.querySelector<HTMLElement>("fieldset:not([disabled]) legend")?.focus();
+  }, [step]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [rulesAgreed, setRulesAgreed] = useState(false);
@@ -44,6 +56,8 @@ export function ApplicationForm() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (loading) return;
+    if (step < 2) { nextStep(); return; }
     if (!rulesAgreed || !ageConfirmed) {
       setError("Подтверди согласие с правилами и возраст 14+");
       return;
@@ -51,6 +65,7 @@ export function ApplicationForm() {
     setLoading(true);
     setError("");
 
+    try {
     const res = await fetch("/api/applications", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -80,15 +95,20 @@ export function ApplicationForm() {
     const id = data.application?.id as string | undefined;
     router.push(id ? `/applications/${id}` : "/applications?sent=1");
     router.refresh();
+    } catch {
+      setError("Не удалось связаться с сервером. Ответы сохранены в форме — попробуй отправить ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <form onSubmit={submit} className="space-y-5">
+    <form ref={formRef} onSubmit={submit} className="solar-application-form space-y-5" aria-busy={loading}>
+      <ol className="application-progress" aria-label="Этапы заявки">{stepTitles.map((title, index) => <li key={title} aria-current={index === step ? "step" : undefined} data-complete={index < step}><span>{index < step ? "✓" : `0${index + 1}`}</span><strong>{title}</strong></li>)}</ol>
+      <p className="application-step-caption" role="status">Шаг {step + 1} из 3 · {stepTitles[step]}</p>
       <div className="rounded-xl border border-border bg-muted/20 p-4 text-sm text-muted-foreground">
         <p>
-          После отправки в Discord появится канал{" "}
-          <strong className="text-foreground">заявка-N</strong> с кнопками одобрения (как у
-          SOLARBOT). Переписка с модераторами —{" "}
+          Заполни анкету, чтобы мы могли познакомиться. После отправки следи за статусом и общайся с модераторами{" "}
           <strong className="text-foreground">на сайте</strong>. Нужно быть на{" "}
           <a
             href={siteConfig.links.discord}
@@ -108,6 +128,7 @@ export function ApplicationForm() {
         </p>
       </div>
 
+      <fieldset disabled={step !== 0 || loading} hidden={step !== 0} className="application-fieldset space-y-5"><legend tabIndex={-1}>Давай познакомимся</legend><p className="application-help">Начнём с самого простого: как тебя зовут и как найти тебя в игре.</p>
       <div className="grid gap-4 sm:grid-cols-2">
         {[
           { key: "mcNick", label: "Ник в Minecraft", placeholder: "Steve" },
@@ -115,9 +136,11 @@ export function ApplicationForm() {
           { key: "age", label: "Возраст", placeholder: "16", type: "number" },
           { key: "source", label: "Откуда узнал о Solar?", placeholder: "YouTube, друг..." },
         ].map((field) => (
-          <label key={field.key} className="block sm:col-span-1">
+          <label key={field.key} htmlFor={`application-${field.key}`} className="block sm:col-span-1">
             <span className="text-sm font-medium">{field.label}</span>
             <input
+              id={`application-${field.key}`}
+              name={field.key}
               required
               type={field.type ?? "text"}
               min={field.type === "number" ? 14 : undefined}
@@ -130,15 +153,19 @@ export function ApplicationForm() {
         ))}
       </div>
 
+      </fieldset>
+      <fieldset disabled={step !== 1 || loading} hidden={step !== 1} className="application-fieldset space-y-5"><legend tabIndex={-1}>Теперь — твоя история</legend><p className="application-help">Расскажи своими словами. Нам интересно, какой ты игрок и что хочешь создать.</p>
       {[
         { key: "hobby", label: "Хобби / спорт", placeholder: "Строительство, футбол..." },
         { key: "aboutSelf", label: "О себе", placeholder: "Кратко о себе и стиле игры" },
         { key: "experience", label: "Опыт в Minecraft", placeholder: "Vanilla, моды, сервера..." },
         { key: "plans", label: "Планы на сервере", placeholder: "Город, ферма, торговля..." },
       ].map((field) => (
-        <label key={field.key} className="block">
+        <label key={field.key} htmlFor={`application-${field.key}`} className="block">
           <span className="text-sm font-medium">{field.label}</span>
           <textarea
+            id={`application-${field.key}`}
+            name={field.key}
             required
             rows={2}
             value={form[field.key as keyof typeof form]}
@@ -149,6 +176,8 @@ export function ApplicationForm() {
         </label>
       ))}
 
+      </fieldset>
+      <fieldset disabled={step !== 2 || loading} hidden={step !== 2} className="application-fieldset space-y-5"><legend tabIndex={-1}>Всё готово к знакомству?</legend><p className="application-help">Осталось рассказать о своём ритме игры и подтвердить правила.</p>
       <div className="grid gap-4 sm:grid-cols-2">
         {[
           { key: "rulesRead", label: "Прочитал правила?", options: yesNo },
@@ -156,9 +185,11 @@ export function ApplicationForm() {
           { key: "weekendHours", label: "Часы в выходные", options: hourOptions },
           { key: "ideaKnown", label: "Знаешь идею проекта?", options: yesNo },
         ].map((field) => (
-          <label key={field.key} className="block">
+          <label key={field.key} htmlFor={`application-${field.key}`} className="block">
             <span className="text-sm font-medium">{field.label}</span>
             <select
+              id={`application-${field.key}`}
+              name={field.key}
               value={form[field.key as keyof typeof form]}
               onChange={(e) => update(field.key, e.target.value)}
               className="input-field mt-1.5 w-full"
@@ -200,6 +231,8 @@ export function ApplicationForm() {
         </label>
       </div>
 
+      </fieldset>
+      <div role="alert" aria-live="polite">
       {error === "__not_in_guild__" ? (
         <p className="text-sm text-red-400">
           Сначала зайди на{" "}
@@ -216,9 +249,12 @@ export function ApplicationForm() {
         <p className="text-sm text-red-400">{error}</p>
       ) : null}
 
-      <button type="submit" disabled={loading} className="btn-primary w-full text-base">
-        {loading ? "Отправка..." : "Подать заявку"}
-      </button>
+      </div>
+      <div className="application-form-actions">
+        {step > 0 && <button type="button" disabled={loading} onClick={() => { setStep(step - 1); setError(""); }} className="application-back">← Назад</button>}
+        {step < 2 ? <button key="next" type="button" onClick={nextStep} className="btn-primary">Продолжить →</button> : <button key="submit" type="submit" disabled={loading} className="btn-primary">{loading ? "Отправляем заявку…" : "Отправить заявку ↗"}</button>}
+      </div>
+      <p className="application-help">Ответы сохраняются при переходе между шагами, пока открыта эта страница.</p>
     </form>
   );
 }

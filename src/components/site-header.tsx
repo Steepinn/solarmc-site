@@ -1,54 +1,17 @@
 "use client";
 
-import { Download, Menu, X } from "lucide-react";
+import { Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { mainNav } from "@/config/site";
+import { SiteMenu } from "./site-menu";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./theme-toggle";
 import { SoundToggle } from "./sound-toggle";
 import { NotificationsBell } from "./notifications-bell";
 import { UserMenu } from "./user-menu";
 
-type MenuPhase = "closed" | "open" | "closing";
-
 export function SiteHeader() {
   const pathname = usePathname();
-  const [phase, setPhase] = useState<MenuPhase>("closed");
-  const menuOpen = phase === "open" || phase === "closing";
-
-  const closeMenu = () => {
-    if (phase !== "open") return;
-    setPhase("closing");
-    window.setTimeout(() => setPhase("closed"), 60);
-  };
-
-  const toggleMenu = () => {
-    if (phase === "open") closeMenu();
-    else if (phase === "closed") setPhase("open");
-  };
-
-  useEffect(() => {
-    setPhase("closed");
-  }, [pathname]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("menu-open", phase === "open");
-    return () => document.documentElement.classList.remove("menu-open");
-  }, [phase]);
-
-  useEffect(() => {
-    if (phase !== "open") return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeMenu();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase]);
-
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href.startsWith("/docs")) return pathname.startsWith("/docs");
@@ -61,29 +24,18 @@ export function SiteHeader() {
       className="relative sticky top-0 z-50 border-b border-border bg-card"
     >
       <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-2 px-3 sm:h-20 sm:gap-3 sm:px-4">
-        <button
-          type="button"
-          aria-label={phase === "open" ? "Закрыть меню" : "Открыть меню"}
-          aria-expanded={phase === "open"}
-          className={cn(
-            "pressable inline-flex size-11 items-center justify-center rounded-xl text-foreground transition-colors hover:bg-accent",
-            phase === "open" && "bg-accent neon-glow",
-          )}
-          onClick={toggleMenu}
-        >
-          {phase === "open" ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <SiteMenu />
 
         <Link href="/" className="inline-flex shrink-0 items-center" aria-label="SolarMC">
           <Image
-            src="/brand-face.png"
+            src="/logo.png"
             alt="SolarMC"
-            width={40}
-            height={40}
-            className="brand-face size-10"
+            width={661}
+            height={168}
+            className="solar-shared-logo"
             priority
           />
-          <span className="solar-header-wordmark">solar<span className="text-solar-gold">.</span></span>
+
         </Link>
 
         <Link
@@ -99,67 +51,15 @@ export function SiteHeader() {
         </Link>
 
         <nav className="solar-desktop-nav" aria-label="Основные разделы">
-          {[{ href: "/docs/informaciya/home", label: "Вики" }, { href: "/map", label: "Карта" }, { href: "/cities", label: "Города" }, { href: "/shop", label: "Магазин" }, { href: "/status", label: "Статус" }].map(item => <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</Link>)}
+          {[{ href: "/docs/informaciya/home", label: "Вики" }, { href: "/map", label: "Карта" }, { href: "/cities", label: "Города" }, { href: "/applications", label: "Заявки" }, { href: "/shop", label: "Магазин" }, { href: "/status", label: "Статус" }].map(item => <Link key={item.href} href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</Link>)}
         </nav>
         <div className="ms-auto flex items-center gap-1">
           <NotificationsBell />
           <SoundToggle />
-          <ThemeToggle />
           <UserMenu />
         </div>
       </div>
 
-      {menuOpen && (
-        <>
-          <button
-            type="button"
-            className={cn(
-              "site-menu-backdrop",
-              phase === "closing" && "site-menu-backdrop--out",
-            )}
-            aria-label="Закрыть меню"
-            onClick={closeMenu}
-          />
-          <nav
-            className={cn(
-              "site-menu-panel",
-              phase === "closing" ? "site-menu-panel--out" : "site-menu-panel--in",
-            )}
-            aria-label="Навигация"
-          >
-            <div className="site-menu-panel__inner">
-              <div className="mb-5 flex items-center gap-3 px-1 sm:mb-7">
-                <span className="h-px flex-1 bg-gradient-to-r from-transparent via-solar-gold/60 to-transparent" />
-                <p className="font-display text-sm font-bold uppercase tracking-[0.2em] text-solar-gold">
-                  Меню
-                </p>
-                <span className="h-px flex-1 bg-gradient-to-r from-transparent via-solar-gold/60 to-transparent" />
-              </div>
-              <ul className="site-menu-grid">
-                {mainNav.map((item, i) => (
-                  <li
-                    key={item.href}
-                    className="site-menu-item"
-                    style={{ animationDelay: `${30 + i * 20}ms` }}
-                  >
-                    <Link
-                      href={item.href}
-                      prefetch
-                      onClick={closeMenu}
-                      className={cn(
-                        "site-menu-link",
-                        isActive(item.href) && "site-menu-link--active",
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
-        </>
-      )}
     </header>
   );
 }

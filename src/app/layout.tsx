@@ -1,16 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito, Pixelify_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SiteSplash } from "@/components/site-splash";
-import {
-  SPLASH_BOOTSTRAP_SCRIPT,
-  SplashBootstrapShell,
-} from "@/components/splash-bootstrap";
-import { CursorTrail } from "@/components/cursor-trail";
 import { CookieConsent } from "@/components/cookie-consent";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 import "./redesign.css";
+import "./solar-v2.css";
+import "./solar-unified.css";
 
 const fontPixel = Pixelify_Sans({
   variable: "--font-pixel",
@@ -50,17 +46,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: SPLASH_BOOTSTRAP_SCRIPT }} />
-      </head>
+    <html lang="ru" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <body
         className={`${fontPixel.variable} ${fontSans.variable} bg-background font-sans text-foreground`}
       >
-        <SplashBootstrapShell />
-        <SiteSplash />
+        <div className="solar-flow-background" aria-hidden="true"><div /><div /></div>
         <ThemeProvider>
-          <CursorTrail />
           {children}
           <CookieConsent />
         </ThemeProvider>

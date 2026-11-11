@@ -18,6 +18,8 @@ export function LauncherSiteChrome({ children }: { children: React.ReactNode }) 
   const pathname = usePathname() ?? "";
   const minimal = isLauncherOAuthFlow(pathname);
 
+  if (pathname === "/") return <main>{children}</main>;
+
   if (minimal) {
     return (
       <div className="site-shell relative flex min-h-screen flex-col">
