@@ -16,5 +16,5 @@ export function PageTransition({ children }: { children: ReactNode }) {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return <div className="page-flip-root">{children}</div>;
+  return <div key={pathname} className="page-flip-root">{children}</div>;
 }

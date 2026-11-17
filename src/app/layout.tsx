@@ -7,6 +7,8 @@ import "./globals.css";
 import "./redesign.css";
 import "./solar-v2.css";
 import "./solar-unified.css";
+import "./solar-motion.css";
+import { SiteMotion } from "@/components/site-motion";
 
 const fontPixel = Pixelify_Sans({
   variable: "--font-pixel",
@@ -52,6 +54,7 @@ export default function RootLayout({
       >
         <div className="solar-flow-background" aria-hidden="true"><div /><div /></div>
         <ThemeProvider>
+          <SiteMotion />
           {children}
           <CookieConsent />
         </ThemeProvider>
